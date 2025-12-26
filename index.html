@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Youssef Kachmar | Network Admin</title>
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- ICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- ANIMATION -->
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    
+    <link href="style.css" rel="stylesheet">
+    
+    <!-- SVG Fix for Azure Icon -->
+    <style>
+        .project-icon svg {
+            width: 45px;
+            height: 45px;
+            fill: var(--primary);
+            filter: drop-shadow(0 0 5px var(--glow));
+        }
+    </style>
+</head>
+<body>
+
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline id="bg-video">
+    <source src="videos/background.webm" type="video/webm">
+</video>
+<div class="video-overlay"></div>
+
+<nav class="main-nav">
+    <div class="nav-content">
+        <a href="#hero" class="logo">YOUSSEF<span class="dot">.</span></a>
+        
+        <div class="nav-links">
+            <a href="#hero" data-i18n="nav_home">Home</a>
+            <a href="#education" data-i18n="nav_edu">Education</a>
+            <a href="#skills" data-i18n="nav_competence">Competence</a>
+            <a href="#certifications" data-i18n="nav_certs">Certs</a>
+            <a href="#projects" data-i18n="nav_projects">Projects</a>
+            <a href="#contact" data-i18n="nav_contact">Contact</a>
+        </div>
+        
+        <div class="nav-controls">
+            <!-- Language Selector (EN / DE / FR) -->
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')" class="lang-opt active" id="btn-en">EN</button>
+                <span class="divider">/</span>
+                <button onclick="setLanguage('de')" class="lang-opt" id="btn-de">DE</button>
+                <span class="divider">/</span>
+                <button onclick="setLanguage('fr')" class="lang-opt" id="btn-fr">FR</button>
+            </div>
+        </div>
+
+        <!-- RESUME DROPDOWN (UPDATED PATHS) -->
+        <div class="resume-dropdown">
+            <button class="resume-btn-toggle">
+                <span data-i18n="nav_resume">Resume</span> 
+                <i class='bx bx-chevron-down'></i>
+            </button>
+            <div class="resume-menu">
+                <a href="resume/resume-en.pdf" target="_blank">English <i class='bx bx-download'></i></a>
+                <a href="resume/resume-de.pdf" target="_blank">Deutsch <i class='bx bx-download'></i></a>
+                <a href="resume/resume-fr.pdf" target="_blank">Français <i class='bx bx-download'></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <button aria-label="Open menu" class="mobile-menu-icon">
+        <i class='bx bx-menu'></i>
+    </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-overlay" id="mobile-nav">
+    <div class="mobile-nav-content">
+        <button class="close-mobile-nav"><i class='bx bx-x'></i></button>
+        <a href="#hero" data-i18n="nav_home">Home</a>
+        <a href="#education" data-i18n="nav_edu">Education</a>
+        <a href="#skills" data-i18n="nav_competence">Competence</a>
+        <a href="#certifications" data-i18n="nav_certs">Certs</a>
+        <a href="#projects" data-i18n="nav_projects">Projects</a>
+        
+        <hr style="width: 50%; border-color: var(--border-light); opacity: 0.3;">
+        
+        <!-- Mobile Resume Links (UPDATED PATHS) -->
+        <div class="mobile-resumes">
+            <a href="resume/resume-en.pdf" target="_blank"><i class='bx bx-file'></i> Resume (EN)</a>
+            <a href="resume/resume-de.pdf" target="_blank"><i class='bx bx-file'></i> Lebenslauf (DE)</a>
+            <a href="resume/resume-fr.pdf" target="_blank"><i class='bx bx-file'></i> CV (FR)</a>
+        </div>
+
+        <div class="mobile-controls">
+            <button onclick="setLanguage('en')">EN</button>
+            <button onclick="setLanguage('de')">DE</button>
+            <button onclick="setLanguage('fr')">FR</button>
+        </div>
+    </div>
+</div>
+
+<main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-text" data-aos="fade-right">
+            <span class="hero-badge" data-i18n="hero_badge">Network & Systems Student</span>
+            <h1>Youssef Kachmar <br><span class="gradient-text" data-i18n="hero_title">Future Admin.</span></h1>
+            <p class="hero-description" data-i18n="hero_desc">
+                A 20-year-old aspiring IT Specialist for System Integration with a solid technical foundation in computer systems and advanced networking. Combining hands-on experience in virtualization and network architecture with a dedicated work ethic, I am eager to apply my skills within a professional apprenticeship in Germany.
+            </p>
+            <div class="hero-btns">
+                <a href="#projects" class="primary-btn" data-i18n="btn_view_project">View Projects</a>
+                <a href="#contact" class="secondary-btn" data-i18n="btn_contact">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-visual" data-aos="fade-left">
+            <div class="image-container">
+                <!-- Ensure you have a profile.jpg in images/ -->
+                <img src="images/profile.jpg" alt="Youssef Kachmar">
+                <div class="glowing-circle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="container" id="education">
+        <h2 data-aos="fade-up" data-i18n="section_edu">Education Path</h2>
+        <div class="timeline-wrapper">
+            
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <article class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 data-i18n="edu_ista_title">Computer Systems & Networks</h3>
+                        <span class="date" data-i18n="edu_ista_date">Sept 2024 - June 2026</span>
+                    </div>
+                    <p class="company">ISTA Taza</p>
+                    <p class="desc" data-i18n="edu_ista_desc">Comprehensive training in network architecture, system administration, and cloud security.</p>
+                    <ul data-i18n="edu_ista_list"></ul>
+                </article>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-dot"></div>
+                <article class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 data-i18n="edu_bio_title">Biology Studies</h3>
+                        <span class="date" data-i18n="edu_bio_date">Sept 2023 - July 2024</span>
+                    </div>
+                    <p class="company">Faculté Polydisciplinaire de Taza</p>
+                    <p class="desc" data-i18n="edu_bio_desc">Developed scientific reasoning, lab safety protocols, and analytical skills.</p>
+                </article>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-dot"></div>
+                <article class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 data-i18n="edu_bac_title">High School Diploma - Physics</h3>
+                        <span class="date">2023</span>
+                    </div>
+                    <p class="company">Groupe Scolaire Salma Regragui</p>
+                    <p class="desc" data-i18n="edu_bac_desc">Focus on Physics and Mathematics.</p>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMPETENCE SECTION -->
+    <section class="container" id="skills">
+        <h2 data-aos="fade-up" data-i18n="section_competence">Competence</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-card" data-aos="zoom-in">
+                <i class='bx bx-network-chart skill-icon'></i>
+                <h3 data-i18n="skill_net">Networking</h3>
+                <p>Cisco, OSPF, BGP, STP, VoIP, WLAN</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class='bx bxl-windows skill-icon'></i>
+                <h3 data-i18n="skill_sys">SysAdmin</h3>
+                <p>Windows Server, Linux, AD DS, DNS</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class='bx bxs-cloud skill-icon'></i>
+                <h3 data-i18n="skill_cloud">Cloud & Sec</h3>
+                <p>Azure, pfSense, Suricata, Python</p>
+            </div>
+
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class='bx bx-globe skill-icon'></i>
+                <h3 data-i18n="skill_lang">Languages</h3>
+                <div class="lang-list">
+                    <div class="lang-row">
+                        <span data-i18n="lang_ar">Arabic</span>
+                        <span class="lang-dot"></span>
+                        <span class="text-muted" data-i18n="level_native">Native</span>
+                    </div>
+                    <div class="lang-row">
+                        <span data-i18n="lang_en">English</span>
+                        <span class="lang-dot"></span>
+                        <span class="text-muted" data-i18n="level_c1">Advanced (C1)</span>
+                    </div>
+                    <div class="lang-row">
+                        <span data-i18n="lang_de">German</span>
+                        <span class="lang-dot"></span>
+                        <span class="text-muted" data-i18n="level_a2">Beginner (A2)</span>
+                    </div>
+                    <div class="lang-row">
+                        <span data-i18n="lang_fr">French</span>
+                        <span class="lang-dot"></span>
+                        <span class="text-muted" data-i18n="level_b2">Intermediate (B2)</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="container" id="certifications">
+        <h2 data-aos="fade-up" data-i18n="section_certs">Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card" data-aos="fade-up">
+                <div class="cert-icon-box"><i class='bx bx-award'></i></div>
+                <div class="cert-details">
+                    <h3>Introduction to Networks</h3>
+                    <p class="issuer">Cisco (CCNA)</p>
+                    <div class="cert-meta"><span class="date" data-i18n="status_earned">Earned</span></div>
+                </div>
+            </div>
+            <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="cert-icon-box"><i class='bx bx-loader-circle'></i></div>
+                <div class="cert-details">
+                    <h3>Switching, Routing & Wireless</h3>
+                    <p class="issuer">Cisco (CCNA)</p>
+                    <div class="cert-meta"><span class="date" data-i18n="status_progress">In Progress</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="container" id="projects">
+        <h2 data-aos="fade-up" data-i18n="section_projects">Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <!-- Project 1: Azure (UPDATED PATH) -->
+            <div class="project-card" data-aos="fade-up" data-modal-id="project-modal-1">
+                <div class="project-cover">
+                    <!-- Updated path to the azure-project folder -->
+                    <img src="images/azure-project/0-topology.png" alt="Azure Topology">
+                    <div class="card-glow"></div>
+                </div>
+                <div class="project-content">
+                    <h3 data-i18n="proj_1_title">Secure Azure Cloud Network</h3>
+                    <p data-i18n="proj_1_desc">A complex Azure implementation featuring pfSense, Suricata IPS, OpenVPN, and Active Directory.</p>
+                    
+                    <div class="project-actions">
+                        <button class="link-text open-project-modal-btn">
+                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                        <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="github-btn" aria-label="View on GitHub">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Network Automation -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-modal-id="project-modal-2">
+                <div class="project-content" style="padding-top: 2rem;">
+                    <div class="project-icon"><i class='bx bxl-python'></i></div>
+                    <h3 data-i18n="proj_2_title">Network Automation</h3>
+                    <p data-i18n="proj_2_desc">Python scripts for automating device configuration and network discovery.</p>
+                    
+                    <div class="project-actions">
+                        <button class="link-text open-project-modal-btn">
+                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                        <a href="#" target="_blank" class="github-btn" aria-label="View on GitHub">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </section>
+
+    <!-- CONTACT -->
+    <section class="container" id="contact">
+        <div class="contact-card" data-aos="fade-up">
+            <div class="contact-info">
+                <h2 data-i18n="section_contact">Let's Connect</h2>
+                <p data-i18n="contact_desc">I am currently looking for internship opportunities.</p>
+                <div class="contact-links">
+                    <a href="mailto:youssef.kachmar@email.com" class="contact-pill">
+                        <div class="icon-box"><i class='bx bx-envelope'></i></div>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="#" class="contact-pill">
+                        <div class="icon-box"><i class='bx bxl-linkedin'></i></div>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/youssefkachmar" class="contact-pill">
+                        <div class="icon-box"><i class='bx bxl-github'></i></div>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+            <form action="#" class="contact-form">
+                <div class="form-group"><label>Name</label><input type="text" required></div>
+                <div class="form-group"><label>Email</label><input type="email" required></div>
+                <div class="form-group"><label>Message</label><textarea required></textarea></div>
+                <button type="submit" class="submit-btn" data-i18n="btn_send">Send Message <i class='bx bx-send'></i></button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <p>© 2025 Youssef Kachmar.</p>
+</footer>
+
+<!-- MODALS -->
+<div class="modal project-modal" id="project-modal-1">
+    <div class="modal-content">
+        <button class="close-button"><i class='bx bx-x'></i></button>
+        <div class="project-modal-body">
+            <div class="project-modal-image-wrapper"></div>
+            <div class="project-modal-description"></div>
+            <div class="project-modal-controls">
+                <button class="control-btn prev"><i class='bx bx-chevron-left'></i></button>
+                <div class="project-modal-counter"></div>
+                <button class="control-btn next"><i class='bx bx-chevron-right'></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal project-modal" id="project-modal-2">
+    <div class="modal-content">
+        <button class="close-button"><i class='bx bx-x'></i></button>
+        <div class="project-modal-body">
+            <div class="project-modal-image-wrapper"></div>
+            <div class="project-modal-description"></div>
+            <div class="project-modal-controls">
+                <button class="control-btn prev"><i class='bx bx-chevron-left'></i></button>
+                <div class="project-modal-counter"></div>
+                <button class="control-btn next"><i class='bx bx-chevron-right'></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="image-modal">
+    <div class="modal-content image-zoom-content">
+        <button class="close-button"><i class='bx bx-x'></i></button>
+        <img src="" alt="Enlarged">
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
