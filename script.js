@@ -386,20 +386,71 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Form Submission
-    const form = document.querySelector(".contact-form");
+    // --- FORM SUBMISSION (AJAX for Formspree) ---
+    const form = document.getElementById("contact-form");
+    
     if(form) {
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
-            const btn = form.querySelector("button");
-            const originalText = btn.textContent;
-            btn.textContent = "Sending...";
-            setTimeout(() => {
-                alert("This is a demo form. Integrate a backend like Formspree to receive emails!");
-                btn.textContent = "Sent!";
-                form.reset();
-                setTimeout(() => btn.textContent = originalText, 2000);
-            }, 1000);
+        form.addEventListener("submit", async function(e) {
+            e.preventDefault(); // Stop the default page reload
+            
+            const btn = form.querySelector(".submit-btn");
+            const originalText = btn.innerHTML;
+
+            // 1. Show Loading State
+            btn.innerHTML = "Sending... <i class='bx bx-loader-alt bx-spin'></i>";
+            btn.style.opacity = "0.7";
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+
+            try {
+                // 2. Send Data to Formspree
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                // 3. Handle Success
+                if (response.ok) {
+                    btn.innerHTML = "Message Sent! <i class='bx bx-check'></i>";
+                    btn.style.background = "#2ecc71"; // Green color
+                    btn.style.color = "#fff";
+                    form.reset(); // Clear input fields
+
+                    // Revert button after 4 seconds
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = ""; // Revert to CSS default
+                        btn.style.color = "";
+                        btn.style.opacity = "1";
+                        btn.disabled = false;
+                    }, 4000);
+                } else {
+                    // Handle Server-side validation errors
+                    const data = await response.json();
+                    if (Object.hasOwn(data, 'errors')) {
+                        alert(data["errors"].map(error => error["message"]).join(", "));
+                    } else {
+                        throw new Error("Server Error");
+                    }
+                    throw new Error("Submission Failed");
+                }
+            } catch (error) {
+                // 4. Handle Network Errors
+                console.error("Error:", error);
+                btn.innerHTML = "Failed. Try Again.";
+                btn.style.background = "#e74c3c"; // Red color
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = "";
+                    btn.style.opacity = "1";
+                    btn.disabled = false;
+                }, 3000);
+            }
         });
     }
 });
