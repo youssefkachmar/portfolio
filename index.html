@@ -35,6 +35,7 @@
 </video>
 <div class="video-overlay"></div>
 
+<!-- NAVIGATION -->
 <nav class="main-nav">
     <div class="nav-content">
         <a href="#hero" class="logo">YOUSSEF<span class="dot">.</span></a>
@@ -58,49 +59,37 @@
                 <button onclick="setLanguage('fr')" class="lang-opt" id="btn-fr">FR</button>
             </div>
         </div>
-
-        <!-- RESUME DROPDOWN (UPDATED PATHS) -->
-        <div class="resume-dropdown">
-            <button class="resume-btn-toggle">
-                <span data-i18n="nav_resume">Resume</span> 
-                <i class='bx bx-chevron-down'></i>
-            </button>
-            <div class="resume-menu">
-                <a href="resume/resume-en.pdf" target="_blank">English <i class='bx bx-download'></i></a>
-                <a href="resume/resume-de.pdf" target="_blank">Deutsch <i class='bx bx-download'></i></a>
-                <a href="resume/resume-fr.pdf" target="_blank">Français <i class='bx bx-download'></i></a>
-            </div>
-        </div>
+        
+        <!-- MOBILE TOGGLE BUTTON -->
+        <button aria-label="Open menu" class="mobile-menu-icon">
+            <i class='bx bx-menu'></i>
+        </button>
     </div>
-    
-    <button aria-label="Open menu" class="mobile-menu-icon">
-        <i class='bx bx-menu'></i>
-    </button>
 </nav>
 
-<!-- MOBILE NAV -->
+<!-- FULL SCREEN MOBILE NAV -->
 <div class="mobile-nav-overlay" id="mobile-nav">
-    <div class="mobile-nav-content">
-        <button class="close-mobile-nav"><i class='bx bx-x'></i></button>
-        <a href="#hero" data-i18n="nav_home">Home</a>
-        <a href="#education" data-i18n="nav_edu">Education</a>
-        <a href="#skills" data-i18n="nav_competence">Competence</a>
-        <a href="#certifications" data-i18n="nav_certs">Certs</a>
-        <a href="#projects" data-i18n="nav_projects">Projects</a>
-        
-        <hr style="width: 50%; border-color: var(--border-light); opacity: 0.3;">
-        
-        <!-- Mobile Resume Links (UPDATED PATHS) -->
-        <div class="mobile-resumes">
-            <a href="resume/resume-en.pdf" target="_blank"><i class='bx bx-file'></i> Resume (EN)</a>
-            <a href="resume/resume-de.pdf" target="_blank"><i class='bx bx-file'></i> Lebenslauf (DE)</a>
-            <a href="resume/resume-fr.pdf" target="_blank"><i class='bx bx-file'></i> CV (FR)</a>
-        </div>
+    <div class="mobile-header">
+        <span class="menu-title">MENU</span>
+        <button class="close-mobile-nav">
+            <i class='bx bx-x'></i>
+        </button>
+    </div>
 
+    <div class="mobile-nav-content">
+        <a href="#hero" class="mobile-link"><i class='bx bx-home-alt'></i> <span data-i18n="nav_home">Home</span></a>
+        <a href="#education" class="mobile-link"><i class='bx bx-book'></i> <span data-i18n="nav_edu">Education</span></a>
+        <a href="#skills" class="mobile-link"><i class='bx bx-code-alt'></i> <span data-i18n="nav_competence">Competence</span></a>
+        <a href="#certifications" class="mobile-link"><i class='bx bx-award'></i> <span data-i18n="nav_certs">Certs</span></a>
+        <a href="#projects" class="mobile-link"><i class='bx bx-folder'></i> <span data-i18n="nav_projects">Projects</span></a>
+        <a href="#contact" class="mobile-link"><i class='bx bx-envelope'></i> <span data-i18n="nav_contact">Contact</span></a>
+    </div>
+
+    <div class="mobile-footer">
         <div class="mobile-controls">
-            <button onclick="setLanguage('en')">EN</button>
-            <button onclick="setLanguage('de')">DE</button>
-            <button onclick="setLanguage('fr')">FR</button>
+            <button onclick="setLanguage('en')" id="mob-en">EN</button>
+            <button onclick="setLanguage('de')" id="mob-de">DE</button>
+            <button onclick="setLanguage('fr')" id="mob-fr">FR</button>
         </div>
     </div>
 </div>
@@ -114,14 +103,31 @@
             <p class="hero-description" data-i18n="hero_desc">
                 A 20-year-old aspiring IT Specialist for System Integration with a solid technical foundation in computer systems and advanced networking. Combining hands-on experience in virtualization and network architecture with a dedicated work ethic, I am eager to apply my skills within a professional apprenticeship in Germany.
             </p>
+            
+            <!-- HERO BUTTONS (Side by Side Fix) -->
             <div class="hero-btns">
-                <a href="#projects" class="primary-btn" data-i18n="btn_view_project">View Projects</a>
+                
+                <!-- 1. Resume Dropdown -->
+                <div class="hero-resume-wrapper">
+                    <button class="primary-btn resume-trigger">
+                        <span data-i18n="nav_resume">Resume</span> 
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <!-- Dropdown Content -->
+                    <div class="hero-resume-menu">
+                        <a href="resume/resume-en.pdf" target="_blank">English <i class='bx bx-download'></i></a>
+                        <a href="resume/resume-de.pdf" target="_blank">Deutsch <i class='bx bx-download'></i></a>
+                        <a href="resume/resume-fr.pdf" target="_blank">Français <i class='bx bx-download'></i></a>
+                    </div>
+                </div>
+
+                <!-- 2. Contact Button -->
                 <a href="#contact" class="secondary-btn" data-i18n="btn_contact">Contact Me</a>
             </div>
+
         </div>
         <div class="hero-visual" data-aos="fade-left">
             <div class="image-container">
-                <!-- Ensure you have a profile.jpg in images/ -->
                 <img src="images/profile.jpg" alt="Youssef Kachmar">
                 <div class="glowing-circle"></div>
             </div>
@@ -141,7 +147,7 @@
                         <span class="date" data-i18n="edu_ista_date">Sept 2024 - June 2026</span>
                     </div>
                     <p class="company">ISTA Taza</p>
-                    <p class="desc" data-i18n="edu_ista_desc">Comprehensive training in network architecture, system administration, and cloud security.</p>
+                    <p class="desc" data-i18n="edu_ista_desc">Comprehensive training in network architecture, system administration, and infrastructure management.</p>
                     <ul data-i18n="edu_ista_list"></ul>
                 </article>
             </div>
@@ -252,10 +258,9 @@
         <h2 data-aos="fade-up" data-i18n="section_projects">Featured Projects</h2>
         <div class="projects-grid">
             
-            <!-- Project 1: Azure (UPDATED PATH) -->
+            <!-- Project 1: Azure (IMAGE COVER) -->
             <div class="project-card" data-aos="fade-up" data-modal-id="project-modal-1">
                 <div class="project-cover">
-                    <!-- Updated path to the azure-project folder -->
                     <img src="images/azure-project/0-topology.png" alt="Azure Topology">
                     <div class="card-glow"></div>
                 </div>
@@ -330,6 +335,8 @@
 <footer class="main-footer">
     <p>© 2025 Youssef Kachmar.</p>
 </footer>
+
+<a href="#hero" class="back-to-top" aria-label="Back to Top"><i class='bx bx-up-arrow-alt'></i></a>
 
 <!-- MODALS -->
 <div class="modal project-modal" id="project-modal-1">
