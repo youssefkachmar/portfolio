@@ -202,7 +202,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     color: var(--text-main);
     text-decoration: none;
     border-bottom: 1px solid rgba(255,255,255,0.03);
-    /* FIX: Added 12px horizontal padding to prevent icon shadow clipping */
     padding: 15px 12px;
     display: flex; align-items: center; gap: 15px;
     width: 100%;
@@ -257,7 +256,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
 .hero-description { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 480px; }
 
-/* FIX: Align items center to handle slight variations on Desktop */
+/* HERO BUTTONS */
 .hero-btns { display: flex; gap: 1rem; align-items: center; }
 
 /* HERO RESUME DROPDOWN */
@@ -280,38 +279,59 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
-/* FIX: Added transparent border, explicit font and line-height for exact match with secondary */
 .primary-btn {
     background: var(--primary); color: #0f161c; padding: 1rem 2rem; border-radius: 6px; font-weight: 700;
-    border: 1px solid transparent; /* Match border size */
+    border: 1px solid transparent;
     cursor: pointer; box-shadow: 0 0 20px rgba(56, 200, 250, 0.4); transition: transform 0.2s;
     text-decoration: none; display: flex; align-items: center; gap: 5px; justify-content: center;
-    font-family: var(--font-body); /* Consistency */
+    font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.5;
 }
 .primary-btn:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(56, 200, 250, 0.6); }
 
-/* FIX: Added explicit font and line-height */
 .secondary-btn {
     border: 1px solid var(--border-light); color: var(--text-main); padding: 1rem 2rem; border-radius: 6px; font-weight: 600;
     backdrop-filter: blur(5px); text-decoration: none; display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-body); /* Consistency */
+    font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.5;
 }
 .secondary-btn:hover { border-color: var(--primary); color: var(--primary); background: rgba(56, 200, 250, 0.1); }
 
-.image-container { position: relative; width: 300px; height: 300px; }
+/* --- UPDATED PROFILE IMAGE (PORTRAIT, DARK BLUE THIN CONTOUR, SUBTLE GLOW) --- */
+.image-container { 
+    position: relative; 
+    width: 320px; 
+    height: 420px; /* Portrait Shape */
+}
+
 .image-container img { 
-    width: 100%; height: 100%; object-fit: cover; border-radius: 50%; 
-    border: 2px solid var(--border-light); position: relative; z-index: 2; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 20px; /* Soft corners */
+    position: relative; 
+    z-index: 2; /* Sits on top of glow */
+    
+    /* VERY THIN DARK BLUE CONTOUR */
+    border: 1px solid #0a4d8c;
 }
+
 .glowing-circle {
-    position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
-    border: 2px solid var(--primary); border-radius: 50%; z-index: 1; opacity: 0.3;
-    box-shadow: 0 0 30px var(--primary);
+    display: block;
+    position: absolute; 
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 20px; /* Matches image soft corners */
+    z-index: 1; /* Sits behind image */
+    
+    /* SUBTLE GLOW: Reduced spread (35px) and opacity (0.3) */
+    box-shadow: 0 0 35px rgba(56, 200, 250, 0.3);
+    
+    background: transparent;
+    border: none;
 }
+
 @media(max-width: 868px) {
     .hero { flex-direction: column-reverse; text-align: center; gap: 4rem; }
     .hero-text { margin: 0 auto; }
@@ -337,7 +357,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 .timeline-item { margin-bottom: 3rem; position: relative; }
 
-/* FIX: Centered Dot with Text & Line */
 .timeline-dot {
     position: absolute; 
     left: calc(-2rem - 7px); 
@@ -359,7 +378,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     border-radius: 12px; transition: var(--transition);
     border: 1px solid var(--border-light); box-shadow: var(--shadow-card); backdrop-filter: blur(10px);
 }
-.skill-card, .cert-card { padding: 2rem; } /* Restore padding for non-project cards */
+.skill-card, .cert-card { padding: 2rem; } 
 
 .skill-card:hover, .project-card:hover, .cert-card:hover {
     transform: translateY(-5px); border-color: var(--primary); box-shadow: var(--shadow-glow);
@@ -417,7 +436,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     border-top: 1px solid var(--border-light);
 }
 
-/* New Button Style for View Details */
 .link-text { 
     background: rgba(56, 200, 250, 0.05); 
     border: 1px solid var(--primary); 
@@ -538,7 +556,9 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .hero-text { width: 100%; margin: 0; }
     .hero h1 { font-size: 2rem; line-height: 1.1; margin-bottom: 1rem; }
     .hero-description { font-size: 0.95rem; line-height: 1.5; max-width: 100%; margin-bottom: 2rem; }
-    .image-container { width: 180px; height: 180px; margin: 0 auto; }
+    
+    /* UPDATED MOBILE IMAGE SIZE (Portrait) */
+    .image-container { width: 220px; height: 290px; margin: 0 auto; }
     
     /* HERO BUTTONS (SIDE-BY-SIDE FIX) */
     .hero-btns { display: flex; flex-direction: row; gap: 12px; width: 100%; justify-content: center; align-items: stretch; }
@@ -550,8 +570,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .timeline-wrapper { padding-left: 1.5rem; margin-left: 0.5rem; }
     .timeline-item { margin-bottom: 2.5rem; }
 
-    /* FIX: Recalculated Left Position for Mobile Padding (1.5rem) */
-    /* Use calc to ensure it sits exactly on the line */
     .timeline-dot {
         left: calc(-1.5rem - 7px);
     }
@@ -570,7 +588,8 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 @media (max-width: 380px) {
     .hero h1 { font-size: 1.8rem; }
-    .image-container { width: 160px; height: 160px; }
+    /* Scales down even further for very small screens */
+    .image-container { width: 180px; height: 240px; }
 }
 
 @media (hover: none) {
