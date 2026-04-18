@@ -7,25 +7,29 @@ document.addEventListener("DOMContentLoaded", function () {
             hero_badge: "Network & Systems Student", hero_title: "Future Admin.",
             hero_desc: "A 20-year-old aspiring IT Specialist for System Integration with a solid technical foundation in computer systems and advanced networking. Combining hands-on experience in virtualization and network architecture with a dedicated work ethic, I am eager to apply my skills within a professional apprenticeship in Germany.",
             nav_resume: "Resume", btn_contact: "Contact Me",
+            
             section_edu: "Education Path",
             edu_ista_title: "Computer Systems & Networks", edu_ista_date: "Sept 2024 - June 2026",
             edu_ista_desc: "Comprehensive training in network architecture, system administration, and infrastructure management.",
             edu_bio_title: "Biology Studies", edu_bio_date: "Sept 2023 - July 2024",
             edu_bio_desc: "Developed scientific reasoning, lab safety protocols, and analytical skills.",
-            edu_bac_title: "High School Diploma - Physics", edu_bac_desc: "Focus on Physics and Mathematics.",
+            edu_bac_title: "High School Diploma - Physics", edu_bac_date: "Jun 2023",
+            edu_bac_company: "GS Salma Erragragui", edu_bac_desc: "Focus on Physics and Mathematics.",
             
             section_exp: "Professional Experience",
-            exp_1_title: "Network Engineering Intern",
-            exp_1_desc: "Configured network devices, implemented network monitoring solutions, and performed advanced troubleshooting to ensure infrastructure reliability.",
-            exp_2_title: "IT Consulting Intern",
-            exp_2_desc: "Installed and configured hardware and network equipment. Provided direct technical support and resolved complex technical issues.",
+            exp_1_title: "IT Technician Intern",
+            exp_1_company: "Societe Regionale Multiservices | Taza, Morocco",
+            exp_1_desc: "Assisted in configuring and deploying network devices. Monitored network performance and provided baseline troubleshooting to maintain reliable IT infrastructure.",
+            exp_2_title: "IT Support Intern",
+            exp_2_company: "L.P.E.C. (Bureau d'Etudes Techniques) | Oujda, Morocco",
+            exp_2_desc: "Installed, configured, and maintained office hardware and network equipment. Delivered Tier-1 technical support and effectively resolved day-to-day user issues.",
 
             section_competence: "Competence",
             skill_net: "Networking", skill_sys: "SysAdmin", skill_cloud: "Cloud & Sec", skill_lang: "Languages",
             lang_ar: "Arabic", level_native: "Native", lang_en: "English", level_c1: "Advanced (C1)",
             lang_de: "German", level_b1: "Intermediate (B1)", lang_fr: "French", level_b2: "Intermediate (B2)",
             
-            section_certs: "Certifications", status_earned: "Earned", status_progress: "In Progress",
+            section_certs: "Certifications", status_earned: "Earned", status_progress: "In Progress", btn_view: "View",
             
             section_projects: "Featured Projects",
             proj_1_title: "Secure Azure Cloud Network", proj_1_desc: "A complex Azure implementation featuring pfSense, Suricata IPS, and Active Directory.",
@@ -37,27 +41,31 @@ document.addEventListener("DOMContentLoaded", function () {
         de: {
             nav_home: "Startseite", nav_edu: "Bildung", nav_exp: "Erfahrung", nav_competence: "Kompetenzen", nav_certs: "Zertifikate", nav_projects: "Projekte", nav_contact: "Kontakt",
             hero_badge: "Netzwerk & Systeme Student", hero_title: "Zukünftiger Admin.",
-            hero_desc: "Ein 20-jähriger angehender Fachinformatiker für Systemintegration mit fundiertem Basiswissen in Computersystemen und fortgeschrittener Netzwerktechnik. Mit praktischer Erfahrung in Virtualisierung und Netzwerkarchitektur strebe ich eine professionelle Ausbildung in Deutschland an.",
+            hero_desc: "Ein 20-jähriger angehender Fachinformatiker für Systemintegration mit fundiertem Basiswissen in Computersystemen und fortgeschrittener Netzwerktechnik. Mit praktischer Erfahrung in Virtualisierung strebe ich eine Ausbildung in Deutschland an.",
             nav_resume: "Lebenslauf", btn_contact: "Kontaktieren",
+            
             section_edu: "Bildungsweg",
             edu_ista_title: "Computersysteme und Netzwerke", edu_ista_date: "Sept 2024 - Juni 2026",
             edu_ista_desc: "Umfassende Ausbildung in Netzwerkarchitektur, Systemadministration und Infrastrukturmanagement.",
             edu_bio_title: "Biologiestudium", edu_bio_date: "Sept 2023 - Juli 2024",
             edu_bio_desc: "Entwicklung von wissenschaftlichem Denken und analytischen Fähigkeiten.",
-            edu_bac_title: "Abitur Physik", edu_bac_desc: "Schwerpunkt Physik und Mathematik.",
+            edu_bac_title: "Abitur Physik", edu_bac_date: "Jun 2023",
+            edu_bac_company: "GS Salma Erragragui", edu_bac_desc: "Schwerpunkt Physik und Mathematik.",
             
             section_exp: "Berufserfahrung",
-            exp_1_title: "Praktikant Netzwerktechnik",
-            exp_1_desc: "Konfiguration von Netzwerkgeräten, Implementierung von Netzwerküberwachungslösungen und erweitertes Troubleshooting zur Gewährleistung der Infrastrukturzuverlässigkeit.",
-            exp_2_title: "Praktikant IT-Beratung",
-            exp_2_desc: "Installation und Konfiguration von Hardware und Netzwerkgeräten. Direkter technischer Support und Behebung komplexer technischer Probleme.",
+            exp_1_title: "Praktikant IT-Technik",
+            exp_1_company: "Societe Regionale Multiservices | Taza, Marokko",
+            exp_1_desc: "Unterstützung bei der Konfiguration und Bereitstellung von Netzwerkgeräten. Überwachung der Netzwerkleistung und Durchführung grundlegender Fehlerbehebungen zur Aufrechterhaltung der IT-Infrastruktur.",
+            exp_2_title: "Praktikant IT-Support",
+            exp_2_company: "L.P.E.C. (Bureau d'Etudes Techniques) | Oujda, Marokko",
+            exp_2_desc: "Installation, Konfiguration und Wartung von Bürohardware und Netzwerkgeräten. Bereitstellung von Tier-1-IT-Support und Lösung von alltäglichen Benutzerproblemen.",
 
             section_competence: "Kompetenzen",
             skill_net: "Netzwerke", skill_sys: "SysAdmin", skill_cloud: "Cloud & Sicherheit", skill_lang: "Sprachen",
             lang_ar: "Arabisch", level_native: "Muttersprache", lang_en: "Englisch", level_c1: "Fortgeschritten (C1)",
             lang_de: "Deutsch", level_b1: "Mittelstufe (B1)", lang_fr: "Französisch", level_b2: "Mittelstufe (B2)",
             
-            section_certs: "Zertifizierungen", status_earned: "Erhalten", status_progress: "In Bearbeitung",
+            section_certs: "Zertifizierungen", status_earned: "Erhalten", status_progress: "In Bearbeitung", btn_view: "Ansehen",
             
             section_projects: "Ausgewählte Projekte",
             proj_1_title: "Sicheres Azure Cloud Netzwerk", proj_1_desc: "Eine komplexe Azure-Implementierung mit pfSense, Suricata IPS und Active Directory.",
@@ -69,27 +77,31 @@ document.addEventListener("DOMContentLoaded", function () {
         fr: {
             nav_home: "Accueil", nav_edu: "Éducation", nav_exp: "Expérience", nav_competence: "Compétences", nav_certs: "Certs", nav_projects: "Projets", nav_contact: "Contact",
             hero_badge: "Étudiant Réseaux & Systèmes", hero_title: "Futur Admin.",
-            hero_desc: "Un futur spécialiste informatique de 20 ans en intégration de systèmes, avec une base technique solide. Alliant une expérience pratique de la virtualisation et de l'architecture réseau, je suis désireux de débuter un apprentissage en Allemagne.",
+            hero_desc: "Un futur spécialiste informatique de 20 ans en intégration de systèmes, avec une base technique solide. Alliant une expérience pratique de la virtualisation, je suis désireux de débuter un apprentissage en Allemagne.",
             nav_resume: "CV", btn_contact: "Contactez-moi",
+            
             section_edu: "Parcours Éducatif",
             edu_ista_title: "Systèmes et Réseaux Informatiques", edu_ista_date: "Sept 2024 - Juin 2026",
             edu_ista_desc: "Formation complète en architecture réseau, administration système et gestion d'infrastructure.",
             edu_bio_title: "Études de Biologie", edu_bio_date: "Sept 2023 - Juil 2024",
             edu_bio_desc: "Développement du raisonnement scientifique et protocoles de laboratoire.",
-            edu_bac_title: "Baccalauréat Sciences Physiques", edu_bac_desc: "Concentration sur la physique et les mathématiques.",
+            edu_bac_title: "Baccalauréat Sciences Physiques", edu_bac_date: "Juin 2023",
+            edu_bac_company: "GS Salma Erragragui", edu_bac_desc: "Concentration sur la physique et les mathématiques.",
             
             section_exp: "Expérience Professionnelle",
-            exp_1_title: "Stagiaire Ingénieur Réseau",
-            exp_1_desc: "Configuration d'équipements réseau, mise en place de solutions de supervision et dépannage avancé pour assurer la fiabilité de l'infrastructure.",
-            exp_2_title: "Stagiaire Consultant IT",
-            exp_2_desc: "Installation et configuration de matériel et d'équipements réseau. Support technique direct et résolution de problèmes techniques complexes.",
+            exp_1_title: "Stagiaire Technicien IT",
+            exp_1_company: "Societe Regionale Multiservices | Taza, Maroc",
+            exp_1_desc: "Assistance à la configuration et au déploiement des équipements réseau. Surveillance des performances du réseau et dépannage de base pour maintenir la fiabilité de l'infrastructure.",
+            exp_2_title: "Stagiaire Support IT",
+            exp_2_company: "L.P.E.C. (Bureau d'Etudes Techniques) | Oujda, Maroc",
+            exp_2_desc: "Installation, configuration et maintenance du matériel informatique et des équipements réseau. Fourniture d'un support technique de niveau 1 et résolution des problèmes quotidiens des utilisateurs.",
 
             section_competence: "Compétences",
             skill_net: "Réseaux", skill_sys: "Admin Sys", skill_cloud: "Cloud & Sécu", skill_lang: "Langues",
             lang_ar: "Arabe", level_native: "Langue Maternelle", lang_en: "Anglais", level_c1: "Avancé (C1)",
             lang_de: "Allemand", level_b1: "Intermédiaire (B1)", lang_fr: "Français", level_b2: "Intermédiaire (B2)",
             
-            section_certs: "Certifications", status_earned: "Obtenu", status_progress: "En Cours",
+            section_certs: "Certifications", status_earned: "Obtenu", status_progress: "En Cours", btn_view: "Voir",
             
             section_projects: "Projets Phares",
             proj_1_title: "Réseau Cloud Azure Sécurisé", proj_1_desc: "Une implémentation Azure complexe avec pfSense, Suricata IPS et Active Directory.",
@@ -116,14 +128,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.setLanguage = function(lang) {
         currentLang = lang;
-        document.querySelectorAll('.lang-opt').forEach(btn => btn.classList.remove('active'));
-        if(document.getElementById(`btn-${lang}`)) document.getElementById(`btn-${lang}`).classList.add('active');
+        
+        // Update Custom Dropdown Visuals
+        const currentLangText = document.getElementById("current-lang");
+        if(currentLangText) currentLangText.innerText = lang.toUpperCase();
+        document.getElementById("lang-dropdown").classList.remove("active");
 
+        // Update Mobile Buttons
         document.querySelectorAll('.mobile-controls button').forEach(btn => {
             btn.classList.remove('active');
             if(btn.getAttribute('onclick').includes(`'${lang}'`)) btn.classList.add('active');
         });
 
+        // Update Text Content
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if(translations[lang][key]) el.textContent = translations[lang][key];
@@ -134,6 +151,18 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     setLanguage('en');
+
+    // --- CUSTOM LANGUAGE DROPDOWN TOGGLE ---
+    const langDropdown = document.getElementById("lang-dropdown");
+    if(langDropdown) {
+        langDropdown.querySelector(".dropdown-trigger").addEventListener("click", (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle("active");
+        });
+        document.addEventListener("click", (e) => {
+            if(!langDropdown.contains(e.target)) langDropdown.classList.remove("active");
+        });
+    }
 
     // --- 2. MOBILE MENU ---
     const mobileMenuBtn = document.querySelector(".mobile-menu-icon");
@@ -233,9 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const techArray = config.projects[modalId].technologies;
         const track = document.getElementById(`ticker-track-${modalId.split('-')[2]}`);
         if(track) {
-            // Build the string of tech items
             let itemsHtml = techArray.map(t => `<div class="ticker-item"><img src="${t.icon}" alt="${t.name}"> ${t.name}</div>`).join('');
-            // Duplicate the array twice so it scrolls perfectly infinitely
             track.innerHTML = itemsHtml + itemsHtml + itemsHtml;
         }
     }
@@ -272,7 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const modal = document.getElementById(modalId);
             if(config.projects[modalId]) {
                 config.projects[modalId].currentSlide = 0;
-                renderTicker(modalId); // Start Ticker
+                renderTicker(modalId); 
                 updateModalSlide(modalId);
             }
             openModal(modal);
