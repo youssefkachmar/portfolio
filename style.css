@@ -27,10 +27,7 @@ html { scroll-behavior: smooth; }
 body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); margin: 0; line-height: 1.6; overflow-x: hidden; }
 body.modal-open { overflow: hidden; }
 
-/* HOLLOW HOVER TEXT EFFECT */
-h2 { transition: all 0.3s ease; }
-h2:hover { color: transparent !important; -webkit-text-stroke: 1px var(--primary); text-stroke: 1px var(--primary); }
-
+/* TYPOGRAPHY */
 h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary); font-weight: 700; margin: 0; letter-spacing: -0.5px; }
 .gradient-text { background: var(--gradient-accent); -webkit-background-clip: text; background-clip: text; color: transparent; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
