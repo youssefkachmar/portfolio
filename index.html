@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -16,24 +16,8 @@
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     
     <link href="style.css" rel="stylesheet">
-    
-    <!-- SVG Fix for Azure Icon -->
-    <style>
-        .project-icon svg {
-            width: 45px;
-            height: 45px;
-            fill: var(--primary);
-            filter: drop-shadow(0 0 5px var(--glow));
-        }
-    </style>
 </head>
 <body>
-
-<!-- VIDEO BACKGROUND -->
-<video autoplay muted loop playsinline id="bg-video">
-    <source src="videos/background.webm" type="video/webm">
-</video>
-<div class="video-overlay"></div>
 
 <!-- NAVIGATION -->
 <nav class="main-nav">
@@ -43,20 +27,23 @@
         <div class="nav-links">
             <a href="#hero" data-i18n="nav_home">Home</a>
             <a href="#education" data-i18n="nav_edu">Education</a>
+            <a href="#experience" data-i18n="nav_exp">Experience</a>
             <a href="#skills" data-i18n="nav_competence">Competence</a>
             <a href="#certifications" data-i18n="nav_certs">Certs</a>
             <a href="#projects" data-i18n="nav_projects">Projects</a>
-            <a href="#contact" data-i18n="nav_contact">Contact</a>
         </div>
         
         <div class="nav-controls">
-            <!-- Language Selector (EN / DE / FR) -->
-            <div class="lang-switch">
-                <button onclick="setLanguage('en')" class="lang-opt active" id="btn-en">EN</button>
-                <span class="divider">/</span>
-                <button onclick="setLanguage('de')" class="lang-opt" id="btn-de">DE</button>
-                <span class="divider">/</span>
-                <button onclick="setLanguage('fr')" class="lang-opt" id="btn-fr">FR</button>
+            <!-- Premium Language Dropdown -->
+            <div class="lang-dropdown" id="lang-dropdown">
+                <button class="dropdown-trigger">
+                    <i class='bx bx-globe'></i> <span id="current-lang">EN</span> <i class='bx bx-chevron-down'></i>
+                </button>
+                <div class="dropdown-menu">
+                    <button onclick="setLanguage('en')">English</button>
+                    <button onclick="setLanguage('de')">Deutsch</button>
+                    <button onclick="setLanguage('fr')">Français</button>
+                </div>
             </div>
         </div>
         
@@ -77,12 +64,12 @@
     </div>
 
     <div class="mobile-nav-content">
-        <a href="#hero" class="mobile-link"><i class='bx bx-home-alt'></i> <span data-i18n="nav_home">Home</span></a>
-        <a href="#education" class="mobile-link"><i class='bx bx-book'></i> <span data-i18n="nav_edu">Education</span></a>
-        <a href="#skills" class="mobile-link"><i class='bx bx-code-alt'></i> <span data-i18n="nav_competence">Competence</span></a>
-        <a href="#certifications" class="mobile-link"><i class='bx bx-award'></i> <span data-i18n="nav_certs">Certs</span></a>
-        <a href="#projects" class="mobile-link"><i class='bx bx-folder'></i> <span data-i18n="nav_projects">Projects</span></a>
-        <a href="#contact" class="mobile-link"><i class='bx bx-envelope'></i> <span data-i18n="nav_contact">Contact</span></a>
+        <a href="#hero" class="mobile-link"><span data-i18n="nav_home">Home</span></a>
+        <a href="#education" class="mobile-link"><span data-i18n="nav_edu">Education</span></a>
+        <a href="#experience" class="mobile-link"><span data-i18n="nav_exp">Experience</span></a>
+        <a href="#skills" class="mobile-link"><span data-i18n="nav_competence">Competence</span></a>
+        <a href="#certifications" class="mobile-link"><span data-i18n="nav_certs">Certs</span></a>
+        <a href="#projects" class="mobile-link"><span data-i18n="nav_projects">Projects</span></a>
     </div>
 
     <div class="mobile-footer">
@@ -104,10 +91,7 @@
                 A 20 years old aspiring IT Specialist for System Integration with a solid technical foundation in computer systems and advanced networking. Combining hands-on experience in virtualization and network architecture with a dedicated work ethic, I am eager to apply my skills within a professional apprenticeship in Germany.
             </p>
             
-            <!-- HERO BUTTONS (Side by Side Fix) -->
             <div class="hero-btns">
-                
-                <!-- 1. Resume Dropdown -->
                 <div class="hero-resume-wrapper">
                     <button class="primary-btn resume-trigger">
                         <span data-i18n="nav_resume">Resume</span> 
@@ -120,16 +104,12 @@
                         <a href="resume/cv-fr.pdf" target="_blank">Français <i class='bx bx-download'></i></a>
                     </div>
                 </div>
-
-                <!-- 2. Contact Button -->
                 <a href="#contact" class="secondary-btn" data-i18n="btn_contact">Contact Me</a>
             </div>
-
         </div>
         <div class="hero-visual" data-aos="fade-left">
             <div class="image-container">
                 <img src="images/profile.png" alt="Youssef Kachmar">
-                <div class="glowing-circle"></div>
             </div>
         </div>
     </section>
@@ -137,43 +117,64 @@
     <!-- EDUCATION SECTION -->
     <section class="container" id="education">
         <h2 data-aos="fade-up" data-i18n="section_edu">Education Path</h2>
-        <div class="timeline-wrapper">
+        
+        <!-- UNIFIED BOX -->
+        <div class="content-card spotlight-card unified-card" data-aos="fade-up">
             
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="timeline-dot"></div>
-                <article class="timeline-content">
-                    <div class="timeline-header">
-                        <h3 data-i18n="edu_ista_title">Computer Systems & Networks</h3>
-                        <span class="date" data-i18n="edu_ista_date">Sept 2024 - June 2026</span>
-                    </div>
-                    <p class="company">ISTA Taza</p>
-                    <p class="desc" data-i18n="edu_ista_desc">Comprehensive training in network architecture, system administration, and infrastructure management.</p>
-                    <ul data-i18n="edu_ista_list"></ul>
-                </article>
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="edu_ista_title">Computer Systems & Networks</h3>
+                    <span class="date-badge" data-i18n="edu_ista_date">Sept 2024 - June 2026</span>
+                </div>
+                <p class="company">ISTA Taza</p>
+                <p class="desc" data-i18n="edu_ista_desc">Comprehensive training in network architecture, system administration, and infrastructure management.</p>
+                <ul data-i18n="edu_ista_list" class="styled-list"></ul>
             </div>
 
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="timeline-dot"></div>
-                <article class="timeline-content">
-                    <div class="timeline-header">
-                        <h3 data-i18n="edu_bio_title">Biology Studies</h3>
-                        <span class="date" data-i18n="edu_bio_date">Sept 2023 - July 2024</span>
-                    </div>
-                    <p class="company">Faculté Polydisciplinaire de Taza</p>
-                    <p class="desc" data-i18n="edu_bio_desc">Developed scientific reasoning, lab safety protocols, and analytical skills.</p>
-                </article>
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="edu_bio_title">Biology Studies</h3>
+                    <span class="date-badge" data-i18n="edu_bio_date">Sept 2023 - July 2024</span>
+                </div>
+                <p class="company">Faculté Polydisciplinaire de Taza</p>
+                <p class="desc" data-i18n="edu_bio_desc">Developed scientific reasoning, lab safety protocols, and analytical skills.</p>
             </div>
 
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="timeline-dot"></div>
-                <article class="timeline-content">
-                    <div class="timeline-header">
-                        <h3 data-i18n="edu_bac_title">High School Diploma - Physics</h3>
-                        <span class="date">2023</span>
-                    </div>
-                    <p class="company">Groupe Scolaire Salma Regragui</p>
-                    <p class="desc" data-i18n="edu_bac_desc">Focus on Physics and Mathematics.</p>
-                </article>
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="edu_bac_title">High School Diploma - Physics</h3>
+                    <span class="date-badge" data-i18n="edu_bac_date">Jun 2023</span>
+                </div>
+                <p class="company" data-i18n="edu_bac_company">GS Salma Erragragui</p>
+                <p class="desc" data-i18n="edu_bac_desc">Focus on Physics and Mathematics.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="container" id="experience">
+        <h2 data-aos="fade-up" data-i18n="section_exp">Professional Experience</h2>
+        
+        <!-- UNIFIED BOX -->
+        <div class="content-card spotlight-card unified-card" data-aos="fade-up">
+            
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="exp_1_title">IT Technician Intern</h3>
+                    <span class="date-badge">04/2026 - 05/2026</span>
+                </div>
+                <p class="company" data-i18n="exp_1_company">Societe Regionale Multiservices | Taza, Morocco</p>
+                <p class="desc" data-i18n="exp_1_desc">Assisted in configuring and deploying network devices. Monitored network performance and provided baseline troubleshooting to maintain reliable IT infrastructure.</p>
+            </div>
+
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="exp_2_title">IT Support Intern</h3>
+                    <span class="date-badge">06/2025 - 09/2025</span>
+                </div>
+                <p class="company" data-i18n="exp_2_company">L.P.E.C. (Bureau d'Etudes Techniques) | Oujda, Morocco</p>
+                <p class="desc" data-i18n="exp_2_desc">Installed, configured, and maintained office hardware and network equipment. Delivered Tier-1 technical support and effectively resolved day-to-day user issues.</p>
             </div>
 
         </div>
@@ -183,24 +184,23 @@
     <section class="container" id="skills">
         <h2 data-aos="fade-up" data-i18n="section_competence">Competence</h2>
         <div class="skills-grid">
-            
-            <div class="skill-card" data-aos="zoom-in">
+            <div class="skill-card spotlight-card" data-aos="fade-up">
                 <i class='bx bx-network-chart skill-icon'></i>
                 <h3 data-i18n="skill_net">Networking</h3>
                 <p>Cisco, OSPF, BGP, STP, VoIP, WLAN</p>
             </div>
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="skill-card spotlight-card" data-aos="fade-up" data-aos-delay="100">
                 <i class='bx bxl-windows skill-icon'></i>
                 <h3 data-i18n="skill_sys">SysAdmin</h3>
                 <p>Windows Server, Linux, AD DS, DNS</p>
             </div>
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="skill-card spotlight-card" data-aos="fade-up" data-aos-delay="200">
                 <i class='bx bxs-cloud skill-icon'></i>
                 <h3 data-i18n="skill_cloud">Cloud & Sec</h3>
                 <p>Azure, pfSense, Suricata, Python</p>
             </div>
 
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="skill-card spotlight-card" data-aos="fade-up" data-aos-delay="300">
                 <i class='bx bx-globe skill-icon'></i>
                 <h3 data-i18n="skill_lang">Languages</h3>
                 <div class="lang-list">
@@ -217,7 +217,7 @@
                     <div class="lang-row">
                         <span data-i18n="lang_de">German</span>
                         <span class="lang-dot"></span>
-                        <span class="text-muted" data-i18n="level_b1">Beginner (B1)</span>
+                        <span class="text-muted" data-i18n="level_b1">Intermediate (B1)</span>
                     </div>
                     <div class="lang-row">
                         <span data-i18n="lang_fr">French</span>
@@ -226,7 +226,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -234,22 +233,43 @@
     <section class="container" id="certifications">
         <h2 data-aos="fade-up" data-i18n="section_certs">Certifications</h2>
         <div class="cert-grid">
-            <div class="cert-card" data-aos="fade-up">
-                <div class="cert-icon-box"><i class='bx bx-award'></i></div>
+            
+            <div class="cert-card spotlight-card" data-aos="fade-up">
+                <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
                 <div class="cert-details">
                     <h3>Introduction to Networks</h3>
                     <p class="issuer">Cisco (CCNA)</p>
-                    <div class="cert-meta"><span class="date" data-i18n="status_earned">Earned</span></div>
+                    <div class="cert-footer">
+                        <span class="status-earned" data-i18n="status_earned">Earned</span>
+                        <a href="certifications/CCNA Introduction to Networks Certificate.pdf" target="_blank" class="cert-btn"><i class='bx bx-link-external'></i> <span data-i18n="btn_view">View</span></a>
+                    </div>
                 </div>
             </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="cert-icon-box"><i class='bx bx-loader-circle'></i></div>
+            
+            <div class="cert-card spotlight-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
                 <div class="cert-details">
                     <h3>Switching, Routing & Wireless</h3>
                     <p class="issuer">Cisco (CCNA)</p>
-                    <div class="cert-meta"><span class="date" data-i18n="status_progress">In Progress</span></div>
+                    <div class="cert-footer">
+                        <span class="status-earned" data-i18n="status_earned">Earned</span>
+                        <a href="certifications/CCNA Switching, Routing and Wireless Essentials Certificate.pdf" target="_blank" class="cert-btn"><i class='bx bx-link-external'></i> <span data-i18n="btn_view">View</span></a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Centered 3rd Certificate -->
+            <div class="cert-card spotlight-card cert-centered" data-aos="fade-up" data-aos-delay="200">
+                <div class="cert-icon-box"><i class='bx bx-loader-circle'></i></div>
+                <div class="cert-details">
+                    <h3>Enterprise Net, Security & Auto</h3>
+                    <p class="issuer">Cisco (CCNA)</p>
+                    <div class="cert-footer">
+                        <span class="status-progress" data-i18n="status_progress">In Progress</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -257,52 +277,41 @@
     <section class="container" id="projects">
         <h2 data-aos="fade-up" data-i18n="section_projects">Featured Projects</h2>
         <div class="projects-grid">
-            
-            <!-- Project 1: Azure (IMAGE COVER) -->
-            <div class="project-card" data-aos="fade-up" data-modal-id="project-modal-1">
+            <div class="project-card spotlight-card" data-aos="fade-up" data-modal-id="project-modal-1">
                 <div class="project-cover">
                     <img src="images/azure-project/0-topology.png" alt="Azure Topology">
-                    <div class="card-glow"></div>
                 </div>
                 <div class="project-content">
                     <h3 data-i18n="proj_1_title">Secure Azure Cloud Network</h3>
                     <p data-i18n="proj_1_desc">A complex Azure implementation featuring pfSense, Suricata IPS, OpenVPN, and Active Directory.</p>
-                    
                     <div class="project-actions">
                         <button class="link-text open-project-modal-btn">
                             <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
                         </button>
-                        <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="github-btn" aria-label="View on GitHub">
-                            <i class='bx bxl-github'></i>
-                        </a>
+                        <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2: Network Automation -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-modal-id="project-modal-2">
+            <div class="project-card spotlight-card" data-aos="fade-up" data-aos-delay="100" data-modal-id="project-modal-2">
                 <div class="project-content" style="padding-top: 2rem;">
                     <div class="project-icon"><i class='bx bxl-python'></i></div>
                     <h3 data-i18n="proj_2_title">Network Automation</h3>
                     <p data-i18n="proj_2_desc">Python scripts for automating device configuration and network discovery.</p>
-                    
                     <div class="project-actions">
                         <button class="link-text open-project-modal-btn">
                             <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
                         </button>
-                        <a href="#" target="_blank" class="github-btn" aria-label="View on GitHub">
-                            <i class='bx bxl-github'></i>
-                        </a>
+                        <a href="#" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
                     </div>
                 </div>
             </div>
-
         </div> 
     </section>
 
     <!-- CONTACT -->
     <section class="container" id="contact">
-        <div class="contact-card" data-aos="fade-up">
+        <div class="contact-card spotlight-card" data-aos="fade-up">
             <div class="contact-info">
                 <h2 data-i18n="section_contact">Let's Connect</h2>
                 <p data-i18n="contact_desc">I am currently looking for internship opportunities.</p>
@@ -322,7 +331,6 @@
                 </div>
             </div>
             
-            <!-- FORMSPREE INTEGRATION -->
             <form action="https://formspree.io/f/xeeqawbq" method="POST" class="contact-form" id="contact-form">
                 <div class="form-group">
                     <label>Name</label>
@@ -338,7 +346,6 @@
                 </div>
                 <button type="submit" class="submit-btn" data-i18n="btn_send">Send Message <i class='bx bx-send'></i></button>
             </form>
-            
         </div>
     </section>
 
@@ -356,6 +363,7 @@
         <button class="close-button"><i class='bx bx-x'></i></button>
         <div class="project-modal-body">
             <div class="project-modal-image-wrapper"></div>
+            <div class="modal-tech-ticker"><div class="ticker-track" id="ticker-track-1"></div></div>
             <div class="project-modal-description"></div>
             <div class="project-modal-controls">
                 <button class="control-btn prev"><i class='bx bx-chevron-left'></i></button>
@@ -371,6 +379,7 @@
         <button class="close-button"><i class='bx bx-x'></i></button>
         <div class="project-modal-body">
             <div class="project-modal-image-wrapper"></div>
+            <div class="modal-tech-ticker"><div class="ticker-track" id="ticker-track-2"></div></div>
             <div class="project-modal-description"></div>
             <div class="project-modal-controls">
                 <button class="control-btn prev"><i class='bx bx-chevron-left'></i></button>
@@ -389,7 +398,6 @@
 </div>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<!-- CACHE BUSTER ADDED (?v=2) TO FORCE RELOAD -->
-<script src="script.js?v=2"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
