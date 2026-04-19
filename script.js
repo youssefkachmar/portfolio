@@ -202,12 +202,12 @@ document.addEventListener("DOMContentLoaded", function () {
             "project-modal-1": {
                 currentSlide: 0,
                 technologies:[
-                    { name: "Azure", icon: "https://www.svgrepo.com/show/448271/azure.svg" },
-                    { name: "Windows Server", icon: "https://www.svgrepo.com/show/448255/windows.svg" },
-                    { name: "Linux", icon: "https://www.svgrepo.com/show/448236/linux.svg" },
-                    { name: "pfSense", icon: "https://www.svgrepo.com/show/374078/firewall.svg" },
-                    { name: "Suricata", icon: "https://www.svgrepo.com/show/439281/security.svg" },
-                    { name: "Active Directory", icon: "https://www.svgrepo.com/show/330089/azure-active-directory.svg" }
+                    { name: "Azure", icon: "bx bxl-microsoft" },
+                    { name: "Windows Server", icon: "bx bxl-windows" },
+                    { name: "Linux", icon: "bx bxl-tux" },
+                    { name: "pfSense", icon: "bx bx-shield-alt-2" },
+                    { name: "Suricata", icon: "bx bx-check-shield" },
+                    { name: "Active Directory", icon: "bx bx-server" }
                 ],
                 slides:[
                     {
@@ -233,9 +233,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "project-modal-2": {
                 currentSlide: 0,
                 technologies:[
-                    { name: "Python", icon: "https://www.svgrepo.com/show/452091/python.svg" },
-                    { name: "Cisco IOS", icon: "https://www.svgrepo.com/show/305886/cisco.svg" },
-                    { name: "SSH/Telnet", icon: "https://www.svgrepo.com/show/452115/terminal.svg" }
+                    { name: "Python", icon: "bx bxl-python" },
+                    { name: "Cisco IOS", icon: "bx bx-network-chart" },
+                    { name: "SSH/Telnet", icon: "bx bx-terminal" }
                 ],
                 slides:[
                     {
@@ -262,7 +262,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const techArray = config.projects[modalId].technologies;
         const track = document.getElementById(`ticker-track-${modalId.split('-')[2]}`);
         if(track) {
-            let itemsHtml = techArray.map(t => `<div class="ticker-item"><img src="${t.icon}" alt="${t.name}"> ${t.name}</div>`).join('');
+            // Using <i> tags for BoxIcons instead of <img> tags
+            let itemsHtml = techArray.map(t => `<div class="ticker-item"><i class='${t.icon}'></i> ${t.name}</div>`).join('');
             track.innerHTML = itemsHtml + itemsHtml + itemsHtml;
         }
     }

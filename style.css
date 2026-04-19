@@ -188,7 +188,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .modal-tech-ticker { width: 100%; overflow: hidden; border-bottom: 1px solid var(--border-light); padding: 15px 0; margin-bottom: 1.5rem; background: var(--bg-card); }
 .ticker-track { display: inline-flex; animation: marquee 20s linear infinite; gap: 3rem; white-space: nowrap; align-items: center; }
 .ticker-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; font-size: 1rem; }
-.ticker-item img { width: 24px; height: 24px; filter: grayscale(100%); opacity: 0.8; }
+.ticker-item i { font-size: 1.5rem; color: var(--text-muted); }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .project-modal-description h4 { margin-bottom: 0.5rem; font-size: 1.2rem; }
 .project-modal-description p { color: var(--text-muted); font-size: 0.95rem; }
