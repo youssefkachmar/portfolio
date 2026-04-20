@@ -30,12 +30,14 @@
     <div class="nav-content">
         <a href="#hero" class="logo">YOUSSEF<span class="dot">.</span></a>
         
+        <!-- CENTERED LINKS (Reordered) -->
         <div class="nav-links">
             <a href="#hero" data-i18n="nav_home">Home</a>
             <a href="#education" data-i18n="nav_edu">Education</a>
             <a href="#experience" data-i18n="nav_exp">Experience</a>
-            <a href="#skills" data-i18n="nav_competence">Competence</a>
             <a href="#projects" data-i18n="nav_projects">Projects</a>
+            <a href="#skills" data-i18n="nav_competence">Competence</a>
+            <a href="#faq" data-i18n="nav_faq">FAQ</a>
         </div>
         
         <div class="nav-controls">
@@ -59,7 +61,7 @@
     </div>
 </nav>
 
-<!-- FULL SCREEN MOBILE NAV -->
+<!-- FULL SCREEN MOBILE NAV (Reordered) -->
 <div class="mobile-nav-overlay" id="mobile-nav">
     <div class="mobile-header">
         <span class="menu-title">MENU</span>
@@ -72,9 +74,10 @@
         <a href="#hero" class="mobile-link"><span data-i18n="nav_home">Home</span></a>
         <a href="#education" class="mobile-link"><span data-i18n="nav_edu">Education</span></a>
         <a href="#experience" class="mobile-link"><span data-i18n="nav_exp">Experience</span></a>
+        <a href="#projects" class="mobile-link"><span data-i18n="nav_projects">Projects</span></a>
         <a href="#skills" class="mobile-link"><span data-i18n="nav_competence">Competence</span></a>
         <a href="#certifications" class="mobile-link"><span data-i18n="nav_certs">Certs</span></a>
-        <a href="#projects" class="mobile-link"><span data-i18n="nav_projects">Projects</span></a>
+        <a href="#faq" class="mobile-link"><span data-i18n="nav_faq">FAQ</span></a>
     </div>
 
     <div class="mobile-footer">
@@ -179,6 +182,42 @@
         </div>
     </section>
 
+    <!-- PROJECTS SECTION (Moved Up) -->
+    <section class="container" id="projects">
+        <h2 data-aos="fade-up" data-i18n="section_projects">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card spotlight-card" data-aos="fade-up" data-modal-id="project-modal-1">
+                <div class="project-cover">
+                    <img src="images/azure-project/0-topology.png" alt="Azure Topology">
+                </div>
+                <div class="project-content">
+                    <h3 data-i18n="proj_1_title">Secure Azure Cloud Network</h3>
+                    <p data-i18n="proj_1_desc">A complex Azure implementation featuring pfSense, Suricata IPS, OpenVPN, and Active Directory.</p>
+                    <div class="project-actions">
+                        <button class="link-text open-project-modal-btn">
+                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                        <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card spotlight-card" data-aos="fade-up" data-aos-delay="100" data-modal-id="project-modal-2">
+                <div class="project-content" style="padding-top: 2rem;">
+                    <div class="project-icon"><i class='bx bxl-python'></i></div>
+                    <h3 data-i18n="proj_2_title">Network Automation</h3>
+                    <p data-i18n="proj_2_desc">Python scripts for automating device configuration and network discovery.</p>
+                    <div class="project-actions">
+                        <button class="link-text open-project-modal-btn">
+                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                        <a href="#" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
     <!-- COMPETENCE SECTION -->
     <section class="container" id="skills">
         <h2 data-aos="fade-up" data-i18n="section_competence">Competence</h2>
@@ -233,67 +272,50 @@
         <h2 data-aos="fade-up" data-i18n="section_certs">Certifications</h2>
         <div class="cert-grid">
             
-            <!-- Cert 1: Intro to Networks -->
             <div class="cert-card spotlight-card" data-aos="fade-up">
                 <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
-                
                 <div class="cert-details">
                     <h3>Introduction to Networks</h3>
                     <p class="issuer">Cisco (CCNA)</p>
-                    
                     <div class="cert-footer">
                         <span class="status-earned" data-i18n="status_earned">Earned</span>
                         <div class="cert-actions">
-    <!-- 1. VERIFY BUTTON: Links to your public Credly URL -->
-    <a href="https://www.credly.com/badges/98b8142d-b62c-4193-9437-b59b36b7c24e/public_url" target="_blank" class="btn-verify">
-        <i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span>
-    </a>
-    
-    <!-- 2. CERTIFICATE BUTTON: Links to your local PDF file -->
-    <a href="certifications/CCNA Introduction to Networks Certificate.pdf" target="_blank" class="btn-view-cert">
-        <i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span>
-    </a>
-</div>
+                            <a href="https://www.credly.com/badges/98b8142d-b62c-4193-9437-b59b36b7c24e/public_url" target="_blank" class="btn-verify">
+                                <i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span>
+                            </a>
+                            <a href="certifications/CCNA Introduction to Networks Certificate.pdf" target="_blank" class="btn-view-cert">
+                                <i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Cert 2: Switching, Routing & Wireless -->
             <div class="cert-card spotlight-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
-                
                 <div class="cert-details">
-                    <h3>Switching, Routing & Wireless Essentials</h3>
+                    <h3>Switching, Routing & Wireless</h3>
                     <p class="issuer">Cisco (CCNA)</p>
-                    
                     <div class="cert-footer">
                         <span class="status-earned" data-i18n="status_earned">Earned</span>
                         <div class="cert-actions">
-    <!-- VERIFY BUTTON -->
-    <a href="https://www.credly.com/badges/c46107af-00c9-42b9-b66d-6a2ce5f493bf/public_url" target="_blank" class="btn-verify">
-        <i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span>
-    </a>
-    
-    <!-- CERTIFICATE BUTTON -->
-    <a href="certifications/CCNA Switching, Routing and Wireless Essentials Certificate.pdf" target="_blank" class="btn-view-cert">
-        <i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span>
-    </a>
-</div>
+                            <a href="https://www.credly.com/badges/c46107af-00c9-42b9-b66d-6a2ce5f493bf/public_url" target="_blank" class="btn-verify">
+                                <i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span>
+                            </a>
+                            <a href="certifications/CCNA Switching, Routing and Wireless Essentials Certificate.pdf" target="_blank" class="btn-view-cert">
+                                <i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Cert 3: In Progress (Centered) -->
             <div class="cert-card spotlight-card cert-centered" data-aos="fade-up" data-aos-delay="200">
                 <div class="cert-icon-box"><i class='bx bx-time-five'></i></div>
-                
                 <div class="cert-details">
-                    <!-- Updated Full Name -->
                     <h3>Enterprise Networking, Security, and Automation</h3>
                     <p class="issuer">Cisco (CCNA)</p>
-                    
                     <div class="cert-footer">
-                        <!-- Removed Spin, Updated Icon -->
                         <span class="status-progress"><i class='bx bx-time-five'></i> <span data-i18n="status_progress">In Progress</span></span>
                     </div>
                 </div>
@@ -302,40 +324,63 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="container" id="projects">
-        <h2 data-aos="fade-up" data-i18n="section_projects">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card spotlight-card" data-aos="fade-up" data-modal-id="project-modal-1">
-                <div class="project-cover">
-                    <img src="images/azure-project/0-topology.png" alt="Azure Topology">
-                </div>
-                <div class="project-content">
-                    <h3 data-i18n="proj_1_title">Secure Azure Cloud Network</h3>
-                    <p data-i18n="proj_1_desc">A complex Azure implementation featuring pfSense, Suricata IPS, OpenVPN, and Active Directory.</p>
-                    <div class="project-actions">
-                        <button class="link-text open-project-modal-btn">
-                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
-                        </button>
-                        <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
+    <!-- NEW FAQ SECTION -->
+    <section class="container" id="faq">
+        <h2 data-aos="fade-up" data-i18n="section_faq">Frequently Asked Questions</h2>
+        
+        <div class="faq-container">
+            <!-- FAQ 1 -->
+            <div class="faq-item spotlight-card" data-aos="fade-up">
+                <button class="faq-question">
+                    <span data-i18n="faq_1_q">Why do you want to do an Ausbildung in Germany?</span>
+                    <i class='bx bx-chevron-down'></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_1_a">
+                        Germany's dual vocational training system is globally recognized for blending theory with hands-on practice. My goal is to become an elite System Integration Specialist, and learning within a high-standard German IT environment is the best path to achieve that.
                     </div>
                 </div>
             </div>
 
-            <div class="project-card spotlight-card" data-aos="fade-up" data-aos-delay="100" data-modal-id="project-modal-2">
-                <div class="project-content" style="padding-top: 2rem;">
-                    <div class="project-icon"><i class='bx bxl-python'></i></div>
-                    <h3 data-i18n="proj_2_title">Network Automation</h3>
-                    <p data-i18n="proj_2_desc">Python scripts for automating device configuration and network discovery.</p>
-                    <div class="project-actions">
-                        <button class="link-text open-project-modal-btn">
-                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
-                        </button>
-                        <a href="#" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
+            <!-- FAQ 2 -->
+            <div class="faq-item spotlight-card" data-aos="fade-up" data-aos-delay="100">
+                <button class="faq-question">
+                    <span data-i18n="faq_2_q">What is your current German language proficiency?</span>
+                    <i class='bx bx-chevron-down'></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_2_a">
+                        I currently hold a certified B1 level in German and communicate effectively in everyday situations. I am actively continuing my language courses to reach B2 before the apprenticeship starts, ensuring seamless workplace communication.
                     </div>
                 </div>
             </div>
-        </div> 
+
+            <!-- FAQ 3 -->
+            <div class="faq-item spotlight-card" data-aos="fade-up" data-aos-delay="200">
+                <button class="faq-question">
+                    <span data-i18n="faq_3_q">How will you handle the visa and relocation process?</span>
+                    <i class='bx bx-chevron-down'></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_3_a">
+                        As a qualified candidate with an Ausbildung contract, I am eligible for a dedicated apprenticeship visa. I have already familiarized myself with the German embassy's requirements in Morocco to ensure a swift and organized relocation well before the start date.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item spotlight-card" data-aos="fade-up" data-aos-delay="300">
+                <button class="faq-question">
+                    <span data-i18n="faq_4_q">Do you already have practical IT experience?</span>
+                    <i class='bx bx-chevron-down'></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_4_a">
+                        Yes. Beyond my academic background and Cisco CCNA training, I have completed two IT internships and actively build complex enterprise networks in my home lab (featuring Azure, pfSense, and Windows Server). This allows me to add value to your team from day one.
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CONTACT -->
@@ -427,6 +472,6 @@
 </div>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="script.js?v=8"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
