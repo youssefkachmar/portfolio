@@ -155,6 +155,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .btn-view-cert { flex: 1; min-width: 130px; background: transparent; border: 1px solid var(--border-light); color: var(--text-muted); padding: 8px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; display: inline-flex; justify-content: center; align-items: center; gap: 5px; transition: var(--transition); text-align: center; text-decoration: none;}
 .btn-view-cert:hover { border-color: var(--primary); color: var(--primary); }
 
+
 /* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 .project-card { display: flex; flex-direction: column; padding: 0; }
