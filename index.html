@@ -7,17 +7,23 @@
     
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- ICONS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
-    <!-- ANIMATION -->
+    <!-- ANIMATION & SMOOTH SCROLL -->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
     
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+
+<!-- SYSADMIN BOOT SEQUENCE (Preloader) -->
+<div id="boot-screen">
+    <div class="boot-text" id="boot-text"></div>
+</div>
 
 <!-- NAVIGATION -->
 <nav class="main-nav">
@@ -29,7 +35,6 @@
             <a href="#education" data-i18n="nav_edu">Education</a>
             <a href="#experience" data-i18n="nav_exp">Experience</a>
             <a href="#skills" data-i18n="nav_competence">Competence</a>
-            <a href="#certifications" data-i18n="nav_certs">Certs</a>
             <a href="#projects" data-i18n="nav_projects">Projects</a>
         </div>
         
@@ -84,7 +89,7 @@
 <main>
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
-        <div class="hero-text" data-aos="fade-right">
+        <div class="hero-text" data-aos="fade-right" data-aos-delay="1500">
             <span class="hero-badge" data-i18n="hero_badge">Network & Systems Student</span>
             <h1>Youssef Kachmar <br><span class="gradient-text" data-i18n="hero_title">Future Admin.</span></h1>
             <p class="hero-description" data-i18n="hero_desc">
@@ -107,7 +112,7 @@
                 <a href="#contact" class="secondary-btn" data-i18n="btn_contact">Contact Me</a>
             </div>
         </div>
-        <div class="hero-visual" data-aos="fade-left">
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="1700">
             <div class="image-container">
                 <img src="images/profile.png" alt="Youssef Kachmar">
             </div>
@@ -118,9 +123,7 @@
     <section class="container" id="education">
         <h2 data-aos="fade-up" data-i18n="section_edu">Education Path</h2>
         
-        <!-- UNIFIED BOX -->
         <div class="content-card spotlight-card unified-card" data-aos="fade-up">
-            
             <div class="unified-item">
                 <div class="card-header-row">
                     <h3 data-i18n="edu_ista_title">Computer Systems & Networks</h3>
@@ -148,7 +151,6 @@
                 <p class="company" data-i18n="edu_bac_company">GS Salma Erragragui</p>
                 <p class="desc" data-i18n="edu_bac_desc">Focus on Physics and Mathematics.</p>
             </div>
-
         </div>
     </section>
 
@@ -156,9 +158,7 @@
     <section class="container" id="experience">
         <h2 data-aos="fade-up" data-i18n="section_exp">Professional Experience</h2>
         
-        <!-- UNIFIED BOX -->
         <div class="content-card spotlight-card unified-card" data-aos="fade-up">
-            
             <div class="unified-item">
                 <div class="card-header-row">
                     <h3 data-i18n="exp_1_title">IT Technician Intern</h3>
@@ -176,7 +176,6 @@
                 <p class="company" data-i18n="exp_2_company">L.P.E.C. (Bureau d'Etudes Techniques) | Oujda, Morocco</p>
                 <p class="desc" data-i18n="exp_2_desc">Installed, configured, and maintained office hardware and network equipment. Delivered Tier-1 technical support and effectively resolved day-to-day user issues.</p>
             </div>
-
         </div>
     </section>
 
@@ -234,38 +233,54 @@
         <h2 data-aos="fade-up" data-i18n="section_certs">Certifications</h2>
         <div class="cert-grid">
             
+            <!-- Cert 1: Intro to Networks -->
             <div class="cert-card spotlight-card" data-aos="fade-up">
                 <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
+                
                 <div class="cert-details">
                     <h3>Introduction to Networks</h3>
                     <p class="issuer">Cisco (CCNA)</p>
+                    
                     <div class="cert-footer">
                         <span class="status-earned" data-i18n="status_earned">Earned</span>
-                        <a href="certifications/CCNA Introduction to Networks Certificate.pdf" target="_blank" class="cert-btn"><i class='bx bx-link-external'></i> <span data-i18n="btn_view">View</span></a>
+                        <div class="cert-actions">
+                            <!-- Link this to your Credly Public Link -->
+                            <a href="#" target="_blank" class="btn-verify"><i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span></a>
+                            <a href="certifications/CCNA Introduction to Networks Certificate.pdf" target="_blank" class="btn-view-cert"><i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
             
+            <!-- Cert 2: Switching, Routing & Wireless -->
             <div class="cert-card spotlight-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
+                
                 <div class="cert-details">
                     <h3>Switching, Routing & Wireless</h3>
                     <p class="issuer">Cisco (CCNA)</p>
+                    
                     <div class="cert-footer">
                         <span class="status-earned" data-i18n="status_earned">Earned</span>
-                        <a href="certifications/CCNA Switching, Routing and Wireless Essentials Certificate.pdf" target="_blank" class="cert-btn"><i class='bx bx-link-external'></i> <span data-i18n="btn_view">View</span></a>
+                        <div class="cert-actions">
+                            <!-- Link this to your Credly Public Link -->
+                            <a href="#" target="_blank" class="btn-verify"><i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span></a>
+                            <a href="certifications/CCNA Switching, Routing and Wireless Essentials Certificate.pdf" target="_blank" class="btn-view-cert"><i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Centered 3rd Certificate -->
+            <!-- Cert 3: In Progress (Centered) -->
             <div class="cert-card spotlight-card cert-centered" data-aos="fade-up" data-aos-delay="200">
-                <div class="cert-icon-box"><i class='bx bx-loader-circle'></i></div>
+                <div class="cert-icon-box"><i class='bx bx-loader-circle bx-spin'></i></div>
+                
                 <div class="cert-details">
                     <h3>Enterprise Net, Security & Auto</h3>
                     <p class="issuer">Cisco (CCNA)</p>
+                    
                     <div class="cert-footer">
-                        <span class="status-progress" data-i18n="status_progress">In Progress</span>
+                        <span class="status-progress"><i class='bx bx-loader-circle bx-spin'></i> <span data-i18n="status_progress">In Progress</span></span>
                     </div>
                 </div>
             </div>
@@ -398,6 +413,6 @@
 </div>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="script.js?v=5"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>
