@@ -195,11 +195,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- 7. MODALS & PROJECTS ---
     const config = {
         projects: {
-            "project-modal-1": {
-                currentSlide: 0,
-                technologies:[ { name: "Azure", icon: "bx bxl-microsoft" }, { name: "Windows Server", icon: "bx bxl-windows" }, { name: "Linux", icon: "bx bxl-tux" }, { name: "pfSense", icon: "bx bx-shield-alt-2" }, { name: "Suricata", icon: "bx bx-check-shield" }, { name: "Active Directory", icon: "bx bx-server" } ],
-                slides:[ { img: "images/azure-project/0-topology.png", title: { en: "1. Network Topology", fr: "1. Topologie", de: "1. Topologie" }, text: { en: "High-level diagram illustrating the Hub-and-Spoke model with central pfSense NVA.", fr: "Diagramme illustrant le modèle Hub-and-Spoke avec pfSense NVA.", de: "High-Level-Diagramm des Hub-and-Spoke-Modells mit zentralem pfSense." } }, { img: "images/azure-project/1-azure-udr.png", title: { en: "2. Azure Routing (UDR)", fr: "2. Routage (UDR)", de: "2. Routing (UDR)" }, text: { en: "Forced tunneling configurations to direct traffic through the NVA.", fr: "Tunnels forcés pour diriger le trafic via la NVA.", de: "Erzwungenes Tunneling, um den Verkehr durch die NVA zu leiten." } } ]
-            },
             "project-modal-2": {
                 currentSlide: 0,
                 technologies:[ { name: "Python", icon: "bx bxl-python" }, { name: "Cisco IOS", icon: "bx bx-network-chart" }, { name: "SSH/Telnet", icon: "bx bx-terminal" } ],

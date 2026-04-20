@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Secure Azure Infrastructure | Youssef Kachmar</title>
+    
+    <!-- FONTS & ICONS -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVIGATION (Simplified for Project Page) -->
+<nav class="main-nav" style="background: rgba(0,0,0,0.9);">
+    <div class="nav-content">
+        <a href="index.html" class="logo">YOUSSEF<span class="dot">.</span></a>
+        <div class="nav-links" style="position: static; transform: none;">
+            <a href="index.html" class="back-link"><i class='bx bx-left-arrow-alt'></i> Back to Portfolio</a>
+        </div>
+    </div>
+</nav>
+
+<main class="case-study-main">
+    
+    <!-- PROJECT HERO -->
+    <section class="project-hero container">
+        <div class="project-hero-header">
+            <span class="hero-badge">Enterprise Cloud Architecture</span>
+            <h1 class="project-title">Secure Azure Cloud <br> <span class="gradient-text">Infrastructure</span></h1>
+            <p class="project-subtitle">Designing and implementing a segmented, zero-trust Azure environment featuring centralized routing, IDS/IPS, and comprehensive SIEM monitoring.</p>
+            
+            <div class="project-links">
+                <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="primary-btn">
+                    <i class='bx bxl-github'></i> View Repository
+                </a>
+            </div>
+        </div>
+        
+        <div class="project-hero-image spotlight-card">
+            <img src="images/azure-project/0-topology.png" alt="Azure Network Topology">
+        </div>
+    </section>
+
+    <!-- PROJECT DETAILS -->
+    <section class="project-content container">
+        
+        <!-- Section 1 -->
+        <div class="case-section">
+            <div class="case-text">
+                <h2>1. Architecture & Segmentation</h2>
+                <p>To eliminate the risks of a flat network, the architecture was designed using a Hub-and-Spoke model. The Virtual Network (VNet) is strictly segmented into dedicated subnets: <strong>AD/DNS, Web, Client, VoIP, and Management</strong>.</p>
+                <p>Using Azure <strong>User Defined Routes (UDRs)</strong>, all intra-subnet and outbound traffic is forced through the central pfSense Network Virtual Appliance (NVA). This guarantees that no internal machine has direct, unmonitored access to the internet.</p>
+            </div>
+            <div class="case-image spotlight-card">
+                <img src="images/azure-project/1-azure-udr.png" alt="Azure UDR Routing">
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="case-section reverse">
+            <div class="case-text">
+                <h2>2. Centralized Gateway & VPN</h2>
+                <p>The <strong>pfSense Firewall</strong> acts as the absolute core of the security perimeter. It handles strict LAN/WAN filtering, Network Address Translation (NAT), and secure remote administration.</p>
+                <p>To access the Management subnet without exposing critical interfaces to the public internet, a highly secure <strong>OpenVPN</strong> tunnel was deployed, utilizing a local Certificate Authority (CA) for robust cryptographic authentication.</p>
+            </div>
+            <div class="case-image spotlight-card">
+                <img src="images/azure-project/2-pfsense-dashboard.png" alt="pfSense Dashboard">
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="case-section">
+            <div class="case-text">
+                <h2>3. Identity, DNS & Web Proxy</h2>
+                <p>A Windows Server runs <strong>Active Directory (AD DS)</strong> to centralize identity and access management, while handling local DNS resolution. </p>
+                <p>For external services, an internal Nginx web server is securely published using <strong>HAProxy</strong>. Operating as a reverse proxy on the pfSense gateway, HAProxy handles SSL-offloading and obfuscates the internal network topology from external users.</p>
+            </div>
+            <div class="case-grid-images">
+                <div class="spotlight-card"><img src="images/azure-project/3-ad-dashboard.png" alt="Active Directory"></div>
+                <div class="spotlight-card"><img src="images/azure-project/4-haproxy-stats.png" alt="HAProxy Stats"></div>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="case-section reverse">
+            <div class="case-text">
+                <h2>4. VoIP Implementation</h2>
+                <p>An <strong>Asterisk</strong> IP-PBX server was deployed to handle internal communications via SIP protocols. Specific outbound NAT rules were configured on the firewall to prevent aggressive port-rewriting, ensuring stable, bidirectional RTP audio streams for clients (Zoiper).</p>
+            </div>
+            <div class="case-image spotlight-card">
+                <img src="images/azure-project/5-voip-call.png" alt="VoIP Call Zoiper">
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="case-section">
+            <div class="case-text">
+                <h2>5. IDS/IPS, Monitoring & SIEM</h2>
+                <p>To defend the perimeter, <strong>Suricata (IDS/IPS)</strong> actively analyzes network flows to detect and block malicious signatures, such as Nmap port scans.</p>
+                <p>Visibility is maintained using <strong>Zabbix</strong> for real-time hardware and service monitoring, while <strong>Wazuh (SIEM/HIDS)</strong> aggregates system logs to detect anomalies, analyze vulnerabilities, and provide a comprehensive Security Operations Center (SOC) dashboard.</p>
+            </div>
+            <div class="case-grid-images">
+                <div class="spotlight-card"><img src="images/azure-project/6-suricata-alerts.png" alt="Suricata Alerts"></div>
+                <div class="spotlight-card"><img src="images/azure-project/8-wazuh-dashboard.png" alt="Wazuh SIEM"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="tech-stack-container container">
+        <h2>Technologies Used</h2>
+        <div class="tech-stack-grid">
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pfsense/pfsense-original.svg" alt="pfSense"><span>pfSense</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows Server"><span>Windows Server</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx"><span>Nginx</span></div>
+            <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Suricata_Logo.png" alt="Suricata"><span>Suricata</span></div>
+            <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Zabbix_logo.png" alt="Zabbix"><span>Zabbix</span></div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <p>© 2026 Youssef Kachmar.</p>
+</footer>
+
+<script>
+    // Smooth Scroll for the new page
+    const lenis = new Lenis({ duration: 1.2, smooth: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    
+    // Spotlight Effect
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+            card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        });
+    });
+</script>
+</body>
+</html>

@@ -182,11 +182,13 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION (Moved Up) -->
+    <!-- PROJECTS SECTION -->
     <section class="container" id="projects">
         <h2 data-aos="fade-up" data-i18n="section_projects">Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card spotlight-card" data-aos="fade-up" data-modal-id="project-modal-1">
+            
+            <!-- Project 1: Azure (NOW LINKS TO NEW PAGE) -->
+            <div class="project-card spotlight-card" data-aos="fade-up">
                 <div class="project-cover">
                     <img src="images/azure-project/0-topology.png" alt="Azure Topology">
                 </div>
@@ -194,14 +196,16 @@
                     <h3 data-i18n="proj_1_title">Secure Azure Cloud Network</h3>
                     <p data-i18n="proj_1_desc">A complex Azure implementation featuring pfSense, Suricata IPS, OpenVPN, and Active Directory.</p>
                     <div class="project-actions">
-                        <button class="link-text open-project-modal-btn">
+                        <!-- LINK TO THE NEW PAGE -->
+                        <a href="project-azure.html" class="link-text">
                             <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
-                        </button>
+                        </a>
                         <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
                     </div>
                 </div>
             </div>
 
+            <!-- Project 2: Network Automation (Keeps the Modal) -->
             <div class="project-card spotlight-card" data-aos="fade-up" data-aos-delay="100" data-modal-id="project-modal-2">
                 <div class="project-content" style="padding-top: 2rem;">
                     <div class="project-icon"><i class='bx bxl-python'></i></div>
