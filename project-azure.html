@@ -5,16 +5,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Secure Azure Infrastructure | Youssef Kachmar</title>
     
-    <!-- FONTS & ICONS -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-    
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAVIGATION (Simplified for Project Page) -->
 <nav class="main-nav" style="background: rgba(0,0,0,0.9);">
     <div class="nav-content">
         <a href="index.html" class="logo">YOUSSEF<span class="dot">.</span></a>
@@ -28,92 +25,100 @@
     
     <!-- PROJECT HERO -->
     <section class="project-hero container">
-        <div class="project-hero-header">
-            <span class="hero-badge">Enterprise Cloud Architecture</span>
-            <h1 class="project-title">Secure Azure Cloud <br> <span class="gradient-text">Infrastructure</span></h1>
-            <p class="project-subtitle">Designing and implementing a segmented, zero-trust Azure environment featuring centralized routing, IDS/IPS, and comprehensive SIEM monitoring.</p>
-            
-            <div class="project-links">
-                <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="primary-btn">
-                    <i class='bx bxl-github'></i> View Repository
-                </a>
-            </div>
-        </div>
+        <span class="hero-badge">Enterprise Cloud Architecture</span>
+        <h1 class="project-title">Secure Azure Cloud <br> <span class="gradient-text">Infrastructure</span></h1>
+        <p class="project-subtitle">A comprehensive, zero-trust cloud network deployment on Microsoft Azure featuring strict Hub-and-Spoke segmentation, IDS/IPS threat detection, and centralized SIEM monitoring.</p>
         
+        <div class="project-links">
+            <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="primary-btn">
+                <i class='bx bxl-github'></i> View Repository
+            </a>
+        </div>
+    </section>
+
+    <!-- PROJECT META DATA BAR -->
+    <div class="project-meta-bar">
+        <div class="meta-item">
+            <span>Role</span>
+            <strong>Network Architect</strong>
+        </div>
+        <div class="meta-item">
+            <span>Environment</span>
+            <strong>Microsoft Azure IaaS</strong>
+        </div>
+        <div class="meta-item">
+            <span>Security Model</span>
+            <strong>Zero-Trust / Hub-and-Spoke</strong>
+        </div>
+    </div>
+
+    <section class="container">
+        <!-- TOPOLOGY IMAGE -->
         <div class="project-hero-image spotlight-card">
             <img src="images/azure-project/0-topology.png" alt="Azure Network Topology">
         </div>
+
+        <!-- BENTO BOX GRID -->
+        <div class="bento-container">
+            
+            <!-- Bento Box 1: Routing (Spans Full Width) -->
+            <div class="bento-card bento-span-2 spotlight-card">
+                <div class="bento-text">
+                    <h2><i class='bx bx-sitemap'></i> Traffic & Routing Control</h2>
+                    <p>To eliminate the risks of a flat network, the architecture was segmented into dedicated subnets: <strong>AD/DNS, Web, Client, VoIP, and Management</strong>.</p>
+                    <p>Using Azure <strong>User Defined Routes (UDRs)</strong>, all inter-subnet and outbound traffic is forcefully funneled through the central pfSense Network Virtual Appliance (NVA). This strictly prohibits internal machines from bypassing the firewall.</p>
+                </div>
+                <div class="window-ui">
+                    <div class="window-header">
+                        <div class="window-dot"></div><div class="window-dot"></div><div class="window-dot"></div>
+                    </div>
+                    <img src="images/azure-project/1-azure-udr.png" alt="Azure UDR Routing">
+                </div>
+            </div>
+
+            <!-- Bento Box 2: Firewall -->
+            <div class="bento-card spotlight-card">
+                <div class="bento-text">
+                    <h2><i class='bx bx-shield-quarter'></i> Central Gateway</h2>
+                    <p>The <strong>pfSense Firewall</strong> acts as the absolute core of the security perimeter, handling strict LAN/WAN filtering, Network Address Translation (NAT), and providing a secure <strong>OpenVPN</strong> tunnel for remote administration using PKI certificates.</p>
+                </div>
+                <div class="window-ui">
+                    <div class="window-header"><div class="window-dot"></div><div class="window-dot"></div><div class="window-dot"></div></div>
+                    <img src="images/azure-project/2-pfsense-dashboard.png" alt="pfSense Dashboard">
+                </div>
+            </div>
+
+            <!-- Bento Box 3: Identity & Proxy -->
+            <div class="bento-card spotlight-card">
+                <div class="bento-text">
+                    <h2><i class='bx bx-server'></i> Identity & Proxy</h2>
+                    <p>Windows Server runs <strong>Active Directory (AD DS)</strong> to centralize IAM. Externally, an internal Nginx server is published using <strong>HAProxy</strong> on the gateway, handling SSL-offloading and hiding internal IPs.</p>
+                </div>
+                <div class="window-ui">
+                    <div class="window-header"><div class="window-dot"></div><div class="window-dot"></div><div class="window-dot"></div></div>
+                    <img src="images/azure-project/3-ad-dashboard.png" alt="Active Directory">
+                </div>
+            </div>
+
+            <!-- Bento Box 4: Security Operations (Spans Full Width) -->
+            <div class="bento-card bento-span-2 spotlight-card">
+                <div class="window-ui">
+                    <div class="window-header"><div class="window-dot"></div><div class="window-dot"></div><div class="window-dot"></div></div>
+                    <img src="images/azure-project/8-wazuh-dashboard.png" alt="Wazuh SIEM">
+                </div>
+                <div class="bento-text">
+                    <h2><i class='bx bx-radar'></i> IDS/IPS & SIEM Monitoring</h2>
+                    <p>To defend the perimeter dynamically, <strong>Suricata (IDS/IPS)</strong> actively analyzes network flows to detect and block malicious signatures, successfully mitigating simulated Nmap port scans.</p>
+                    <p>Total operational visibility is maintained using <strong>Zabbix</strong> for real-time hardware monitoring, while <strong>Wazuh (SIEM/HIDS)</strong> aggregates system logs to detect anomalies and provide a comprehensive Security Operations Center (SOC).</p>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <!-- PROJECT DETAILS -->
-    <section class="project-content container">
-        
-        <!-- Section 1 -->
-        <div class="case-section">
-            <div class="case-text">
-                <h2>1. Architecture & Segmentation</h2>
-                <p>To eliminate the risks of a flat network, the architecture was designed using a Hub-and-Spoke model. The Virtual Network (VNet) is strictly segmented into dedicated subnets: <strong>AD/DNS, Web, Client, VoIP, and Management</strong>.</p>
-                <p>Using Azure <strong>User Defined Routes (UDRs)</strong>, all intra-subnet and outbound traffic is forced through the central pfSense Network Virtual Appliance (NVA). This guarantees that no internal machine has direct, unmonitored access to the internet.</p>
-            </div>
-            <div class="case-image spotlight-card">
-                <img src="images/azure-project/1-azure-udr.png" alt="Azure UDR Routing">
-            </div>
-        </div>
-
-        <!-- Section 2 -->
-        <div class="case-section reverse">
-            <div class="case-text">
-                <h2>2. Centralized Gateway & VPN</h2>
-                <p>The <strong>pfSense Firewall</strong> acts as the absolute core of the security perimeter. It handles strict LAN/WAN filtering, Network Address Translation (NAT), and secure remote administration.</p>
-                <p>To access the Management subnet without exposing critical interfaces to the public internet, a highly secure <strong>OpenVPN</strong> tunnel was deployed, utilizing a local Certificate Authority (CA) for robust cryptographic authentication.</p>
-            </div>
-            <div class="case-image spotlight-card">
-                <img src="images/azure-project/2-pfsense-dashboard.png" alt="pfSense Dashboard">
-            </div>
-        </div>
-
-        <!-- Section 3 -->
-        <div class="case-section">
-            <div class="case-text">
-                <h2>3. Identity, DNS & Web Proxy</h2>
-                <p>A Windows Server runs <strong>Active Directory (AD DS)</strong> to centralize identity and access management, while handling local DNS resolution. </p>
-                <p>For external services, an internal Nginx web server is securely published using <strong>HAProxy</strong>. Operating as a reverse proxy on the pfSense gateway, HAProxy handles SSL-offloading and obfuscates the internal network topology from external users.</p>
-            </div>
-            <div class="case-grid-images">
-                <div class="spotlight-card"><img src="images/azure-project/3-ad-dashboard.png" alt="Active Directory"></div>
-                <div class="spotlight-card"><img src="images/azure-project/4-haproxy-stats.png" alt="HAProxy Stats"></div>
-            </div>
-        </div>
-
-        <!-- Section 4 -->
-        <div class="case-section reverse">
-            <div class="case-text">
-                <h2>4. VoIP Implementation</h2>
-                <p>An <strong>Asterisk</strong> IP-PBX server was deployed to handle internal communications via SIP protocols. Specific outbound NAT rules were configured on the firewall to prevent aggressive port-rewriting, ensuring stable, bidirectional RTP audio streams for clients (Zoiper).</p>
-            </div>
-            <div class="case-image spotlight-card">
-                <img src="images/azure-project/5-voip-call.png" alt="VoIP Call Zoiper">
-            </div>
-        </div>
-
-        <!-- Section 5 -->
-        <div class="case-section">
-            <div class="case-text">
-                <h2>5. IDS/IPS, Monitoring & SIEM</h2>
-                <p>To defend the perimeter, <strong>Suricata (IDS/IPS)</strong> actively analyzes network flows to detect and block malicious signatures, such as Nmap port scans.</p>
-                <p>Visibility is maintained using <strong>Zabbix</strong> for real-time hardware and service monitoring, while <strong>Wazuh (SIEM/HIDS)</strong> aggregates system logs to detect anomalies, analyze vulnerabilities, and provide a comprehensive Security Operations Center (SOC) dashboard.</p>
-            </div>
-            <div class="case-grid-images">
-                <div class="spotlight-card"><img src="images/azure-project/6-suricata-alerts.png" alt="Suricata Alerts"></div>
-                <div class="spotlight-card"><img src="images/azure-project/8-wazuh-dashboard.png" alt="Wazuh SIEM"></div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- TECH STACK -->
+    <!-- TECH STACK ICONS -->
     <section class="tech-stack-container container">
-        <h2>Technologies Used</h2>
+        <h2>Technology Stack</h2>
         <div class="tech-stack-grid">
             <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
             <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pfsense/pfsense-original.svg" alt="pfSense"><span>pfSense</span></div>
@@ -132,12 +137,12 @@
 </footer>
 
 <script>
-    // Smooth Scroll for the new page
+    // Smooth Scroll
     const lenis = new Lenis({ duration: 1.2, smooth: true });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
     
-    // Spotlight Effect
+    // Spotlight Effect for Bento Cards
     document.querySelectorAll('.spotlight-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
