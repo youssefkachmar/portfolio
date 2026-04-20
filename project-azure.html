@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
-<body>
+<body class="project-page-body">
 
-<nav class="main-nav" style="background: rgba(0,0,0,0.9);">
+<nav class="main-nav" style="background: rgba(0,0,0,0.8); border-bottom: 1px solid rgba(255,255,255,0.05);">
     <div class="nav-content">
         <a href="index.html" class="logo">YOUSSEF<span class="dot">.</span></a>
         <div class="nav-links" style="position: static; transform: none;">
@@ -23,101 +24,122 @@
 
 <main class="case-study-main">
     
-    <!-- PROJECT HERO -->
-    <section class="project-hero container">
-        <span class="hero-badge">Enterprise Cloud Architecture</span>
-        <h1 class="project-title">Secure Azure Cloud <br> <span class="gradient-text">Infrastructure</span></h1>
-        <p class="project-subtitle">A comprehensive, zero-trust cloud network deployment on Microsoft Azure featuring strict Hub-and-Spoke segmentation, IDS/IPS threat detection, and centralized SIEM monitoring.</p>
-        
-        <div class="project-links">
-            <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="primary-btn">
-                <i class='bx bxl-github'></i> View Repository
-            </a>
+    <!-- PROJECT HERO (Massive Title & Meta) -->
+    <section class="project-hero">
+        <div class="hero-content">
+            <span class="hero-badge" data-aos="fade-up">Enterprise Cloud Architecture</span>
+            <h1 class="project-title" data-aos="fade-up" data-aos-delay="100">Secure Azure Cloud <br><span class="gradient-text">Infrastructure</span></h1>
+            <p class="project-subtitle" data-aos="fade-up" data-aos-delay="200">A comprehensive, zero-trust cloud network deployment on Microsoft Azure featuring strict Hub-and-Spoke segmentation, IDS/IPS threat detection, and centralized SIEM monitoring.</p>
+            
+            <div class="project-links" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="primary-btn">
+                    <i class='bx bxl-github'></i> View Repository
+                </a>
+            </div>
+            
+            <!-- META DATA BAR -->
+            <div class="project-meta-bar" data-aos="fade-up" data-aos-delay="400">
+                <div class="meta-item"><span>Role</span><strong>Network Architect</strong></div>
+                <div class="meta-item"><span>Environment</span><strong>Microsoft Azure IaaS</strong></div>
+                <div class="meta-item"><span>Security Model</span><strong>Zero-Trust / Hub-and-Spoke</strong></div>
+            </div>
         </div>
     </section>
 
-    <!-- PROJECT META DATA BAR -->
-    <div class="project-meta-bar">
-        <div class="meta-item">
-            <span>Role</span>
-            <strong>Network Architect</strong>
+    <!-- MASSIVE TOPOLOGY HERO IMAGE -->
+    <section class="full-width-section" data-aos="fade-up" data-aos-delay="500">
+        <div class="massive-image-container glow-blue">
+            <div class="mac-window">
+                <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">0-topology.png</span></div>
+                <img src="images/azure-project/0-topology.png" alt="Azure Network Topology">
+            </div>
         </div>
-        <div class="meta-item">
-            <span>Environment</span>
-            <strong>Microsoft Azure IaaS</strong>
-        </div>
-        <div class="meta-item">
-            <span>Security Model</span>
-            <strong>Zero-Trust / Hub-and-Spoke</strong>
-        </div>
-    </div>
+    </section>
 
-    <section class="container">
-        <!-- TOPOLOGY IMAGE -->
-        <div class="project-hero-image spotlight-card">
-            <img src="images/azure-project/0-topology.png" alt="Azure Network Topology">
-        </div>
-
-        <!-- BENTO BOX GRID -->
-        <div class="bento-container">
-            
-            <!-- Bento Box 1: Routing (Spans Full Width) -->
-            <div class="bento-card bento-span-2 spotlight-card">
-                <div class="bento-text">
-                    <h2><i class='bx bx-sitemap'></i> Traffic & Routing Control</h2>
-                    <p>To eliminate the risks of a flat network, the architecture was segmented into dedicated subnets: <strong>AD/DNS, Web, Client, VoIP, and Management</strong>.</p>
-                    <p>Using Azure <strong>User Defined Routes (UDRs)</strong>, all inter-subnet and outbound traffic is forcefully funneled through the central pfSense Network Virtual Appliance (NVA). This strictly prohibits internal machines from bypassing the firewall.</p>
-                </div>
-                <div class="window-ui">
-                    <div class="window-header">
-                        <div class="window-dot"></div><div class="window-dot"></div><div class="window-dot"></div>
-                    </div>
+    <!-- EDITORIAL ZIG-ZAG SECTIONS -->
+    <section class="editorial-container">
+        
+        <!-- ROW 1: Routing (Text Left, Image Right) -->
+        <div class="editorial-row" data-aos="fade-up">
+            <div class="editorial-text">
+                <div class="step-number">01</div>
+                <h2>Strict Traffic Control & UDRs</h2>
+                <p>To completely eliminate the vulnerabilities of a flat network, the architecture is strictly segmented into dedicated subnets: <strong>AD/DNS, Web, Client, VoIP, and Management</strong>.</p>
+                <p>Using Azure <strong>User Defined Routes (UDRs)</strong>, all outbound and inter-subnet traffic is forcefully funneled through the central pfSense Network Virtual Appliance (NVA). No internal machine can bypass the firewall.</p>
+            </div>
+            <div class="editorial-image glow-purple">
+                <div class="mac-window">
+                    <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">1-azure-udr.png</span></div>
                     <img src="images/azure-project/1-azure-udr.png" alt="Azure UDR Routing">
                 </div>
             </div>
+        </div>
 
-            <!-- Bento Box 2: Firewall -->
-            <div class="bento-card spotlight-card">
-                <div class="bento-text">
-                    <h2><i class='bx bx-shield-quarter'></i> Central Gateway</h2>
-                    <p>The <strong>pfSense Firewall</strong> acts as the absolute core of the security perimeter, handling strict LAN/WAN filtering, Network Address Translation (NAT), and providing a secure <strong>OpenVPN</strong> tunnel for remote administration using PKI certificates.</p>
-                </div>
-                <div class="window-ui">
-                    <div class="window-header"><div class="window-dot"></div><div class="window-dot"></div><div class="window-dot"></div></div>
+        <!-- ROW 2: Firewall (Image Left, Text Right) -->
+        <div class="editorial-row reverse" data-aos="fade-up">
+            <div class="editorial-text">
+                <div class="step-number">02</div>
+                <h2>Central Security Gateway</h2>
+                <p>The <strong>pfSense Firewall</strong> acts as the absolute core of the security perimeter.</p>
+                <p>It handles highly granular LAN/WAN filtering, Network Address Translation (NAT) for outbound traffic, and provisions a secure <strong>OpenVPN</strong> tunnel for remote administration. This ensures root access is never exposed to the public internet.</p>
+            </div>
+            <div class="editorial-image glow-blue">
+                <div class="mac-window">
+                    <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">2-pfsense-dashboard.png</span></div>
                     <img src="images/azure-project/2-pfsense-dashboard.png" alt="pfSense Dashboard">
                 </div>
             </div>
+        </div>
 
-            <!-- Bento Box 3: Identity & Proxy -->
-            <div class="bento-card spotlight-card">
-                <div class="bento-text">
-                    <h2><i class='bx bx-server'></i> Identity & Proxy</h2>
-                    <p>Windows Server runs <strong>Active Directory (AD DS)</strong> to centralize IAM. Externally, an internal Nginx server is published using <strong>HAProxy</strong> on the gateway, handling SSL-offloading and hiding internal IPs.</p>
-                </div>
-                <div class="window-ui">
-                    <div class="window-header"><div class="window-dot"></div><div class="window-dot"></div><div class="window-dot"></div></div>
+        <!-- ROW 3: Identity & Proxy (Text Left, Dual Image Stack Right) -->
+        <div class="editorial-row" data-aos="fade-up">
+            <div class="editorial-text">
+                <div class="step-number">03</div>
+                <h2>Identity & Reverse Proxy</h2>
+                <p>A Windows Server instance runs <strong>Active Directory (AD DS)</strong> to centralize IAM and handle local DNS resolution across the entire virtual network.</p>
+                <p>For externally facing services, internal Nginx web servers are securely published using <strong>HAProxy</strong>. This handles SSL-offloading at the edge and obfuscates internal IP structures from end-users.</p>
+            </div>
+            <div class="editorial-image stacked-images">
+                <div class="mac-window glow-purple mb-4">
+                    <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">3-ad-dashboard.png</span></div>
                     <img src="images/azure-project/3-ad-dashboard.png" alt="Active Directory">
                 </div>
-            </div>
-
-            <!-- Bento Box 4: Security Operations (Spans Full Width) -->
-            <div class="bento-card bento-span-2 spotlight-card">
-                <div class="window-ui">
-                    <div class="window-header"><div class="window-dot"></div><div class="window-dot"></div><div class="window-dot"></div></div>
-                    <img src="images/azure-project/8-wazuh-dashboard.png" alt="Wazuh SIEM">
-                </div>
-                <div class="bento-text">
-                    <h2><i class='bx bx-radar'></i> IDS/IPS & SIEM Monitoring</h2>
-                    <p>To defend the perimeter dynamically, <strong>Suricata (IDS/IPS)</strong> actively analyzes network flows to detect and block malicious signatures, successfully mitigating simulated Nmap port scans.</p>
-                    <p>Total operational visibility is maintained using <strong>Zabbix</strong> for real-time hardware monitoring, while <strong>Wazuh (SIEM/HIDS)</strong> aggregates system logs to detect anomalies and provide a comprehensive Security Operations Center (SOC).</p>
+                <div class="mac-window glow-blue">
+                    <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">4-haproxy-stats.png</span></div>
+                    <img src="images/azure-project/4-haproxy-stats.png" alt="HAProxy Stats">
                 </div>
             </div>
+        </div>
 
+    </section>
+
+    <!-- MASSIVE FULL WIDTH SOC SECTION -->
+    <section class="soc-section" data-aos="fade-up">
+        <div class="soc-header">
+            <div class="step-number" style="margin: 0 auto 1rem;">04</div>
+            <h2>Full SOC Observability & IDS/IPS</h2>
+            <p>A modern network is blind without monitoring. To defend the perimeter dynamically, <strong>Suricata (IDS/IPS)</strong> analyzes network flows to detect and block malicious signatures, actively mitigating simulated Nmap port scans.</p>
+            <p>Total visibility is maintained using <strong>Zabbix</strong> for real-time hardware monitoring, while <strong>Wazuh (SIEM/HIDS)</strong> aggregates system logs into a comprehensive Security Operations Center.</p>
+        </div>
+        
+        <div class="soc-gallery">
+            <div class="mac-window glow-red" data-aos="fade-up">
+                <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">6-suricata-alerts.png</span></div>
+                <img src="images/azure-project/6-suricata-alerts.png" alt="Suricata Alerts">
+            </div>
+            <div class="mac-window glow-blue" data-aos="fade-up" data-aos-delay="100">
+                <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">8-wazuh-dashboard.png</span></div>
+                <img src="images/azure-project/8-wazuh-dashboard.png" alt="Wazuh SIEM">
+            </div>
+            <div class="mac-window glow-purple" data-aos="fade-up" data-aos-delay="200">
+                <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">7-zabbix-dashboard.png</span></div>
+                <img src="images/azure-project/7-zabbix-dashboard.png" alt="Zabbix Dashboard">
+            </div>
         </div>
     </section>
 
     <!-- TECH STACK ICONS -->
-    <section class="tech-stack-container container">
+    <section class="tech-stack-container">
         <h2>Technology Stack</h2>
         <div class="tech-stack-grid">
             <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
@@ -136,20 +158,13 @@
     <p>© 2026 Youssef Kachmar.</p>
 </footer>
 
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
+    AOS.init({ duration: 1000, once: true });
     // Smooth Scroll
     const lenis = new Lenis({ duration: 1.2, smooth: true });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
-    
-    // Spotlight Effect for Bento Cards
-    document.querySelectorAll('.spotlight-card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-            card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-        });
-    });
 </script>
 </body>
 </html>
