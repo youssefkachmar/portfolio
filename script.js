@@ -4,28 +4,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const bootScreen = document.getElementById("boot-screen");
     const bootText = document.getElementById("boot-text");
     
-    const lines =[
-        "Initializing Network Protocols...",
-        "Establishing Secure Connection...",
-        "Loading Routing Tables... [OK]",
-        "Starting pfSense Firewall... [OK]",
-        "Mounting File Systems... [OK]",
-        "System Ready. Welcome Admin."
-    ];
-    
-    let delay = 0;
-    lines.forEach((line, index) => {
-        setTimeout(() => {
-            bootText.innerHTML += line + "<br>";
-            if (index === lines.length - 1) {
-                setTimeout(() => {
-                    bootScreen.style.opacity = "0";
-                    setTimeout(() => bootScreen.remove(), 800);
-                }, 500);
-            }
-        }, delay);
-        delay += 250; 
-    });
+    if (bootScreen && bootText) {
+        const lines =[
+            "Initializing Network Protocols...",
+            "Establishing Secure Connection...",
+            "Loading Routing Tables...[OK]",
+            "Starting pfSense Firewall... [OK]",
+            "Mounting File Systems... [OK]",
+            "System Ready. Welcome Admin."
+        ];
+        
+        let delay = 0;
+        lines.forEach((line, index) => {
+            setTimeout(() => {
+                bootText.innerHTML += line + "<br>";
+                if (index === lines.length - 1) {
+                    setTimeout(() => {
+                        bootScreen.style.opacity = "0";
+                        setTimeout(() => bootScreen.remove(), 800);
+                    }, 500);
+                }
+            }, delay);
+            delay += 250; 
+        });
+    }
 
     // --- 2. SMOOTH SCROLLING (LENIS) ---
     const lenis = new Lenis({
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
 
-    // --- 3. LANGUAGE DICTIONARY (Updated with FAQ) ---
+    // --- 3. LANGUAGE DICTIONARY ---
     const translations = {
         en: {
             nav_home: "Home", nav_edu: "Education", nav_exp: "Experience", nav_competence: "Competence", nav_certs: "Certs", nav_projects: "Projects", nav_contact: "Contact", nav_faq: "FAQ",
@@ -53,18 +55,26 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Certifications", status_earned: "Earned", status_progress: "In Progress", btn_verify: "Verify", btn_view_cert: "Certificate",
             section_projects: "Featured Projects", proj_1_title: "Secure Azure Cloud Network", proj_1_desc: "A complex Azure implementation featuring pfSense, Suricata IPS, and Active Directory.", proj_2_title: "Network Automation", proj_2_desc: "Python scripts for automating device configuration and network discovery.", btn_details: "View Details",
             
-            // FAQ Translations
             section_faq: "Frequently Asked Questions",
-            faq_1_q: "Why do you want to do an Ausbildung in Germany?",
-            faq_1_a: "Germany's dual vocational training system is globally recognized for blending theory with hands-on practice. My goal is to become an elite System Integration Specialist, and learning within a high-standard German IT environment is the best path to achieve that.",
-            faq_2_q: "What is your current German language proficiency?",
-            faq_2_a: "I currently hold a certified B1 level in German and communicate effectively in everyday situations. I am actively continuing my language courses to reach B2 before the apprenticeship starts, ensuring seamless workplace communication.",
-            faq_3_q: "How will you handle the visa and relocation process?",
-            faq_3_a: "As a qualified candidate with an Ausbildung contract, I am eligible for a dedicated apprenticeship visa. I have already familiarized myself with the German embassy's requirements in Morocco to ensure a swift and organized relocation well before the start date.",
-            faq_4_q: "Do you already have practical IT experience?",
-            faq_4_a: "Yes. Beyond my academic background and Cisco CCNA training, I have completed two IT internships and actively build complex enterprise networks in my home lab (featuring Azure, pfSense, and Windows Server). This allows me to add value to your team from day one.",
-
-            section_contact: "Let's Connect", contact_desc: "I am currently looking for internship and apprenticeship opportunities.", btn_send: "Send Message"
+            faq_1_q: "Why do you want to do an Ausbildung in Germany?", faq_1_a: "Germany's dual vocational training system is globally recognized for blending theory with hands-on practice. My goal is to become an elite System Integration Specialist, and learning within a high-standard German IT environment is the best path to achieve that.",
+            faq_2_q: "What is your current German language proficiency?", faq_2_a: "I currently hold a certified B1 level in German and communicate effectively in everyday situations. I am actively continuing my language courses to reach B2 before the apprenticeship starts, ensuring seamless workplace communication.",
+            faq_3_q: "How will you handle the visa and relocation process?", faq_3_a: "As a qualified candidate with an Ausbildung contract, I am eligible for a dedicated apprenticeship visa. I have already familiarized myself with the German embassy's requirements in Morocco to ensure a swift and organized relocation well before the start date.",
+            faq_4_q: "Do you already have practical IT experience?", faq_4_a: "Yes. Beyond my academic background and Cisco CCNA training, I have completed two IT internships and actively build complex enterprise networks in my home lab (featuring Azure, pfSense, and Windows Server). This allows me to add value to your team from day one.",
+            section_contact: "Let's Connect", contact_desc: "I am currently looking for internship and apprenticeship opportunities.", btn_send: "Send Message",
+            
+            // PROJECT PAGE TRANSLATIONS
+            proj_badge: "Enterprise Cloud Architecture",
+            proj_title: "Secure Azure Cloud Infrastructure",
+            proj_subtitle: "A comprehensive, zero-trust cloud network deployment on Microsoft Azure featuring strict Hub-and-Spoke segmentation, IDS/IPS threat detection, and centralized SIEM monitoring.",
+            proj_repo: "View Repository",
+            proj_role_label: "Role", proj_role_val: "Network Architect",
+            proj_env_label: "Environment", proj_env_val: "Microsoft Azure IaaS",
+            proj_sec_label: "Security Model", proj_sec_val: "Zero-Trust / Hub-and-Spoke",
+            proj_s1_title: "Strict Traffic Control & UDRs", proj_s1_p1: "To completely eliminate the vulnerabilities of a flat network, the architecture is strictly segmented into dedicated subnets: AD/DNS, Web, Client, VoIP, and Management.", proj_s1_p2: "Using Azure User Defined Routes (UDRs), all outbound and inter-subnet traffic is forcefully funneled through the central pfSense Network Virtual Appliance (NVA). No internal machine can bypass the firewall.",
+            proj_s2_title: "Central Security Gateway", proj_s2_p1: "The pfSense Firewall acts as the absolute core of the security perimeter.", proj_s2_p2: "It handles highly granular LAN/WAN filtering, Network Address Translation (NAT) for outbound traffic, and provisions a secure OpenVPN tunnel for remote administration. This ensures root access is never exposed to the public internet.",
+            proj_s3_title: "Identity & Reverse Proxy", proj_s3_p1: "A Windows Server instance runs Active Directory (AD DS) to centralize IAM and handle local DNS resolution across the entire virtual network.", proj_s3_p2: "For externally facing services, internal Nginx web servers are securely published using HAProxy. This handles SSL-offloading at the edge and obfuscates internal IP structures from end-users.",
+            proj_s4_title: "Full SOC Observability & IDS/IPS", proj_s4_p1: "A modern network is blind without monitoring. To defend the perimeter dynamically, Suricata (IDS/IPS) analyzes network flows to detect and block malicious signatures, actively mitigating simulated Nmap port scans.", proj_s4_p2: "Total visibility is maintained using Zabbix for real-time hardware monitoring, while Wazuh (SIEM/HIDS) aggregates system logs into a comprehensive Security Operations Center.",
+            proj_tech_stack: "Technology Stack"
         },
         de: {
             nav_home: "Startseite", nav_edu: "Bildung", nav_exp: "Erfahrung", nav_competence: "Kompetenzen", nav_certs: "Zertifikate", nav_projects: "Projekte", nav_contact: "Kontakt", nav_faq: "FAQ",
@@ -77,18 +87,26 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Zertifizierungen", status_earned: "Erhalten", status_progress: "In Bearbeitung", btn_verify: "Verifizieren", btn_view_cert: "Zertifikat",
             section_projects: "Ausgewählte Projekte", proj_1_title: "Sicheres Azure Cloud Netzwerk", proj_1_desc: "Eine komplexe Azure-Implementierung mit pfSense, Suricata IPS und Active Directory.", proj_2_title: "Netzwerkautomatisierung", proj_2_desc: "Python-Skripte zur Automatisierung der Gerätekonfiguration.", btn_details: "Details",
             
-            // FAQ Translations
             section_faq: "Häufig Gestellte Fragen",
-            faq_1_q: "Warum möchten Sie eine Ausbildung in Deutschland machen?",
-            faq_1_a: "Das duale Ausbildungssystem in Deutschland ist weltweit für die Kombination aus Theorie und Praxis anerkannt. Mein Ziel ist es, ein hervorragender Fachinformatiker für Systemintegration zu werden. Die Ausbildung in einem deutschen IT-Unternehmen bietet dafür die perfekten Rahmenbedingungen.",
-            faq_2_q: "Wie gut sind Ihre Deutschkenntnisse?",
-            faq_2_a: "Ich verfüge aktuell über ein solides B1-Niveau und kann mich im Alltag gut verständigen. Ich besuche weiterhin intensiv Sprachkurse, um vor Ausbildungsbeginn das B2-Niveau zu erreichen und eine reibungslose Kommunikation im Betrieb sicherzustellen.",
-            faq_3_q: "Wie funktioniert der Visum- und Umzugsprozess?",
-            faq_3_a: "Mit einem unterschriebenen Ausbildungsvertrag habe ich Anspruch auf ein Visum zur Berufsausbildung. Ich habe mich bereits mit den Anforderungen der deutschen Botschaft in Marokko vertraut gemacht, um den Visumprozess zügig und fristgerecht abzuwickeln.",
-            faq_4_q: "Verfügen Sie bereits über praktische IT-Erfahrung?",
-            faq_4_a: "Ja. Neben meinem Studium und meiner CCNA-Zertifizierung habe ich bereits zwei IT-Praktika absolviert. Zudem baue ich in meinem Home-Lab komplexe Unternehmensnetzwerke auf (mit Azure, pfSense und Windows Server). Dadurch kann ich Ihr Team vom ersten Tag an produktiv unterstützen.",
+            faq_1_q: "Warum möchten Sie eine Ausbildung in Deutschland machen?", faq_1_a: "Das duale Ausbildungssystem in Deutschland ist weltweit für die Kombination aus Theorie und Praxis anerkannt. Mein Ziel ist es, ein hervorragender Fachinformatiker für Systemintegration zu werden. Die Ausbildung in einem deutschen IT-Unternehmen bietet dafür die perfekten Rahmenbedingungen.",
+            faq_2_q: "Wie gut sind Ihre Deutschkenntnisse?", faq_2_a: "Ich verfüge aktuell über ein solides B1-Niveau und kann mich im Alltag gut verständigen. Ich besuche weiterhin intensiv Sprachkurse, um vor Ausbildungsbeginn das B2-Niveau zu erreichen und eine reibungslose Kommunikation im Betrieb sicherzustellen.",
+            faq_3_q: "Wie funktioniert der Visum- und Umzugsprozess?", faq_3_a: "Mit einem unterschriebenen Ausbildungsvertrag habe ich Anspruch auf ein Visum zur Berufsausbildung. Ich habe mich bereits mit den Anforderungen der deutschen Botschaft in Marokko vertraut gemacht, um den Visumprozess zügig und fristgerecht abzuwickeln.",
+            faq_4_q: "Verfügen Sie bereits über praktische IT-Erfahrung?", faq_4_a: "Ja. Neben meinem Studium und meiner CCNA-Zertifizierung habe ich bereits zwei IT-Praktika absolviert. Zudem baue ich in meinem Home-Lab komplexe Unternehmensnetzwerke auf (mit Azure, pfSense und Windows Server). Dadurch kann ich Ihr Team vom ersten Tag an produktiv unterstützen.",
+            section_contact: "Lassen Sie uns verbinden", contact_desc: "Ich suche derzeit nach Praktikums- und Ausbildungsplätzen.", btn_send: "Nachricht Senden",
 
-            section_contact: "Lassen Sie uns verbinden", contact_desc: "Ich suche derzeit nach Praktikums- und Ausbildungsplätzen.", btn_send: "Nachricht Senden"
+            // PROJECT PAGE TRANSLATIONS
+            proj_badge: "Enterprise Cloud Architektur",
+            proj_title: "Sichere Azure Cloud Infrastruktur",
+            proj_subtitle: "Eine umfassende Zero-Trust-Cloud-Netzwerkbereitstellung auf Microsoft Azure mit strenger Hub-and-Spoke-Segmentierung, IDS/IPS-Bedrohungserkennung und zentralisierter SIEM-Überwachung.",
+            proj_repo: "Repository Ansehen",
+            proj_role_label: "Rolle", proj_role_val: "Netzwerkarchitekt",
+            proj_env_label: "Umgebung", proj_env_val: "Microsoft Azure IaaS",
+            proj_sec_label: "Sicherheitsmodell", proj_sec_val: "Zero-Trust / Hub-and-Spoke",
+            proj_s1_title: "Strenge Verkehrskontrolle & UDRs", proj_s1_p1: "Um die Schwachstellen eines flachen Netzwerks vollständig zu beseitigen, ist die Architektur strikt in dedizierte Subnetze unterteilt: AD/DNS, Web, Client, VoIP und Management.", proj_s1_p2: "Mithilfe von Azure User Defined Routes (UDRs) wird der gesamte ausgehende und Inter-Subnetz-Verkehr zwingend durch die zentrale pfSense-Firewall geleitet. Keine interne Maschine kann die Firewall umgehen.",
+            proj_s2_title: "Zentrales Sicherheits-Gateway", proj_s2_p1: "Die pfSense-Firewall fungiert als absoluter Kern des Sicherheitsperimeters.", proj_s2_p2: "Sie übernimmt hochgranulare LAN/WAN-Filterung, Network Address Translation (NAT) für ausgehenden Datenverkehr und stellt einen sicheren OpenVPN-Tunnel für die Fernadministration bereit. Dies stellt sicher, dass der Root-Zugriff niemals dem öffentlichen Internet ausgesetzt ist.",
+            proj_s3_title: "Identität & Reverse Proxy", proj_s3_p1: "Eine Windows Server-Instanz führt Active Directory (AD DS) aus, um das IAM zu zentralisieren und die lokale DNS-Auflösung im gesamten virtuellen Netzwerk abzuwickeln.", proj_s3_p2: "Für nach außen gerichtete Dienste werden interne Nginx-Webserver sicher über HAProxy veröffentlicht. Dies übernimmt das SSL-Offloading am Edge und verbirgt interne IP-Strukturen vor Endbenutzern.",
+            proj_s4_title: "Vollständige SOC-Überwachung & IDS/IPS", proj_s4_p1: "Ein modernes Netzwerk ist ohne Überwachung blind. Um den Perimeter dynamisch zu verteidigen, analysiert Suricata (IDS/IPS) Netzwerkströme, um bösartige Signaturen zu erkennen und zu blockieren.", proj_s4_p2: "Die vollständige Transparenz wird durch Zabbix für die Echtzeit-Hardwareüberwachung aufrechterhalten, während Wazuh (SIEM/HIDS) Systemprotokolle in einem umfassenden Security Operations Center aggregiert.",
+            proj_tech_stack: "Technologie-Stack"
         },
         fr: {
             nav_home: "Accueil", nav_edu: "Éducation", nav_exp: "Expérience", nav_competence: "Compétences", nav_certs: "Certs", nav_projects: "Projets", nav_contact: "Contact", nav_faq: "FAQ",
@@ -101,18 +119,26 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Certifications", status_earned: "Obtenu", status_progress: "En Cours", btn_verify: "Vérifier", btn_view_cert: "Certificat",
             section_projects: "Projets Phares", proj_1_title: "Réseau Cloud Azure Sécurisé", proj_1_desc: "Une implémentation Azure complexe avec pfSense, Suricata IPS et Active Directory.", proj_2_title: "Automatisation Réseau", proj_2_desc: "Scripts Python pour automatiser la configuration des appareils.", btn_details: "Voir Détails",
             
-            // FAQ Translations
             section_faq: "Foire Aux Questions",
-            faq_1_q: "Pourquoi faire un apprentissage (Ausbildung) en Allemagne ?",
-            faq_1_a: "Le système de formation en alternance en Allemagne est mondialement reconnu. Mon objectif est de devenir un spécialiste en intégration de systèmes de haut niveau, et me former dans un environnement informatique allemand est la meilleure voie pour y parvenir.",
-            faq_2_q: "Quel est votre niveau actuel en allemand ?",
-            faq_2_a: "J'ai actuellement un niveau B1 certifié en allemand. Je poursuis activement mes cours de langue pour atteindre le niveau B2 avant le début de l'apprentissage, garantissant ainsi une communication fluide en entreprise.",
-            faq_3_q: "Comment gérerez-vous le processus de visa et de déménagement ?",
-            faq_3_a: "Avec un contrat d'apprentissage, je suis éligible au visa d'Ausbildung. Je me suis déjà familiarisé avec les exigences de l'ambassade d'Allemagne au Maroc pour garantir un déménagement rapide et organisé bien avant la date de début.",
-            faq_4_q: "Avez-vous déjà une expérience pratique en informatique ?",
-            faq_4_a: "Oui. En plus de mon parcours académique et de ma formation Cisco CCNA, j'ai effectué deux stages en informatique et je construis activement des réseaux complexes dans mon Home Lab (utilisant Azure, pfSense et Windows Server).",
+            faq_1_q: "Pourquoi faire un apprentissage (Ausbildung) en Allemagne ?", faq_1_a: "Le système de formation en alternance en Allemagne est mondialement reconnu. Mon objectif est de devenir un spécialiste en intégration de systèmes de haut niveau, et me former dans un environnement informatique allemand est la meilleure voie pour y parvenir.",
+            faq_2_q: "Quel est votre niveau actuel en allemand ?", faq_2_a: "J'ai actuellement un niveau B1 certifié en allemand. Je poursuis activement mes cours de langue pour atteindre le niveau B2 avant le début de l'apprentissage, garantissant ainsi une communication fluide en entreprise.",
+            faq_3_q: "Comment gérerez-vous le processus de visa et de déménagement ?", faq_3_a: "Avec un contrat d'apprentissage, je suis éligible au visa d'Ausbildung. Je me suis déjà familiarisé avec les exigences de l'ambassade d'Allemagne au Maroc pour garantir un déménagement rapide et organisé bien avant la date de début.",
+            faq_4_q: "Avez-vous déjà une expérience pratique en informatique ?", faq_4_a: "Oui. En plus de mon parcours académique et de ma formation Cisco CCNA, j'ai effectué deux stages en informatique et je construis activement des réseaux complexes dans mon Home Lab (utilisant Azure, pfSense et Windows Server).",
+            section_contact: "Connectons-nous", contact_desc: "Je suis actuellement à la recherche d'opportunités de stage et d'apprentissage.", btn_send: "Envoyer",
 
-            section_contact: "Connectons-nous", contact_desc: "Je suis actuellement à la recherche d'opportunités de stage et d'apprentissage.", btn_send: "Envoyer"
+            // PROJECT PAGE TRANSLATIONS
+            proj_badge: "Architecture Cloud d'Entreprise",
+            proj_title: "Infrastructure Cloud Azure Sécurisée",
+            proj_subtitle: "Un déploiement réseau cloud complet et zéro-confiance sur Microsoft Azure avec une segmentation stricte Hub-and-Spoke, une détection des menaces IDS/IPS et une surveillance SIEM centralisée.",
+            proj_repo: "Voir le Dépôt",
+            proj_role_label: "Rôle", proj_role_val: "Architecte Réseau",
+            proj_env_label: "Environnement", proj_env_val: "Microsoft Azure IaaS",
+            proj_sec_label: "Modèle de Sécurité", proj_sec_val: "Zéro Confiance / Hub-and-Spoke",
+            proj_s1_title: "Contrôle Strict du Trafic & UDRs", proj_s1_p1: "Pour éliminer complètement les vulnérabilités d'un réseau plat, l'architecture est strictement segmentée en sous-réseaux dédiés : AD/DNS, Web, Client, VoIP et Management.", proj_s1_p2: "Grâce aux User Defined Routes (UDR) d'Azure, tout le trafic sortant et inter-sous-réseaux est obligatoirement acheminé via le pare-feu central pfSense. Aucune machine interne ne peut contourner le pare-feu.",
+            proj_s2_title: "Passerelle de Sécurité Centrale", proj_s2_p1: "Le pare-feu pfSense agit comme le cœur absolu du périmètre de sécurité.", proj_s2_p2: "Il gère un filtrage LAN/WAN très granulaire, la traduction d'adresses réseau (NAT) pour le trafic sortant et fournit un tunnel OpenVPN sécurisé pour l'administration à distance.",
+            proj_s3_title: "Identité & Proxy Inverse", proj_s3_p1: "Une instance Windows Server exécute Active Directory (AD DS) pour centraliser l'IAM et gérer la résolution DNS locale sur l'ensemble du réseau virtuel.", proj_s3_p2: "Pour les services exposés à l'extérieur, les serveurs web Nginx internes sont publiés en toute sécurité via HAProxy. Cela gère le déchargement SSL à la périphérie et masque les structures IP internes.",
+            proj_s4_title: "Observabilité Complète du SOC & IDS/IPS", proj_s4_p1: "Un réseau moderne est aveugle sans surveillance. Pour défendre dynamiquement le périmètre, Suricata (IDS/IPS) analyse les flux réseau pour détecter et bloquer les signatures malveillantes.", proj_s4_p2: "La visibilité totale est maintenue grâce à Zabbix pour la surveillance matérielle en temps réel, tandis que Wazuh (SIEM/HIDS) agrège les journaux système dans un centre des opérations de sécurité complet.",
+            proj_tech_stack: "Stack Technologique"
         }
     };
     
@@ -122,13 +148,18 @@ document.addEventListener("DOMContentLoaded", function () {
         de: `<li><strong>Netzwerke:</strong> VLANs, OSPF, BGP, STP, IPv6, WLAN, VoIP.</li><li><strong>SysAdmin:</strong> Windows Server (AD, DNS, GPO), Linux Admin.</li><li><strong>Cloud & Auto:</strong> Azure, SDN, Python, Netzwerksicherheit.</li>`
     };
 
-    let currentLang = 'en';
+    // --- LANGUAGE PERSISTENCE (localStorage) ---
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
 
     window.setLanguage = function(lang) {
         currentLang = lang;
+        localStorage.setItem('preferredLang', lang); // Save choice so it survives page reloads
+        
         const currentLangText = document.getElementById("current-lang");
         if(currentLangText) currentLangText.innerText = lang.toUpperCase();
-        document.getElementById("lang-dropdown").classList.remove("active");
+        
+        const dropdown = document.getElementById("lang-dropdown");
+        if(dropdown) dropdown.classList.remove("active");
 
         document.querySelectorAll('.mobile-controls button').forEach(btn => {
             btn.classList.remove('active');
@@ -143,7 +174,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const istaListEl = document.querySelector('[data-i18n="edu_ista_list"]');
         if(istaListEl) istaListEl.innerHTML = istaLists[lang];
     };
-    setLanguage('en');
+    
+    // Initialize the language instantly on load
+    setLanguage(currentLang);
 
     // --- 4. DROPDOWNS & NAVIGATION ---
     const langDropdown = document.getElementById("lang-dropdown");
@@ -183,93 +216,94 @@ document.addEventListener("DOMContentLoaded", function () {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
-            // Close all others
             faqItems.forEach(faq => faq.classList.remove('active'));
-            // Toggle clicked item
-            if (!isActive) {
-                item.classList.add('active');
-            }
+            if (!isActive) item.classList.add('active');
         });
     });
 
-    // --- 7. MODALS & PROJECTS ---
-    const config = {
-        projects: {
-            "project-modal-2": {
-                currentSlide: 0,
-                technologies:[ { name: "Python", icon: "bx bxl-python" }, { name: "Cisco IOS", icon: "bx bx-network-chart" }, { name: "SSH/Telnet", icon: "bx bx-terminal" } ],
-                slides:[ { img: "images/python-automation.png", title: { en: "Network Automation", fr: "Automatisation", de: "Automatisierung" }, text: { en: "Python scripts for configuration backups via SSH.", fr: "Scripts Python pour les sauvegardes SSH.", de: "Python-Skripte für SSH-Backups." } } ]
+    // --- 7. MODALS & PROJECTS (Home Page Only) ---
+    if(document.getElementById("project-modal-2")) {
+        const config = {
+            projects: {
+                "project-modal-2": {
+                    currentSlide: 0,
+                    technologies:[ { name: "Python", icon: "bx bxl-python" }, { name: "Cisco IOS", icon: "bx bx-network-chart" }, { name: "SSH/Telnet", icon: "bx bx-terminal" } ],
+                    slides:[ { img: "images/python-automation.png", title: { en: "Network Automation", fr: "Automatisation", de: "Automatisierung" }, text: { en: "Python scripts for configuration backups via SSH.", fr: "Scripts Python pour les sauvegardes SSH.", de: "Python-Skripte für SSH-Backups." } } ]
+                }
+            }
+        };
+
+        AOS.init({ duration: 800, once: true });
+        const allModals = document.querySelectorAll(".modal");
+        const imageModal = document.getElementById("image-modal");
+
+        function renderTicker(modalId) {
+            const techArray = config.projects[modalId].technologies;
+            const track = document.getElementById(`ticker-track-${modalId.split('-')[2]}`);
+            if(track) {
+                let itemsHtml = techArray.map(t => `<div class="ticker-item"><i class='${t.icon}'></i> ${t.name}</div>`).join('');
+                track.innerHTML = itemsHtml + itemsHtml + itemsHtml;
             }
         }
-    };
 
-    AOS.init({ duration: 800, once: true });
-    const allModals = document.querySelectorAll(".modal");
-    const imageModal = document.getElementById("image-modal");
-
-    function renderTicker(modalId) {
-        const techArray = config.projects[modalId].technologies;
-        const track = document.getElementById(`ticker-track-${modalId.split('-')[2]}`);
-        if(track) {
-            let itemsHtml = techArray.map(t => `<div class="ticker-item"><i class='${t.icon}'></i> ${t.name}</div>`).join('');
-            track.innerHTML = itemsHtml + itemsHtml + itemsHtml;
-        }
-    }
-
-    function updateModalSlide(modalId) {
-        const projectData = config.projects[modalId];
-        const modal = document.getElementById(modalId);
-        const currentData = projectData.slides[projectData.currentSlide];
-        
-        modal.querySelector(".project-modal-image-wrapper").innerHTML = `<img src="${currentData.img}" alt="${currentData.title[currentLang]}">`;
-        modal.querySelector(".project-modal-description").innerHTML = `<h4>${currentData.title[currentLang]}</h4><p>${currentData.text[currentLang]}</p>`;
-        
-        const counter = modal.querySelector(".project-modal-counter");
-        if(counter) counter.textContent = `${projectData.currentSlide + 1} / ${projectData.slides.length}`;
-        
-        modal.querySelector(".project-modal-image-wrapper img").addEventListener("click", () => {
-             const zoomImg = imageModal.querySelector("img");
-             if(zoomImg) { zoomImg.src = currentData.img; openModal(imageModal); }
-        });
-    }
-
-    function openModal(modal) { modal.classList.add("active"); lenis.stop(); }
-    function closeModal(modal) { modal.classList.remove("active"); lenis.start(); }
-
-    document.querySelectorAll(".open-project-modal-btn").forEach(btn => {
-        btn.addEventListener("click", function(e) {
-            e.preventDefault();
-            const modalId = this.closest(".project-card").dataset.modalId;
+        function updateModalSlide(modalId) {
+            const projectData = config.projects[modalId];
             const modal = document.getElementById(modalId);
-            if(config.projects[modalId]) {
-                config.projects[modalId].currentSlide = 0;
-                renderTicker(modalId); 
+            const currentData = projectData.slides[projectData.currentSlide];
+            
+            modal.querySelector(".project-modal-image-wrapper").innerHTML = `<img src="${currentData.img}" alt="${currentData.title[currentLang]}">`;
+            modal.querySelector(".project-modal-description").innerHTML = `<h4>${currentData.title[currentLang]}</h4><p>${currentData.text[currentLang]}</p>`;
+            
+            const counter = modal.querySelector(".project-modal-counter");
+            if(counter) counter.textContent = `${projectData.currentSlide + 1} / ${projectData.slides.length}`;
+            
+            modal.querySelector(".project-modal-image-wrapper img").addEventListener("click", () => {
+                 const zoomImg = imageModal.querySelector("img");
+                 if(zoomImg) { zoomImg.src = currentData.img; openModal(imageModal); }
+            });
+        }
+
+        function openModal(modal) { modal.classList.add("active"); lenis.stop(); }
+        function closeModal(modal) { modal.classList.remove("active"); lenis.start(); }
+
+        document.querySelectorAll(".open-project-modal-btn").forEach(btn => {
+            btn.addEventListener("click", function(e) {
+                e.preventDefault();
+                const modalId = this.closest(".project-card").dataset.modalId;
+                const modal = document.getElementById(modalId);
+                if(config.projects[modalId]) {
+                    config.projects[modalId].currentSlide = 0;
+                    renderTicker(modalId); 
+                    updateModalSlide(modalId);
+                }
+                openModal(modal);
+            });
+        });
+
+        allModals.forEach(modal => {
+            const closeBtn = modal.querySelector(".close-button");
+            if(closeBtn) closeBtn.addEventListener("click", () => closeModal(modal));
+            modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(modal); });
+        });
+
+        document.querySelectorAll(".project-modal").forEach(modal => {
+            const modalId = modal.id;
+            const nextBtn = modal.querySelector(".next");
+            const prevBtn = modal.querySelector(".prev");
+
+            if(nextBtn) nextBtn.addEventListener("click", () => {
+                config.projects[modalId].currentSlide = (config.projects[modalId].currentSlide + 1) % config.projects[modalId].slides.length;
                 updateModalSlide(modalId);
-            }
-            openModal(modal);
+            });
+            if(prevBtn) prevBtn.addEventListener("click", () => {
+                config.projects[modalId].currentSlide = (config.projects[modalId].currentSlide - 1 + config.projects[modalId].slides.length) % config.projects[modalId].slides.length;
+                updateModalSlide(modalId);
+            });
         });
-    });
-
-    allModals.forEach(modal => {
-        const closeBtn = modal.querySelector(".close-button");
-        if(closeBtn) closeBtn.addEventListener("click", () => closeModal(modal));
-        modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(modal); });
-    });
-
-    document.querySelectorAll(".project-modal").forEach(modal => {
-        const modalId = modal.id;
-        const nextBtn = modal.querySelector(".next");
-        const prevBtn = modal.querySelector(".prev");
-
-        if(nextBtn) nextBtn.addEventListener("click", () => {
-            config.projects[modalId].currentSlide = (config.projects[modalId].currentSlide + 1) % config.projects[modalId].slides.length;
-            updateModalSlide(modalId);
-        });
-        if(prevBtn) prevBtn.addEventListener("click", () => {
-            config.projects[modalId].currentSlide = (config.projects[modalId].currentSlide - 1 + config.projects[modalId].slides.length) % config.projects[modalId].slides.length;
-            updateModalSlide(modalId);
-        });
-    });
+    } else {
+        // Just init AOS for Azure page
+        if(typeof AOS !== 'undefined') AOS.init({ duration: 1000, once: true });
+    }
 
     const backToTopBtn = document.querySelector('.back-to-top');
     if(backToTopBtn) {

@@ -296,18 +296,38 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .soc-header h2 { font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -1px; }
 .soc-header p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
 
-.soc-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+/* FIX: Align-items start prevents the weird bottom stretching! */
+.soc-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: flex-start; }
 .soc-gallery .mac-window { transition: transform 0.4s ease; }
 .soc-gallery .mac-window:hover { transform: translateY(-10px); }
 
-/* Tech Stack Container */
-.tech-stack-container { text-align: center; border-top: 1px solid var(--border-light); padding-top: 6rem; padding-bottom: 8rem; }
+/* --- TECH STACK MARQUEE --- */
+.tech-stack-container { text-align: center; border-top: 1px solid var(--border-light); padding-top: 6rem; padding-bottom: 6rem; overflow: hidden; }
 .tech-stack-container h2 { font-size: 2.5rem; margin-bottom: 4rem; letter-spacing: -1px; }
-.tech-stack-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; }
-.tech-item { display: flex; flex-direction: column; align-items: center; gap: 1rem; color: var(--text-muted); font-weight: 600; font-family: var(--font-heading); transition: var(--transition); }
-.tech-item img { width: 65px; height: 65px; transition: var(--transition); filter: drop-shadow(0 0 10px rgba(255,255,255,0.05)); }
+
+/* The Marquee Wrapper */
+.tech-marquee-wrapper { width: 100%; overflow: hidden; position: relative; white-space: nowrap; }
+
+/* Adding soft fade edges to the marquee */
+.tech-marquee-wrapper::before, .tech-marquee-wrapper::after { content: ""; position: absolute; top: 0; width: 150px; height: 100%; z-index: 2; pointer-events: none; }
+.tech-marquee-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg-dark), transparent); }
+.tech-marquee-wrapper::after { right: 0; background: linear-gradient(to left, var(--bg-dark), transparent); }
+
+/* The Scrolling Track */
+.tech-stack-grid { display: inline-flex; gap: 6rem; animation: scrollMarquee 35s linear infinite; padding-left: 6rem; }
+.tech-stack-grid:hover { animation-play-state: paused; } /* Pauses on hover */
+
+.tech-item { display: inline-flex; flex-direction: column; align-items: center; gap: 1rem; color: var(--text-muted); font-weight: 600; font-family: var(--font-heading); transition: var(--transition); cursor: default; }
+
+/* FIX: Removed Grayscale entirely! Fully colored. */
+.tech-item img { width: 65px; height: 65px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.05)); transition: var(--transition); }
 .tech-item:hover { color: var(--primary); transform: translateY(-8px); }
 .tech-item:hover img { filter: drop-shadow(0 0 20px rgba(255,255,255,0.3)); }
+
+@keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Scrolls exactly half so the loop is seamless */
+}
 
 /* Responsive Adjustments */
 @media (max-width: 1100px) {
