@@ -302,19 +302,74 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .soc-gallery .mac-window { transition: transform 0.4s ease; }
 .soc-gallery .mac-window:hover { transform: translateY(-10px); }
 
-/* --- TECH STACK (STATIC, CENTERED, FULL COLOR) --- */
-.tech-stack-container { text-align: center; border-top: 1px solid var(--border-light); padding-top: 6rem; padding-bottom: 6rem; }
-.tech-stack-container h2 { font-size: 2.5rem; margin-bottom: 4rem; letter-spacing: -1px; }
+/* --- TECH STACK (SMALLER, BOUNDED SCROLL, ALWAYS COLORED) --- */
+.tech-stack-container { 
+    text-align: center; 
+    border-top: 1px solid var(--border-light); 
+    padding-top: 6rem; 
+    padding-bottom: 6rem; 
+}
 
-.tech-stack-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 5rem; max-width: 1200px; margin: 0 auto; }
+.tech-stack-container h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 3rem; 
+    letter-spacing: -1px; 
+}
 
-.tech-item { display: flex; flex-direction: column; align-items: center; gap: 1rem; color: var(--text-muted); font-weight: 600; font-family: var(--font-heading); transition: var(--transition); cursor: default;}
+/* The Container that creates the "Red Box" range */
+.tech-marquee-wrapper {
+    max-width: 900px; /* Constrains the scroll width */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    /* This creates a seamless fade effect on the left and right edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
 
-/* ALWAYS COLORED - NO GRAYSCALE FILTER AT ALL */
-.tech-item img { width: 70px; height: 70px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255,255,255,0.05)); transition: var(--transition); }
+/* The Track that moves */
+.tech-stack-track { 
+    display: flex; 
+    width: max-content; 
+    gap: 4rem; 
+    /* Very slow scroll (40s), linear speed, infinite loop */
+    animation: scrollMarqueeSlow 40s linear infinite; 
+}
 
-.tech-item:hover { color: var(--primary); transform: translateY(-8px); }
-.tech-item:hover img { filter: drop-shadow(0 0 25px rgba(255,255,255,0.25)); }
+.tech-item { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.6rem; 
+    color: var(--text-muted); 
+    font-weight: 600; 
+    font-family: var(--font-heading); 
+    font-size: 0.9rem; /* Slightly smaller text */
+    transition: var(--transition); 
+    cursor: default;
+}
+
+/* ALWAYS COLORED - SMALLER ICONS (45px) */
+.tech-item img { 
+    width: 45px; 
+    height: 45px; 
+    object-fit: contain; 
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.05)); 
+    transition: var(--transition); 
+}
+
+.tech-item:hover { color: var(--primary); transform: translateY(-5px); }
+.tech-item:hover img { filter: drop-shadow(0 0 20px rgba(255,255,255,0.25)); }
+
+/* Math calculation to ensure it loops perfectly without jumping */
+@keyframes scrollMarqueeSlow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 2rem)); }
+}
+
+@media (max-width: 950px) {
+    .tech-marquee-wrapper { max-width: 100%; }
+}
 
 /* Editorial Responsive Adjustments */
 @media (max-width: 1100px) {
