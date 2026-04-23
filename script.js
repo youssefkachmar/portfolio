@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     
     // --- 1. SYSADMIN BOOT SEQUENCE PRELOADER ---
+    // Only play once per browser session and respect reduced-motion preferences.
     const bootScreen = document.getElementById("boot-screen");
     const bootText = document.getElementById("boot-text");
-    
-    if (bootScreen && bootText) {
-        const lines =[
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const alreadyBooted = sessionStorage.getItem('booted') === '1';
+
+    if (bootScreen && bootText && !alreadyBooted && !reducedMotion) {
+        const lines = [
             "Initializing Network Protocols...",
             "Establishing Secure Connection...",
             "Loading Routing Tables...[OK]",
@@ -13,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Mounting File Systems... [OK]",
             "System Ready. Welcome Admin."
         ];
-        
+
         let delay = 0;
         lines.forEach((line, index) => {
             setTimeout(() => {
@@ -21,12 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (index === lines.length - 1) {
                     setTimeout(() => {
                         bootScreen.style.opacity = "0";
-                        setTimeout(() => bootScreen.remove(), 800);
+                        setTimeout(() => {
+                            bootScreen.remove();
+                            sessionStorage.setItem('booted', '1');
+                        }, 800);
                     }, 500);
                 }
             }, delay);
-            delay += 250; 
+            delay += 250;
         });
+    } else if (bootScreen) {
+        bootScreen.remove();
     }
 
     // --- 2. SMOOTH SCROLLING (LENIS) ---
@@ -47,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         en: {
             nav_home: "Home", nav_edu: "Education", nav_exp: "Experience", nav_competence: "Competence", nav_certs: "Certs", nav_projects: "Projects", nav_contact: "Contact", nav_faq: "FAQ",
             hero_badge: "Network & Systems Student", hero_title: "Future Admin.",
+            hero_avail: "Available from Aug 2026 \u00b7 Open to relocation to Germany \u00b7 German B1 (targeting B2)",
             hero_desc: "A 20-year-old aspiring IT Specialist for System Integration with a solid technical foundation in computer systems and advanced networking. Combining hands-on experience in virtualization and network architecture with a dedicated work ethic, I am eager to apply my skills within a professional apprenticeship in Germany.",
             nav_resume: "Resume", btn_contact: "Contact Me",
             section_edu: "Education Path", edu_ista_title: "Computer Systems & Networks", edu_ista_date: "Sept 2024 - June 2026", edu_ista_desc: "Comprehensive training in network architecture, system administration, and infrastructure management.", edu_bio_title: "Biology Studies", edu_bio_date: "Sept 2023 - July 2024", edu_bio_desc: "Developed scientific reasoning, lab safety protocols, and analytical skills.", edu_bac_title: "High School Diploma - Physics", edu_bac_date: "Jun 2023", edu_bac_company: "GS Salma Erragragui", edu_bac_desc: "Focus on Physics and Mathematics.",
@@ -79,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         de: {
             nav_home: "Startseite", nav_edu: "Bildung", nav_exp: "Erfahrung", nav_competence: "Kompetenzen", nav_certs: "Zertifikate", nav_projects: "Projekte", nav_contact: "Kontakt", nav_faq: "FAQ",
             hero_badge: "Netzwerk & Systeme Student", hero_title: "Zukünftiger Admin.",
+            hero_avail: "Verfügbar ab Aug. 2026 \u00b7 Bereit für Umzug nach Deutschland \u00b7 Deutsch B1 (Ziel B2)",
             hero_desc: "Ein 20-jähriger angehender Fachinformatiker für Systemintegration mit fundiertem Basiswissen in Computersystemen und fortgeschrittener Netzwerktechnik. Mit praktischer Erfahrung in Virtualisierung strebe ich eine Ausbildung in Deutschland an.",
             nav_resume: "Lebenslauf", btn_contact: "Kontaktieren",
             section_edu: "Bildungsweg", edu_ista_title: "Computersysteme und Netzwerke", edu_ista_date: "Sept 2024 - Juni 2026", edu_ista_desc: "Umfassende Ausbildung in Netzwerkarchitektur, Systemadministration und Infrastrukturmanagement.", edu_bio_title: "Biologiestudium", edu_bio_date: "Sept 2023 - Juli 2024", edu_bio_desc: "Entwicklung von wissenschaftlichem Denken und analytischen Fähigkeiten.", edu_bac_title: "Abitur Physik", edu_bac_date: "Jun 2023", edu_bac_company: "GS Salma Erragragui", edu_bac_desc: "Schwerpunkt Physik und Mathematik.",
@@ -111,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fr: {
             nav_home: "Accueil", nav_edu: "Éducation", nav_exp: "Expérience", nav_competence: "Compétences", nav_certs: "Certs", nav_projects: "Projets", nav_contact: "Contact", nav_faq: "FAQ",
             hero_badge: "Étudiant Réseaux & Systèmes", hero_title: "Futur Admin.",
+            hero_avail: "Disponible à partir d'août 2026 \u00b7 Prêt à m'installer en Allemagne \u00b7 Allemand B1 (objectif B2)",
             hero_desc: "Un futur spécialiste informatique de 20 ans en intégration de systèmes, avec une base technique solide. Alliant une expérience pratique de la virtualisation, je suis désireux de débuter un apprentissage en Allemagne.",
             nav_resume: "CV", btn_contact: "Contactez-moi",
             section_edu: "Parcours Éducatif", edu_ista_title: "Systèmes et Réseaux Informatiques", edu_ista_date: "Sept 2024 - Juin 2026", edu_ista_desc: "Formation complète en architecture réseau, administration système et gestion d'infrastructure.", edu_bio_title: "Études de Biologie", edu_bio_date: "Sept 2023 - Juil 2024", edu_bio_desc: "Développement du raisonnement scientifique et protocoles de laboratoire.", edu_bac_title: "Baccalauréat Sciences Physiques", edu_bac_date: "Juin 2023", edu_bac_company: "GS Salma Erragragui", edu_bac_desc: "Concentration sur la physique et les mathématiques.",
@@ -181,15 +192,30 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- 4. DROPDOWNS & NAVIGATION ---
     const langDropdown = document.getElementById("lang-dropdown");
     if(langDropdown) {
-        langDropdown.querySelector(".dropdown-trigger").addEventListener("click", (e) => { e.stopPropagation(); langDropdown.classList.toggle("active"); });
-        document.addEventListener("click", (e) => { if(!langDropdown.contains(e.target)) langDropdown.classList.remove("active"); });
+        const trigger = langDropdown.querySelector(".dropdown-trigger");
+        const syncExpanded = () => { if (trigger) trigger.setAttribute('aria-expanded', langDropdown.classList.contains('active') ? 'true' : 'false'); };
+        trigger.addEventListener("click", (e) => { e.stopPropagation(); langDropdown.classList.toggle("active"); syncExpanded(); });
+        document.addEventListener("click", (e) => { if(!langDropdown.contains(e.target)) { langDropdown.classList.remove("active"); syncExpanded(); } });
+        syncExpanded();
     }
 
     const mobileMenuBtn = document.querySelector(".mobile-menu-icon");
     const mobileNav = document.getElementById("mobile-nav");
     const closeMobileBtn = document.querySelector(".close-mobile-nav");
-    function closeMenu() { if (mobileNav) { mobileNav.classList.remove("active"); document.body.classList.remove("menu-open"); } }
-    if(mobileMenuBtn) { mobileMenuBtn.addEventListener("click", () => { mobileNav.classList.add("active"); document.body.classList.add("menu-open"); }); }
+    function closeMenu() {
+        if (mobileNav) {
+            mobileNav.classList.remove("active");
+            document.body.classList.remove("menu-open");
+            if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+    }
+    if(mobileMenuBtn) {
+        mobileMenuBtn.addEventListener("click", () => {
+            mobileNav.classList.add("active");
+            document.body.classList.add("menu-open");
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        });
+    }
     if(closeMobileBtn) closeMobileBtn.addEventListener("click", closeMenu);
     document.querySelectorAll(".mobile-nav-content a").forEach(link => link.addEventListener('click', closeMenu));
 

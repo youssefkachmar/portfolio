@@ -3,25 +3,79 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Youssef Kachmar | Network Admin</title>
-    
+    <meta name="theme-color" content="#000000">
+    <title>Youssef Kachmar | Aspiring Fachinformatiker Systemintegration</title>
+    <meta name="description" content="Youssef Kachmar — 20-year-old Network & Systems student from Morocco. Cisco CCNA, Azure, pfSense, Active Directory. Seeking an Ausbildung (Fachinformatiker Systemintegration) in Germany starting 2026.">
+    <meta name="author" content="Youssef Kachmar">
+    <meta name="keywords" content="Youssef Kachmar, Fachinformatiker, Systemintegration, Ausbildung, CCNA, Azure, pfSense, Active Directory, Morocco, Germany, IT apprenticeship">
+    <link rel="canonical" href="https://youssefkachmar.github.io/portfolio/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youssefkachmar.github.io/portfolio/">
+    <meta property="og:title" content="Youssef Kachmar | Aspiring Fachinformatiker Systemintegration">
+    <meta property="og:description" content="Network & Systems student — Cisco CCNA, Azure, pfSense, Active Directory. Seeking an Ausbildung in Germany.">
+    <meta property="og:image" content="https://youssefkachmar.github.io/portfolio/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Youssef Kachmar | Aspiring Fachinformatiker Systemintegration">
+    <meta name="twitter:description" content="Network & Systems student — Cisco CCNA, Azure, pfSense, Active Directory. Seeking an Ausbildung in Germany.">
+    <meta name="twitter:image" content="https://youssefkachmar.github.io/portfolio/images/og-image.png">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+
+    <!-- JSON-LD Person schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Youssef Kachmar",
+      "url": "https://youssefkachmar.github.io/portfolio/",
+      "image": "https://youssefkachmar.github.io/portfolio/images/profile.png",
+      "jobTitle": "Aspiring Fachinformatiker Systemintegration",
+      "description": "Network & Systems student specialising in Cisco CCNA, Azure, pfSense, and Active Directory. Seeking an Ausbildung in Germany.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Taza", "addressCountry": "MA" },
+      "alumniOf": [
+        { "@type": "EducationalOrganization", "name": "ISTA Taza" }
+      ],
+      "knowsAbout": ["Networking", "Cisco CCNA", "Microsoft Azure", "pfSense", "Suricata", "Active Directory", "Windows Server", "Linux"],
+      "knowsLanguage": ["Arabic", "English", "German", "French"],
+      "sameAs": [
+        "https://www.linkedin.com/in/youssef-kachmar-82600a296",
+        "https://github.com/youssefkachmar"
+      ]
+    }
+    </script>
+
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
+
     <!-- ICONS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+
     <!-- ANIMATION & SMOOTH SCROLL -->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-    
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js" defer></script>
+
+    <link rel="preload" as="image" href="images/profile.png">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <!-- SYSADMIN BOOT SEQUENCE (Preloader) -->
-<div id="boot-screen">
+<div id="boot-screen" aria-hidden="true">
     <div class="boot-text" id="boot-text"></div>
 </div>
 
@@ -43,8 +97,8 @@
         <div class="nav-controls">
             <!-- Premium Language Dropdown -->
             <div class="lang-dropdown" id="lang-dropdown">
-                <button class="dropdown-trigger">
-                    <i class='bx bx-globe'></i> <span id="current-lang">EN</span> <i class='bx bx-chevron-down'></i>
+                <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+                    <i class='bx bx-globe' aria-hidden="true"></i> <span id="current-lang">EN</span> <i class='bx bx-chevron-down' aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu">
                     <button onclick="setLanguage('en')">English</button>
@@ -55,8 +109,8 @@
         </div>
         
         <!-- MOBILE TOGGLE BUTTON -->
-        <button aria-label="Open menu" class="mobile-menu-icon">
-            <i class='bx bx-menu'></i>
+        <button aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" class="mobile-menu-icon">
+            <i class='bx bx-menu' aria-hidden="true"></i>
         </button>
     </div>
 </nav>
@@ -89,21 +143,25 @@
     </div>
 </div>
 
-<main>
+<main id="main-content">
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
         <div class="hero-text" data-aos="fade-right" data-aos-delay="1500">
             <span class="hero-badge" data-i18n="hero_badge">Network & Systems Student</span>
             <h1>Youssef Kachmar <br><span class="gradient-text" data-i18n="hero_title">Future Admin.</span></h1>
+            <p class="availability-line" data-i18n="hero_avail">
+                <span class="avail-dot" aria-hidden="true"></span>
+                Available from Aug 2026 &middot; Open to relocation to Germany &middot; German B1 (targeting B2)
+            </p>
             <p class="hero-description" data-i18n="hero_desc">
                 A 20 years old aspiring IT Specialist for System Integration with a solid technical foundation in computer systems and advanced networking. Combining hands-on experience in virtualization and network architecture with a dedicated work ethic, I am eager to apply my skills within a professional apprenticeship in Germany.
             </p>
             
             <div class="hero-btns">
                 <div class="hero-resume-wrapper">
-                    <button class="primary-btn resume-trigger">
+                    <button class="primary-btn resume-trigger" aria-haspopup="true" aria-expanded="false">
                         <span data-i18n="nav_resume">Resume</span> 
-                        <i class='bx bx-chevron-down'></i>
+                        <i class='bx bx-chevron-down' aria-hidden="true"></i>
                     </button>
                     <!-- Dropdown Content -->
                     <div class="hero-resume-menu">
@@ -117,7 +175,7 @@
         </div>
         <div class="hero-visual" data-aos="fade-left" data-aos-delay="1700">
             <div class="image-container">
-                <img src="images/profile.png" alt="Youssef Kachmar">
+                <img src="images/profile.png" alt="Portrait of Youssef Kachmar" width="320" height="420" loading="eager">
             </div>
         </div>
     </section>
@@ -213,9 +271,8 @@
                     <p data-i18n="proj_2_desc">Python scripts for automating device configuration and network discovery.</p>
                     <div class="project-actions">
                         <button class="link-text open-project-modal-btn">
-                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
+                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt' aria-hidden="true"></i>
                         </button>
-                        <a href="#" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
                     </div>
                 </div>
             </div>
