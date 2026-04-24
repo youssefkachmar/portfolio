@@ -36,29 +36,32 @@
 </nav>
 
 <main class="case-study-main">
-    
-    <!-- PROJECT HERO -->
     <section class="project-hero">
         <div class="hero-content">
-            <span class="hero-badge" data-aos="fade-up" data-i18n="proj_badge">Enterprise Cloud Architecture</span>
-            <h1 class="project-title" data-aos="fade-up" data-aos-delay="100" data-i18n="proj_title">Secure Azure Cloud Infrastructure</h1>
-            <p class="project-subtitle" data-aos="fade-up" data-aos-delay="200" data-i18n="proj_subtitle">A comprehensive, zero-trust cloud network deployment on Microsoft Azure featuring strict Hub-and-Spoke segmentation, IDS/IPS threat detection, and centralized SIEM monitoring.</p>
+            <span class="hero-badge" data-aos="fade-up" data-i18n="proj_badge"></span>
+            <h1 class="project-title" data-aos="fade-up" data-aos-delay="100" data-i18n="proj_title"></h1>
+            <p class="project-subtitle" data-aos="fade-up" data-aos-delay="200" data-i18n="proj_subtitle"></p>
             
-            <div class="project-links" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-links" data-aos="fade-up" data-aos-delay="300" style="gap: 1rem;">
                 <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="primary-btn">
-                    <i class='bx bxl-github'></i> <span data-i18n="proj_repo">View Repository</span>
+                    <i class='bx bxl-github'></i> <span data-i18n="proj_repo"></span>
+                </a>
+                <a href="docs/report-de.pdf" target="_blank" class="secondary-btn">
+                    <i class='bx bxs-file-pdf'></i> Report (DE)
+                </a>
+                <a href="docs/report-fr.pdf" target="_blank" class="secondary-btn">
+                    <i class='bx bxs-file-pdf'></i> Rapport (FR)
                 </a>
             </div>
             
             <div class="project-meta-bar" data-aos="fade-up" data-aos-delay="400">
-                <div class="meta-item"><span data-i18n="proj_role_label">Role</span><strong data-i18n="proj_role_val">Network Architect</strong></div>
-                <div class="meta-item"><span data-i18n="proj_env_label">Environment</span><strong data-i18n="proj_env_val">Microsoft Azure IaaS</strong></div>
-                <div class="meta-item"><span data-i18n="proj_sec_label">Security Model</span><strong data-i18n="proj_sec_val">Zero-Trust / Hub-and-Spoke</strong></div>
+                <div class="meta-item"><span data-i18n="proj_role_label"></span><strong data-i18n="proj_role_val"></strong></div>
+                <div class="meta-item"><span data-i18n="proj_env_label"></span><strong data-i18n="proj_env_val"></strong></div>
+                <div class="meta-item"><span data-i18n="proj_sec_label"></span><strong data-i18n="proj_sec_val"></strong></div>
             </div>
         </div>
     </section>
 
-    <!-- MASSIVE TOPOLOGY HERO IMAGE -->
     <section class="full-width-section" data-aos="fade-up" data-aos-delay="500">
         <div class="massive-image-container glow-blue">
             <div class="mac-window">
@@ -68,15 +71,13 @@
         </div>
     </section>
 
-    <!-- EDITORIAL ZIG-ZAG SECTIONS -->
     <section class="editorial-container">
-        
         <div class="editorial-row" data-aos="fade-up">
             <div class="editorial-text">
                 <div class="step-number">01</div>
-                <h2 data-i18n="proj_s1_title">Strict Traffic Control & UDRs</h2>
-                <p data-i18n="proj_s1_p1">To completely eliminate the vulnerabilities of a flat network, the architecture is strictly segmented into dedicated subnets: AD/DNS, Web, Client, VoIP, and Management.</p>
-                <p data-i18n="proj_s1_p2">Using Azure User Defined Routes (UDRs), all outbound and inter-subnet traffic is forcefully funneled through the central pfSense Network Virtual Appliance (NVA). No internal machine can bypass the firewall.</p>
+                <h2 data-i18n="proj_s1_title"></h2>
+                <p data-i18n="proj_s1_p1"></p>
+                <p data-i18n="proj_s1_p2"></p>
             </div>
             <div class="editorial-image glow-purple">
                 <div class="mac-window">
@@ -89,9 +90,9 @@
         <div class="editorial-row reverse" data-aos="fade-up">
             <div class="editorial-text">
                 <div class="step-number">02</div>
-                <h2 data-i18n="proj_s2_title">Central Security Gateway</h2>
-                <p data-i18n="proj_s2_p1">The pfSense Firewall acts as the absolute core of the security perimeter.</p>
-                <p data-i18n="proj_s2_p2">It handles highly granular LAN/WAN filtering, Network Address Translation (NAT) for outbound traffic, and provisions a secure OpenVPN tunnel for remote administration. This ensures root access is never exposed to the public internet.</p>
+                <h2 data-i18n="proj_s2_title"></h2>
+                <p data-i18n="proj_s2_p1"></p>
+                <p data-i18n="proj_s2_p2"></p>
             </div>
             <div class="editorial-image glow-blue">
                 <div class="mac-window">
@@ -104,9 +105,9 @@
         <div class="editorial-row" data-aos="fade-up">
             <div class="editorial-text">
                 <div class="step-number">03</div>
-                <h2 data-i18n="proj_s3_title">Identity & Reverse Proxy</h2>
-                <p data-i18n="proj_s3_p1">A Windows Server instance runs Active Directory (AD DS) to centralize IAM and handle local DNS resolution across the entire virtual network.</p>
-                <p data-i18n="proj_s3_p2">For externally facing services, internal Nginx web servers are securely published using HAProxy. This handles SSL-offloading at the edge and obfuscates internal IP structures from end-users.</p>
+                <h2 data-i18n="proj_s3_title"></h2>
+                <p data-i18n="proj_s3_p1"></p>
+                <p data-i18n="proj_s3_p2"></p>
             </div>
             <div class="editorial-image stacked-images">
                 <div class="mac-window glow-purple mb-4">
@@ -119,16 +120,14 @@
                 </div>
             </div>
         </div>
-
     </section>
 
-    <!-- FULL WIDTH SOC SECTION -->
     <section class="soc-section" data-aos="fade-up">
         <div class="soc-header">
             <div class="step-number" style="margin: 0 auto 1rem;">04</div>
-            <h2 data-i18n="proj_s4_title">Full SOC Observability & IDS/IPS</h2>
-            <p data-i18n="proj_s4_p1">A modern network is blind without monitoring. To defend the perimeter dynamically, Suricata (IDS/IPS) analyzes network flows to detect and block malicious signatures, actively mitigating simulated Nmap port scans.</p>
-            <p data-i18n="proj_s4_p2">Total visibility is maintained using Zabbix for real-time hardware monitoring, while Wazuh (SIEM/HIDS) aggregates system logs into a comprehensive Security Operations Center.</p>
+            <h2 data-i18n="proj_s4_title"></h2>
+            <p data-i18n="proj_s4_p1"></p>
+            <p data-i18n="proj_s4_p2"></p>
         </div>
         
         <div class="soc-gallery">
@@ -147,44 +146,35 @@
         </div>
     </section>
 
-    <!-- TECH STACK ICONS -->
     <section class="tech-stack-container">
-        <h2 data-i18n="proj_tech_stack">Technology Stack</h2>
-        
+        <h2 data-i18n="proj_tech_stack"></h2>
         <div class="tech-marquee-wrapper">
             <div class="tech-stack-track">
-                
-                <!-- LIST 1 -->
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pfsense/pfsense-original.svg" alt="pfSense"><span>pfSense</span></div>
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows Server"><span>Windows Server</span></div>
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx"><span>Nginx</span></div>
-                <!-- Updated to Wazuh -->
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/wazuh.svg" alt="Wazuh"><span>Wazuh</span></div>
                 <div class="tech-item"><img src="https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/zabbix.svg" alt="Zabbix"><span>Zabbix</span></div>
 
-                <!-- LIST 2 (DUPLICATE FOR SEAMLESS LOOP) -->
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pfsense/pfsense-original.svg" alt="pfSense"><span>pfSense</span></div>
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows Server"><span>Windows Server</span></div>
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx"><span>Nginx</span></div>
-                <!-- Updated to Wazuh -->
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/wazuh.svg" alt="Wazuh"><span>Wazuh</span></div>
                 <div class="tech-item"><img src="https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/zabbix.svg" alt="Zabbix"><span>Zabbix</span></div>
-
             </div>
         </div>
     </section>
-
 </main>
 
 <footer class="main-footer">
     <p>© 2026 Youssef Kachmar.</p>
 </footer>
 
-<script src="script.js?v=12"></script>
+<script src="script.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 </body>

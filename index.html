@@ -5,32 +5,23 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Youssef Kachmar | Network Admin</title>
     
-    <!-- FONTS -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- ICONS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-    <!-- ANIMATION & SMOOTH SCROLL -->
-    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-    
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- SYSADMIN BOOT SEQUENCE (Preloader) -->
 <div id="boot-screen">
     <div class="boot-text" id="boot-text"></div>
 </div>
 
-<!-- NAVIGATION -->
 <nav class="main-nav">
     <div class="nav-content">
         <a href="#hero" class="logo">YOUSSEF<span class="dot">.</span></a>
         
-        <!-- CENTERED LINKS (Reordered) -->
         <div class="nav-links">
             <a href="#hero" data-i18n="nav_home">Home</a>
             <a href="#education" data-i18n="nav_edu">Education</a>
@@ -41,7 +32,6 @@
         </div>
         
         <div class="nav-controls">
-            <!-- Premium Language Dropdown -->
             <div class="lang-dropdown" id="lang-dropdown">
                 <button class="dropdown-trigger">
                     <i class='bx bx-globe'></i> <span id="current-lang">EN</span> <i class='bx bx-chevron-down'></i>
@@ -54,14 +44,12 @@
             </div>
         </div>
         
-        <!-- MOBILE TOGGLE BUTTON -->
         <button aria-label="Open menu" class="mobile-menu-icon">
             <i class='bx bx-menu'></i>
         </button>
     </div>
 </nav>
 
-<!-- FULL SCREEN MOBILE NAV (Reordered) -->
 <div class="mobile-nav-overlay" id="mobile-nav">
     <div class="mobile-header">
         <span class="menu-title">MENU</span>
@@ -69,7 +57,6 @@
             <i class='bx bx-x'></i>
         </button>
     </div>
-
     <div class="mobile-nav-content">
         <a href="#hero" class="mobile-link"><span data-i18n="nav_home">Home</span></a>
         <a href="#education" class="mobile-link"><span data-i18n="nav_edu">Education</span></a>
@@ -79,7 +66,6 @@
         <a href="#certifications" class="mobile-link"><span data-i18n="nav_certs">Certs</span></a>
         <a href="#faq" class="mobile-link"><span data-i18n="nav_faq">FAQ</span></a>
     </div>
-
     <div class="mobile-footer">
         <div class="mobile-controls">
             <button onclick="setLanguage('en')" id="mob-en">EN</button>
@@ -90,14 +76,11 @@
 </div>
 
 <main>
-    <!-- HERO SECTION -->
     <section class="hero" id="hero">
         <div class="hero-text" data-aos="fade-right" data-aos-delay="1500">
             <span class="hero-badge" data-i18n="hero_badge">Network & Systems Student</span>
             <h1>Youssef Kachmar <br><span class="gradient-text" data-i18n="hero_title">Future Admin.</span></h1>
-            <p class="hero-description" data-i18n="hero_desc">
-                A 20 years old aspiring IT Specialist for System Integration with a solid technical foundation in computer systems and advanced networking. Combining hands-on experience in virtualization and network architecture with a dedicated work ethic, I am eager to apply my skills within a professional apprenticeship in Germany.
-            </p>
+            <p class="hero-description" data-i18n="hero_desc"></p>
             
             <div class="hero-btns">
                 <div class="hero-resume-wrapper">
@@ -105,7 +88,6 @@
                         <span data-i18n="nav_resume">Resume</span> 
                         <i class='bx bx-chevron-down'></i>
                     </button>
-                    <!-- Dropdown Content -->
                     <div class="hero-resume-menu">
                         <a href="resume/resume-en.pdf" target="_blank">English <i class='bx bx-download'></i></a>
                         <a href="resume/resume-de.pdf" target="_blank">Deutsch <i class='bx bx-download'></i></a>
@@ -122,10 +104,8 @@
         </div>
     </section>
 
-    <!-- EDUCATION SECTION -->
     <section class="container" id="education">
         <h2 data-aos="fade-up" data-i18n="section_edu">Education Path</h2>
-        
         <div class="content-card spotlight-card unified-card" data-aos="fade-up">
             <div class="unified-item">
                 <div class="card-header-row">
@@ -133,70 +113,61 @@
                     <span class="date-badge" data-i18n="edu_ista_date">Sept 2024 - June 2026</span>
                 </div>
                 <p class="company">ISTA Taza</p>
-                <p class="desc" data-i18n="edu_ista_desc">Comprehensive training in network architecture, system administration, and infrastructure management.</p>
+                <p class="desc" data-i18n="edu_ista_desc"></p>
                 <ul data-i18n="edu_ista_list" class="styled-list"></ul>
             </div>
-
             <div class="unified-item">
                 <div class="card-header-row">
                     <h3 data-i18n="edu_bio_title">Biology Studies</h3>
                     <span class="date-badge" data-i18n="edu_bio_date">Sept 2023 - July 2024</span>
                 </div>
                 <p class="company">Faculté Polydisciplinaire de Taza</p>
-                <p class="desc" data-i18n="edu_bio_desc">Developed scientific reasoning, lab safety protocols, and analytical skills.</p>
+                <p class="desc" data-i18n="edu_bio_desc"></p>
             </div>
-
             <div class="unified-item">
                 <div class="card-header-row">
                     <h3 data-i18n="edu_bac_title">High School Diploma - Physics</h3>
                     <span class="date-badge" data-i18n="edu_bac_date">Jun 2023</span>
                 </div>
                 <p class="company" data-i18n="edu_bac_company">GS Salma Erragragui</p>
-                <p class="desc" data-i18n="edu_bac_desc">Focus on Physics and Mathematics.</p>
+                <p class="desc" data-i18n="edu_bac_desc"></p>
             </div>
         </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
     <section class="container" id="experience">
         <h2 data-aos="fade-up" data-i18n="section_exp">Professional Experience</h2>
-        
         <div class="content-card spotlight-card unified-card" data-aos="fade-up">
             <div class="unified-item">
                 <div class="card-header-row">
                     <h3 data-i18n="exp_1_title">IT Technician Intern</h3>
                     <span class="date-badge">04/2026 - 05/2026</span>
                 </div>
-                <p class="company" data-i18n="exp_1_company">Societe Regionale Multiservices | Taza, Morocco</p>
-                <p class="desc" data-i18n="exp_1_desc">Assisted in configuring and deploying network devices. Monitored network performance and provided baseline troubleshooting to maintain reliable IT infrastructure.</p>
+                <p class="company" data-i18n="exp_1_company"></p>
+                <p class="desc" data-i18n="exp_1_desc"></p>
             </div>
-
             <div class="unified-item">
                 <div class="card-header-row">
                     <h3 data-i18n="exp_2_title">IT Support Intern</h3>
                     <span class="date-badge">06/2025 - 09/2025</span>
                 </div>
-                <p class="company" data-i18n="exp_2_company">L.P.E.C. (Bureau d'Etudes Techniques) | Oujda, Morocco</p>
-                <p class="desc" data-i18n="exp_2_desc">Installed, configured, and maintained office hardware and network equipment. Delivered Tier-1 technical support and effectively resolved day-to-day user issues.</p>
+                <p class="company" data-i18n="exp_2_company"></p>
+                <p class="desc" data-i18n="exp_2_desc"></p>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
     <section class="container" id="projects">
         <h2 data-aos="fade-up" data-i18n="section_projects">Featured Projects</h2>
         <div class="projects-grid">
-            
-            <!-- Project 1: Azure (NOW LINKS TO NEW PAGE) -->
             <div class="project-card spotlight-card" data-aos="fade-up">
                 <div class="project-cover">
                     <img src="images/azure-project/0-topology.png" alt="Azure Topology">
                 </div>
                 <div class="project-content">
                     <h3 data-i18n="proj_1_title">Secure Azure Cloud Network</h3>
-                    <p data-i18n="proj_1_desc">A complex Azure implementation featuring pfSense, Suricata IPS, OpenVPN, and Active Directory.</p>
+                    <p data-i18n="proj_1_desc"></p>
                     <div class="project-actions">
-                        <!-- LINK TO THE NEW PAGE -->
                         <a href="project-azure.html" class="link-text">
                             <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
                         </a>
@@ -205,12 +176,11 @@
                 </div>
             </div>
 
-            <!-- Project 2: Network Automation (Keeps the Modal) -->
             <div class="project-card spotlight-card" data-aos="fade-up" data-aos-delay="100" data-modal-id="project-modal-2">
                 <div class="project-content" style="padding-top: 2rem;">
                     <div class="project-icon"><i class='bx bxl-python'></i></div>
                     <h3 data-i18n="proj_2_title">Network Automation</h3>
-                    <p data-i18n="proj_2_desc">Python scripts for automating device configuration and network discovery.</p>
+                    <p data-i18n="proj_2_desc"></p>
                     <div class="project-actions">
                         <button class="link-text open-project-modal-btn">
                             <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
@@ -222,7 +192,6 @@
         </div> 
     </section>
 
-    <!-- COMPETENCE SECTION -->
     <section class="container" id="skills">
         <h2 data-aos="fade-up" data-i18n="section_competence">Competence</h2>
         <div class="skills-grid">
@@ -241,41 +210,30 @@
                 <h3 data-i18n="skill_cloud">Cloud & Sec</h3>
                 <p>Azure, pfSense, Suricata, Python</p>
             </div>
-
             <div class="skill-card spotlight-card" data-aos="fade-up" data-aos-delay="300">
                 <i class='bx bx-globe skill-icon'></i>
                 <h3 data-i18n="skill_lang">Languages</h3>
                 <div class="lang-list">
                     <div class="lang-row">
-                        <span data-i18n="lang_ar">Arabic</span>
-                        <span class="lang-dot"></span>
-                        <span class="text-muted" data-i18n="level_native">Native</span>
+                        <span data-i18n="lang_ar">Arabic</span><span class="lang-dot"></span><span class="text-muted" data-i18n="level_native">Native</span>
                     </div>
                     <div class="lang-row">
-                        <span data-i18n="lang_en">English</span>
-                        <span class="lang-dot"></span>
-                        <span class="text-muted" data-i18n="level_c1">Advanced (C1)</span>
+                        <span data-i18n="lang_en">English</span><span class="lang-dot"></span><span class="text-muted" data-i18n="level_c1">Advanced (C1)</span>
                     </div>
                     <div class="lang-row">
-                        <span data-i18n="lang_de">German</span>
-                        <span class="lang-dot"></span>
-                        <span class="text-muted" data-i18n="level_b1">Intermediate (B1)</span>
+                        <span data-i18n="lang_de">German</span><span class="lang-dot"></span><span class="text-muted" data-i18n="level_b1">Intermediate (B1)</span>
                     </div>
                     <div class="lang-row">
-                        <span data-i18n="lang_fr">French</span>
-                        <span class="lang-dot"></span>
-                        <span class="text-muted" data-i18n="level_b2">Intermediate (B2)</span>
+                        <span data-i18n="lang_fr">French</span><span class="lang-dot"></span><span class="text-muted" data-i18n="level_b2">Intermediate (B2)</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
     <section class="container" id="certifications">
         <h2 data-aos="fade-up" data-i18n="section_certs">Certifications</h2>
         <div class="cert-grid">
-            
             <div class="cert-card spotlight-card" data-aos="fade-up">
                 <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
                 <div class="cert-details">
@@ -294,7 +252,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="cert-card spotlight-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
                 <div class="cert-details">
@@ -313,7 +270,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="cert-card spotlight-card cert-centered" data-aos="fade-up" data-aos-delay="200">
                 <div class="cert-icon-box"><i class='bx bx-time-five'></i></div>
                 <div class="cert-details">
@@ -324,63 +280,45 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- ELITE FAQ SECTION -->
     <section class="container" id="faq">
         <div class="faq-header-centered">
             <h2 data-i18n="faq_section_title">FREQUENTLY ASKED QUESTIONS</h2>
             <div class="header-line"></div>
         </div>
-        
         <div class="faq-main-box">
-            
-            <!-- FAQ 1: The Complex Visa Explanation -->
             <div class="faq-item active">
                 <button class="faq-question">
-                    <span data-i18n="faq_1_q">You live outside the EU. How complicated is the hiring process from Morocco to Germany?</span>
-                    <i class='bx bx-x'></i> <!-- Starts open as an 'x' -->
+                    <span data-i18n="faq_1_q"></span>
+                    <i class='bx bx-x'></i>
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        <h4 data-i18n="faq_1_intro_title" class="mb-2">A manageable process for employers</h4>
-                        <p data-i18n="faq_1_intro" class="mb-4">I am familiar with this procedure and will take over the applicant side entirely as soon as the employer documents are ready. For companies, this mainly means: choosing the regular or fast-track route and submitting the required documents cleanly once.</p>
-                        
-                        <!-- Visa Options Grid -->
+                        <h4 data-i18n="faq_1_intro_title" class="mb-2"></h4>
+                        <p data-i18n="faq_1_intro" class="mb-4"></p>
                         <div class="visa-grid">
-                            <!-- Option 1 -->
                             <div class="visa-card">
-                                <h4 data-i18n="faq_1_opt1_title">Option 1: Classic Route (§ 36 BeschV)</h4>
-                                <p data-i18n="faq_1_opt1_p1"><strong>1. Your Part: Pre-approval</strong><br>You submit the 'Declaration regarding a contract of employment' and the training contract to your local Agentur für Arbeit. This step is free and takes 2-4 weeks.</p>
-                                <p data-i18n="faq_1_opt1_p2"><strong>2. My Part: Embassy Appointment</strong></p>
-                                <div class="visa-wait" data-i18n="faq_1_opt1_wait">WAITING TIME: 2-4 MONTHS<br><span class="wait-subtext">After your approval, I have to wait for an appointment at the German Embassy in Morocco before I can submit the application.</span></div>
+                                <h4 data-i18n="faq_1_opt1_title"></h4>
+                                <p data-i18n="faq_1_opt1_p1"></p>
+                                <p data-i18n="faq_1_opt1_p2"></p>
+                                <div class="visa-wait" data-i18n="faq_1_opt1_wait"></div>
                             </div>
-
-                            <!-- Option 2 -->
                             <div class="visa-card">
-                                <h4 data-i18n="faq_1_opt2_title">Option 2: Fast-Track Route (§ 81a AufenthG)</h4>
-                                <p data-i18n="faq_1_opt2_p1"><strong>1. Your Part: Initiate process</strong><br>With my power of attorney, you initiate the process at your local Ausländerbehörde. The fee is €411.</p>
-                                <p data-i18n="faq_1_opt2_p2"><strong>2. My Part: Direct Appointment</strong></p>
-                                <div class="visa-wait" data-i18n="faq_1_opt2_wait">WAITING TIME: WITHIN 3 WEEKS<br><span class="wait-subtext">I receive a guaranteed appointment to submit my application directly. The final decision usually follows within 3 weeks.</span></div>
+                                <h4 data-i18n="faq_1_opt2_title"></h4>
+                                <p data-i18n="faq_1_opt2_p1"></p>
+                                <p data-i18n="faq_1_opt2_p2"></p>
+                                <div class="visa-wait" data-i18n="faq_1_opt2_wait"></div>
                             </div>
                         </div>
-
-                        <!-- Security & Responsibility -->
-                        <h4 data-i18n="faq_1_sec_title" class="mt-4 mb-2">Your Security and My Responsibility</h4>
-                        <div class="security-callout" data-i18n="faq_1_sec_callout">
-                            <strong>Clear contract regulation:</strong> A standard clause can state that the training contract only becomes effective upon visa issuance. Companies can use their regular HR phrasing for this.
-                        </div>
-                        <p data-i18n="faq_1_sec_p" class="mb-4">As soon as the employer documents are available, I handle the further process on the applicant side: scheduling, document preparation, application submission, and answering queries.</p>
-
-                        <!-- Download Button -->
-                        <a href="resume/Employer_Visa_Guide.pdf" target="_blank" class="download-pdf-btn" data-i18n="faq_1_btn">Download Complete Guide as PDF</a>
-
-                        <!-- Sources -->
+                        <h4 data-i18n="faq_1_sec_title" class="mt-4 mb-2"></h4>
+                        <div class="security-callout" data-i18n="faq_1_sec_callout"></div>
+                        <p data-i18n="faq_1_sec_p" class="mb-4"></p>
+                        <a href="resume/employer-guide.pdf" target="_blank" class="download-pdf-btn" data-i18n="faq_1_btn"></a>
                         <div class="faq-sources">
-                            <h4 data-i18n="faq_1_src_title">Official Sources</h4>
-                            <p class="source-disclaimer" data-i18n="faq_1_src_disclaimer">Status of this information: April 2026. Fees and processing times should additionally be confirmed via the official sources below.</p>
+                            <h4 data-i18n="faq_1_src_title"></h4>
+                            <p class="source-disclaimer" data-i18n="faq_1_src_disclaimer"></p>
                             <a href="https://www.make-it-in-germany.com/en/visa-residence/types/vocational-training" target="_blank">Visum zur Ausbildung (Make it in Germany)</a>
                             <a href="https://www.gesetze-im-internet.de/beschv_2013/__36.html" target="_blank">§ 36 BeschV (Zustimmung der Bundesagentur für Arbeit)</a>
                             <a href="https://www.gesetze-im-internet.de/aufenthg_2004/__81a.html" target="_blank">§ 81a AufenthG (Beschleunigtes Fachkräfteverfahren)</a>
@@ -389,60 +327,50 @@
                     </div>
                 </div>
             </div>
-
-            <!-- FAQ 2 -->
             <div class="faq-item">
                 <button class="faq-question">
-                    <span data-i18n="faq_2_q">Where will you live? We do not offer accommodation. How do you organize that?</span>
+                    <span data-i18n="faq_2_q"></span>
                     <i class='bx bx-plus'></i>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_2_a">I take full responsibility for my relocation. I have sufficient financial reserves to cover my flights, security deposit, and first few months of rent. To ensure I am ready on day one without stress, I will initially rent a temporary apartment or WG-room before arriving in Germany.</div>
+                    <div class="faq-answer-inner" data-i18n="faq_2_a"></div>
                 </div>
             </div>
-
-            <!-- FAQ 3 -->
             <div class="faq-item">
                 <button class="faq-question">
-                    <span data-i18n="faq_3_q">You previously studied Biology, but are IT-oriented. How does that fit together?</span>
+                    <span data-i18n="faq_3_q"></span>
                     <i class='bx bx-plus'></i>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_3_a">My university studies in Biology sharpened my analytical thinking, methodology, and ability to handle complex systems. However, my true passion has always been network infrastructure. Switching to my current IT degree and building enterprise-grade home labs (Azure, pfSense) was the best decision to purposefully pursue my career as a System Administrator.</div>
+                    <div class="faq-answer-inner" data-i18n="faq_3_a"></div>
                 </div>
             </div>
-
-            <!-- FAQ 4 -->
             <div class="faq-item">
                 <button class="faq-question">
-                    <span data-i18n="faq_4_q">Why Germany?</span>
+                    <span data-i18n="faq_4_q"></span>
                     <i class='bx bx-plus'></i>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_4_a">Germany's dual vocational training system is globally recognized for blending theory with hands-on practice. My goal is to become an elite System Integration Specialist, and learning within a high-standard German IT environment is the best path to achieve that.</div>
+                    <div class="faq-answer-inner" data-i18n="faq_4_a"></div>
                 </div>
             </div>
-
-            <!-- FAQ 5 -->
             <div class="faq-item">
                 <button class="faq-question">
-                    <span data-i18n="faq_5_q">How good are your German and English skills?</span>
+                    <span data-i18n="faq_5_q"></span>
                     <i class='bx bx-plus'></i>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_5_a">I hold a solid, certified B1 level in German and am actively taking intensive courses to reach B2 before the apprenticeship begins. Additionally, I speak English at an advanced C1 level, which is extremely valuable for reading technical IT documentation, Cisco manuals, and troubleshooting.</div>
+                    <div class="faq-answer-inner" data-i18n="faq_5_a"></div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="container" id="contact">
         <div class="contact-card spotlight-card" data-aos="fade-up">
             <div class="contact-info">
                 <h2 data-i18n="section_contact">Let's Connect</h2>
-                <p data-i18n="contact_desc">I am currently looking for internship opportunities.</p>
+                <p data-i18n="contact_desc"></p>
                 <div class="contact-links">
                     <a href="mailto:youssefkachmar46@gmail.com" class="contact-pill">
                         <div class="icon-box"><i class='bx bx-envelope'></i></div>
@@ -452,13 +380,12 @@
                         <div class="icon-box"><i class='bx bxl-linkedin'></i></div>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://github.com/youssefkachmar" class="contact-pill">
+                    <a href="https://github.com/youssefkachmar" class="contact-pill" target="_blank">
                         <div class="icon-box"><i class='bx bxl-github'></i></div>
                         <span>GitHub</span>
                     </a>
                 </div>
             </div>
-            
             <form action="https://formspree.io/f/xeeqawbq" method="POST" class="contact-form" id="contact-form">
                 <div class="form-group">
                     <label>Name</label>
@@ -476,31 +403,13 @@
             </form>
         </div>
     </section>
-
 </main>
 
 <footer class="main-footer">
-    <p>© 2025 Youssef Kachmar.</p>
+    <p>© 2026 Youssef Kachmar.</p>
 </footer>
 
 <a href="#hero" class="back-to-top" aria-label="Back to Top"><i class='bx bx-up-arrow-alt'></i></a>
-
-<!-- MODALS -->
-<div class="modal project-modal" id="project-modal-1">
-    <div class="modal-content">
-        <button class="close-button"><i class='bx bx-x'></i></button>
-        <div class="project-modal-body">
-            <div class="project-modal-image-wrapper"></div>
-            <div class="modal-tech-ticker"><div class="ticker-track" id="ticker-track-1"></div></div>
-            <div class="project-modal-description"></div>
-            <div class="project-modal-controls">
-                <button class="control-btn prev"><i class='bx bx-chevron-left'></i></button>
-                <div class="project-modal-counter"></div>
-                <button class="control-btn next"><i class='bx bx-chevron-right'></i></button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="modal project-modal" id="project-modal-2">
     <div class="modal-content">
@@ -526,6 +435,6 @@
 </div>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="script.js?v=9"></script>
+<script src="script.js"></script>
 </body>
 </html>

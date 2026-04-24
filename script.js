@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // --- 1. SYSADMIN BOOT SEQUENCE PRELOADER ---
     const bootScreen = document.getElementById("boot-screen");
     const bootText = document.getElementById("boot-text");
     
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // --- 2. SMOOTH SCROLLING (LENIS) ---
     const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
@@ -42,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
 
-    // --- 3. LANGUAGE DICTIONARY ---
     const translations = {
         en: {
             nav_home: "Home", nav_edu: "Education", nav_exp: "Experience", nav_competence: "Competence", nav_certs: "Certs", nav_projects: "Projects", nav_contact: "Contact", nav_faq: "FAQ",
@@ -55,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Certifications", status_earned: "Earned", status_progress: "In Progress", btn_verify: "Verify", btn_view_cert: "Certificate",
             section_projects: "Featured Projects", proj_1_title: "Secure Azure Cloud Network", proj_1_desc: "A complex Azure implementation featuring pfSense, Suricata IPS, and Active Directory.", proj_2_title: "Network Automation", proj_2_desc: "Python scripts for automating device configuration and network discovery.", btn_details: "View Details",
             
-            // FAQ SECTION
             faq_section_title: "FREQUENTLY ASKED QUESTIONS",
             faq_1_q: "You live outside the EU. How complicated is the hiring process from Morocco to Germany?",
             faq_1_intro_title: "A manageable process for employers",
@@ -85,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             section_contact: "Let's Connect", contact_desc: "I am currently looking for internship and apprenticeship opportunities.", btn_send: "Send Message",
             
-            // PROJECT PAGE
             proj_badge: "Enterprise Cloud Architecture", proj_title: "Secure Azure Cloud Infrastructure", proj_subtitle: "A comprehensive, zero-trust cloud network deployment on Microsoft Azure featuring strict Hub-and-Spoke segmentation, IDS/IPS threat detection, and centralized SIEM monitoring.", proj_repo: "View Repository", proj_role_label: "Role", proj_role_val: "Network Architect", proj_env_label: "Environment", proj_env_val: "Microsoft Azure IaaS", proj_sec_label: "Security Model", proj_sec_val: "Zero-Trust / Hub-and-Spoke", proj_s1_title: "Strict Traffic Control & UDRs", proj_s1_p1: "To completely eliminate the vulnerabilities of a flat network, the architecture is strictly segmented into dedicated subnets: AD/DNS, Web, Client, VoIP, and Management.", proj_s1_p2: "Using Azure User Defined Routes (UDRs), all outbound and inter-subnet traffic is forcefully funneled through the central pfSense Network Virtual Appliance (NVA). No internal machine can bypass the firewall.", proj_s2_title: "Central Security Gateway", proj_s2_p1: "The pfSense Firewall acts as the absolute core of the security perimeter.", proj_s2_p2: "It handles highly granular LAN/WAN filtering, Network Address Translation (NAT) for outbound traffic, and provisions a secure OpenVPN tunnel for remote administration. This ensures root access is never exposed to the public internet.", proj_s3_title: "Identity & Reverse Proxy", proj_s3_p1: "A Windows Server instance runs Active Directory (AD DS) to centralize IAM and handle local DNS resolution across the entire virtual network.", proj_s3_p2: "For externally facing services, internal Nginx web servers are securely published using HAProxy. This handles SSL-offloading at the edge and obfuscates internal IP structures from end-users.", proj_s4_title: "Full SOC Observability & IDS/IPS", proj_s4_p1: "A modern network is blind without monitoring. To defend the perimeter dynamically, Suricata (IDS/IPS) analyzes network flows to detect and block malicious signatures, actively mitigating simulated Nmap port scans.", proj_s4_p2: "Total visibility is maintained using Zabbix for real-time hardware monitoring, while Wazuh (SIEM/HIDS) aggregates system logs into a comprehensive Security Operations Center.", proj_tech_stack: "Technology Stack"
         },
         de: {
@@ -99,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Zertifizierungen", status_earned: "Erhalten", status_progress: "In Bearbeitung", btn_verify: "Verifizieren", btn_view_cert: "Zertifikat",
             section_projects: "Ausgewählte Projekte", proj_1_title: "Sicheres Azure Cloud Netzwerk", proj_1_desc: "Eine komplexe Azure-Implementierung mit pfSense, Suricata IPS und Active Directory.", proj_2_title: "Netzwerkautomatisierung", proj_2_desc: "Python-Skripte zur Automatisierung der Gerätekonfiguration.", btn_details: "Details",
             
-            // FAQ SECTION
             faq_section_title: "HÄUFIG GESTELLTE FRAGEN",
             faq_1_q: "Sie leben nicht in der EU. Wie kompliziert ist der Einstellungsprozess von Marokko bis Deutschland?",
             faq_1_intro_title: "Ein ueberschaubarer Arbeitgeberprozess",
@@ -129,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             section_contact: "Lassen Sie uns verbinden", contact_desc: "Ich suche derzeit nach Praktikums- und Ausbildungsplätzen.", btn_send: "Nachricht Senden",
             
-            // PROJECT PAGE
             proj_badge: "Enterprise Cloud Architektur", proj_title: "Sichere Azure Cloud Infrastruktur", proj_subtitle: "Eine umfassende Zero-Trust-Cloud-Netzwerkbereitstellung auf Microsoft Azure mit strenger Hub-and-Spoke-Segmentierung, IDS/IPS-Bedrohungserkennung und zentralisierter SIEM-Überwachung.", proj_repo: "Repository Ansehen", proj_role_label: "Rolle", proj_role_val: "Netzwerkarchitekt", proj_env_label: "Umgebung", proj_env_val: "Microsoft Azure IaaS", proj_sec_label: "Sicherheitsmodell", proj_sec_val: "Zero-Trust / Hub-and-Spoke", proj_s1_title: "Strenge Verkehrskontrolle & UDRs", proj_s1_p1: "Um die Schwachstellen eines flachen Netzwerks vollständig zu beseitigen, ist die Architektur strikt in dedizierte Subnetze unterteilt: AD/DNS, Web, Client, VoIP und Management.", proj_s1_p2: "Mithilfe von Azure User Defined Routes (UDRs) wird der gesamte ausgehende und Inter-Subnetz-Verkehr zwingend durch die zentrale pfSense-Firewall geleitet. Keine interne Maschine kann die Firewall umgehen.", proj_s2_title: "Zentrales Sicherheits-Gateway", proj_s2_p1: "Die pfSense-Firewall fungiert als absoluter Kern des Sicherheitsperimeters.", proj_s2_p2: "Sie übernimmt hochgranulare LAN/WAN-Filterung, Network Address Translation (NAT) für ausgehenden Datenverkehr und stellt einen sicheren OpenVPN-Tunnel für die Fernadministration bereit. Dies stellt sicher, dass der Root-Zugriff niemals dem öffentlichen Internet ausgesetzt ist.", proj_s3_title: "Identität & Reverse Proxy", proj_s3_p1: "Eine Windows Server-Instanz führt Active Directory (AD DS) aus, um das IAM zu zentralisieren und die lokale DNS-Auflösung im gesamten virtuellen Netzwerk abzuwickeln.", proj_s3_p2: "Für nach außen gerichtete Dienste werden interne Nginx-Webserver sicher über HAProxy veröffentlicht. Dies übernimmt das SSL-Offloading am Edge und verbirgt interne IP-Strukturen vor Endbenutzern.", proj_s4_title: "Vollständige SOC-Überwachung & IDS/IPS", proj_s4_p1: "Ein modernes Netzwerk ist ohne Überwachung blind. Um den Perimeter dynamisch zu verteidigen, analysiert Suricata (IDS/IPS) Netzwerkströme, um bösartige Signaturen zu erkennen und zu blockieren.", proj_s4_p2: "Die vollständige Transparenz wird durch Zabbix für die Echtzeit-Hardwareüberwachung aufrechterhalten, während Wazuh (SIEM/HIDS) Systemprotokolle in einem umfassenden Security Operations Center aggregiert.", proj_tech_stack: "Technologie-Stack"
         },
         fr: {
@@ -143,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Certifications", status_earned: "Obtenu", status_progress: "En Cours", btn_verify: "Vérifier", btn_view_cert: "Certificat",
             section_projects: "Projets Phares", proj_1_title: "Réseau Cloud Azure Sécurisé", proj_1_desc: "Une implémentation Azure complexe avec pfSense, Suricata IPS et Active Directory.", proj_2_title: "Automatisation Réseau", proj_2_desc: "Scripts Python pour automatiser la configuration des appareils.", btn_details: "Voir Détails",
             
-            // FAQ SECTION
             faq_section_title: "FOIRE AUX QUESTIONS",
             faq_1_q: "Vous résidez hors de l'UE. Le processus de recrutement depuis le Maroc est-il compliqué ?",
             faq_1_intro_title: "Un processus gérable pour les employeurs",
@@ -173,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             section_contact: "Connectons-nous", contact_desc: "Je suis actuellement à la recherche d'opportunités de stage et d'apprentissage.", btn_send: "Envoyer",
             
-            // PROJECT PAGE
             proj_badge: "Architecture Cloud d'Entreprise", proj_title: "Infrastructure Cloud Azure Sécurisée", proj_subtitle: "Un déploiement réseau cloud complet et zéro-confiance sur Microsoft Azure avec une segmentation stricte Hub-and-Spoke, une détection des menaces IDS/IPS et une surveillance SIEM centralisée.", proj_repo: "Voir le Dépôt", proj_role_label: "Rôle", proj_role_val: "Architecte Réseau", proj_env_label: "Environnement", proj_env_val: "Microsoft Azure IaaS", proj_sec_label: "Modèle de Sécurité", proj_sec_val: "Zéro Confiance / Hub-and-Spoke", proj_s1_title: "Contrôle Strict du Trafic & UDRs", proj_s1_p1: "Pour éliminer complètement les vulnérabilités d'un réseau plat, l'architecture est strictement segmentée en sous-réseaux dédiés : AD/DNS, Web, Client, VoIP et Management.", proj_s1_p2: "Grâce aux User Defined Routes (UDR) d'Azure, tout le trafic sortant et inter-sous-réseaux est obligatoirement acheminé via le pare-feu central pfSense. Aucune machine interne ne peut contourner le pare-feu.", proj_s2_title: "Passerelle de Sécurité Centrale", proj_s2_p1: "Le pare-feu pfSense agit comme le cœur absolu du périmètre de sécurité.", proj_s2_p2: "Il gère un filtrage LAN/WAN très granulaire, la traduction d'adresses réseau (NAT) pour le trafic sortant et fournit un tunnel OpenVPN sécurisé pour l'administration à distance.", proj_s3_title: "Identité & Proxy Inverse", proj_s3_p1: "Une instance Windows Server exécute Active Directory (AD DS) pour centraliser l'IAM et gérer la résolution DNS locale sur l'ensemble du réseau virtuel.", proj_s3_p2: "Pour les services exposés à l'extérieur, les serveurs web Nginx internes sont publiés en toute sécurité via HAProxy. Cela gère le déchargement SSL à la périphérie et masque les structures IP internes.", proj_s4_title: "Observabilité Complète du SOC & IDS/IPS", proj_s4_p1: "Un réseau moderne est aveugle sans surveillance. Pour défendre dynamiquement le périmètre, Suricata (IDS/IPS) analyse les flux réseau pour détecter et bloquer les signatures malveillantes.", proj_s4_p2: "La visibilité totale est maintenue grâce à Zabbix pour la surveillance matérielle en temps réel, tandis que Wazuh (SIEM/HIDS) agrège les journaux système dans un centre des opérations de sécurité complet.", proj_tech_stack: "Stack Technologique"
         }
     };
@@ -201,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if(btn.getAttribute('onclick').includes(`'${lang}'`)) btn.classList.add('active');
         });
 
-        // Use innerHTML to render HTML tags in FAQ answers
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if(translations[lang][key]) el.innerHTML = translations[lang][key];
@@ -213,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     setLanguage(currentLang);
 
-    // --- 4. DROPDOWNS & NAVIGATION ---
     const langDropdown = document.getElementById("lang-dropdown");
     if(langDropdown) {
         langDropdown.querySelector(".dropdown-trigger").addEventListener("click", (e) => { e.stopPropagation(); langDropdown.classList.toggle("active"); });
@@ -235,7 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener('click', (e) => { if (!resumeTrigger.contains(e.target) && !resumeMenu.contains(e.target)) resumeMenu.classList.remove('active'); });
     }
 
-    // --- 5. SPOTLIGHT EFFECT ---
     const cards = document.querySelectorAll('.spotlight-card');
     cards.forEach(card => {
         card.addEventListener('mousemove', e => {
@@ -245,21 +233,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // --- 6. FAQ ACCORDION LOGIC (+ and x icons) ---
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
             
-            // Close all items and reset icons to plus
             faqItems.forEach(faq => {
                 faq.classList.remove('active');
                 const icon = faq.querySelector('.faq-question i');
                 if (icon) icon.className = 'bx bx-plus';
             });
             
-            // Open clicked item and change icon to x
             if (!isActive) {
                 item.classList.add('active');
                 const icon = item.querySelector('.faq-question i');
@@ -268,7 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // --- 7. MODALS & PROJECTS (Home Page Only) ---
     if(document.getElementById("project-modal-2")) {
         const config = {
             projects: {
@@ -359,7 +343,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // --- 8. FORM SUBMISSION ---
     const form = document.getElementById("contact-form");
     if(form) {
         form.addEventListener("submit", async function(e) {
