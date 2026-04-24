@@ -330,71 +330,110 @@
 
     <!-- ELITE FAQ SECTION -->
     <section class="container" id="faq">
-        <div class="faq-layout">
+        <div class="faq-header-centered">
+            <h2 data-i18n="faq_section_title">FREQUENTLY ASKED QUESTIONS</h2>
+            <div class="header-line"></div>
+        </div>
+        
+        <div class="faq-main-box">
             
-            <!-- Left Column: Intro & File Download -->
-            <div class="faq-left" data-aos="fade-right">
-                <h2 data-i18n="section_faq">Frequently Asked Questions</h2>
-                <p class="faq-subtitle" data-i18n="faq_subtitle">Everything you need to know about hiring an international apprentice from Morocco.</p>
-                
-                <!-- The "File Explaining" Card for HR -->
-                <div class="employer-guide-card">
-                    <div class="guide-icon"><i class='bx bxs-file-pdf'></i></div>
-                    <div class="guide-text">
-                        <h4 data-i18n="guide_title">Employer Visa Guide</h4>
-                        <p data-i18n="guide_desc">A quick 1-page HR cheat sheet.</p>
+            <!-- FAQ 1: The Complex Visa Explanation -->
+            <div class="faq-item active">
+                <button class="faq-question">
+                    <span data-i18n="faq_1_q">You live outside the EU. How complicated is the hiring process from Morocco to Germany?</span>
+                    <i class='bx bx-x'></i> <!-- Starts open as an 'x' -->
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <h4 data-i18n="faq_1_intro_title" class="mb-2">A manageable process for employers</h4>
+                        <p data-i18n="faq_1_intro" class="mb-4">I am familiar with this procedure and will take over the applicant side entirely as soon as the employer documents are ready. For companies, this mainly means: choosing the regular or fast-track route and submitting the required documents cleanly once.</p>
+                        
+                        <!-- Visa Options Grid -->
+                        <div class="visa-grid">
+                            <!-- Option 1 -->
+                            <div class="visa-card">
+                                <h4 data-i18n="faq_1_opt1_title">Option 1: Classic Route (§ 36 BeschV)</h4>
+                                <p data-i18n="faq_1_opt1_p1"><strong>1. Your Part: Pre-approval</strong><br>You submit the 'Declaration regarding a contract of employment' and the training contract to your local Agentur für Arbeit. This step is free and takes 2-4 weeks.</p>
+                                <p data-i18n="faq_1_opt1_p2"><strong>2. My Part: Embassy Appointment</strong></p>
+                                <div class="visa-wait" data-i18n="faq_1_opt1_wait">WAITING TIME: 2-4 MONTHS<br><span class="wait-subtext">After your approval, I have to wait for an appointment at the German Embassy in Morocco before I can submit the application.</span></div>
+                            </div>
+
+                            <!-- Option 2 -->
+                            <div class="visa-card">
+                                <h4 data-i18n="faq_1_opt2_title">Option 2: Fast-Track Route (§ 81a AufenthG)</h4>
+                                <p data-i18n="faq_1_opt2_p1"><strong>1. Your Part: Initiate process</strong><br>With my power of attorney, you initiate the process at your local Ausländerbehörde. The fee is €411.</p>
+                                <p data-i18n="faq_1_opt2_p2"><strong>2. My Part: Direct Appointment</strong></p>
+                                <div class="visa-wait" data-i18n="faq_1_opt2_wait">WAITING TIME: WITHIN 3 WEEKS<br><span class="wait-subtext">I receive a guaranteed appointment to submit my application directly. The final decision usually follows within 3 weeks.</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Security & Responsibility -->
+                        <h4 data-i18n="faq_1_sec_title" class="mt-4 mb-2">Your Security and My Responsibility</h4>
+                        <div class="security-callout" data-i18n="faq_1_sec_callout">
+                            <strong>Clear contract regulation:</strong> A standard clause can state that the training contract only becomes effective upon visa issuance. Companies can use their regular HR phrasing for this.
+                        </div>
+                        <p data-i18n="faq_1_sec_p" class="mb-4">As soon as the employer documents are available, I handle the further process on the applicant side: scheduling, document preparation, application submission, and answering queries.</p>
+
+                        <!-- Download Button -->
+                        <a href="resume/Employer_Visa_Guide.pdf" target="_blank" class="download-pdf-btn" data-i18n="faq_1_btn">Download Complete Guide as PDF</a>
+
+                        <!-- Sources -->
+                        <div class="faq-sources">
+                            <h4 data-i18n="faq_1_src_title">Official Sources</h4>
+                            <p class="source-disclaimer" data-i18n="faq_1_src_disclaimer">Status of this information: April 2026. Fees and processing times should additionally be confirmed via the official sources below.</p>
+                            <a href="https://www.make-it-in-germany.com/en/visa-residence/types/vocational-training" target="_blank">Visum zur Ausbildung (Make it in Germany)</a>
+                            <a href="https://www.gesetze-im-internet.de/beschv_2013/__36.html" target="_blank">§ 36 BeschV (Zustimmung der Bundesagentur für Arbeit)</a>
+                            <a href="https://www.gesetze-im-internet.de/aufenthg_2004/__81a.html" target="_blank">§ 81a AufenthG (Beschleunigtes Fachkräfteverfahren)</a>
+                            <a href="https://rabat.diplo.de/ma-de/service/05-VisaEinreise" target="_blank">Deutsche Botschaft Marokko (Visa-Informationen)</a>
+                        </div>
                     </div>
-                    <!-- Create a dummy PDF named 'Employer_Visa_Guide.pdf' in your resume folder later -->
-                    <a href="resume/employe-guide.pdf" target="_blank" class="guide-download-btn" aria-label="Download Guide">
-                        <i class='bx bx-download'></i>
-                    </a>
                 </div>
             </div>
 
-            <!-- Right Column: Accordion -->
-            <div class="faq-right" data-aos="fade-left">
-                
-                <div class="faq-item active">
-                    <button class="faq-question">
-                        <span data-i18n="faq_1_q">How complicated is the visa process for you as an employer?</span>
-                        <i class='bx bx-plus'></i>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner" data-i18n="faq_1_a"></div>
-                    </div>
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n="faq_2_q">Where will you live? We do not offer accommodation. How do you organize that?</span>
+                    <i class='bx bx-plus'></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_2_a">I take full responsibility for my relocation. I have sufficient financial reserves to cover my flights, security deposit, and first few months of rent. To ensure I am ready on day one without stress, I will initially rent a temporary apartment or WG-room before arriving in Germany.</div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span data-i18n="faq_2_q">Who handles your relocation and accommodation?</span>
-                        <i class='bx bx-plus'></i>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner" data-i18n="faq_2_a"></div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span data-i18n="faq_3_q">Is your German sufficient for the vocational school (Berufsschule)?</span>
-                        <i class='bx bx-plus'></i>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner" data-i18n="faq_3_a"></div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span data-i18n="faq_4_q">Why should we hire you instead of a local applicant?</span>
-                        <i class='bx bx-plus'></i>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner" data-i18n="faq_4_a"></div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n="faq_3_q">You previously studied Biology, but are IT-oriented. How does that fit together?</span>
+                    <i class='bx bx-plus'></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_3_a">My university studies in Biology sharpened my analytical thinking, methodology, and ability to handle complex systems. However, my true passion has always been network infrastructure. Switching to my current IT degree and building enterprise-grade home labs (Azure, pfSense) was the best decision to purposefully pursue my career as a System Administrator.</div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n="faq_4_q">Why Germany?</span>
+                    <i class='bx bx-plus'></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_4_a">Germany's dual vocational training system is globally recognized for blending theory with hands-on practice. My goal is to become an elite System Integration Specialist, and learning within a high-standard German IT environment is the best path to achieve that.</div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n="faq_5_q">How good are your German and English skills?</span>
+                    <i class='bx bx-plus'></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_5_a">I hold a solid, certified B1 level in German and am actively taking intensive courses to reach B2 before the apprenticeship begins. Additionally, I speak English at an advanced C1 level, which is extremely valuable for reading technical IT documentation, Cisco manuals, and troubleshooting.</div>
+                </div>
+            </div>
+
         </div>
     </section>
 

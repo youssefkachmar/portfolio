@@ -182,12 +182,63 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .github-btn { font-size: 1.5rem; color: var(--text-muted); }
 .github-btn:hover { color: var(--primary); }
 
-/* --- ELITE FAQ SECTION --- */
-#faq { padding-top: 8rem; padding-bottom: 8rem; border-top: 1px solid var(--border-light); }
-.faq-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: start; }
+/* --- ELITE FAQ BOX SECTION --- */
+#faq { padding-top: 8rem; padding-bottom: 8rem; }
 
-.faq-left h2 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px; text-align: left; }
-.faq-subtitle { font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 3rem; }
+.faq-header-centered { text-align: center; margin-bottom: 3rem; }
+.faq-header-centered h2 { font-size: 2rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; color: var(--primary); }
+.header-line { width: 60px; height: 3px; background: var(--border-hover); margin: 0 auto; }
+
+/* Main Container Box */
+.faq-main-box { max-width: 950px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 1rem 3rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+/* Accordion Items */
+.faq-item { border-bottom: 1px solid var(--border-light); padding: 1.5rem 0; overflow: hidden; }
+.faq-item:last-child { border-bottom: none; }
+
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; background: transparent; border: none; color: var(--primary); font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; cursor: pointer; text-align: left; transition: var(--transition); padding: 0; }
+.faq-question:hover { color: var(--text-muted); }
+.faq-question i { font-size: 1.5rem; color: var(--text-muted); transition: transform 0.3s; }
+
+.faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.faq-answer-inner { overflow: hidden; color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
+
+.faq-item.active .faq-answer { grid-template-rows: 1fr; }
+.faq-item.active .faq-answer-inner { padding-top: 1.5rem; padding-bottom: 0.5rem; }
+.faq-item.active .faq-question i { color: var(--primary); }
+
+/* Utility Spacing */
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mt-4 { margin-top: 1.5rem; }
+
+/* Complex FAQ 1 (Visa Grid) */
+.faq-answer-inner h4 { font-size: 1.1rem; color: var(--primary); }
+.visa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+.visa-card { border: 1px solid var(--border-light); border-radius: 8px; padding: 1.5rem; background: #050505; display: flex; flex-direction: column; }
+.visa-card p { margin-bottom: 1rem; }
+.visa-card strong { color: var(--primary); }
+
+.visa-wait { margin-top: auto; font-weight: 800; font-family: var(--font-heading); font-size: 1rem; color: var(--primary); letter-spacing: 0.5px; }
+.wait-subtext { font-size: 0.85rem; font-style: italic; font-weight: normal; color: var(--text-muted); font-family: var(--font-body); display: block; margin-top: 0.5rem; text-transform: none; letter-spacing: 0; }
+
+.security-callout { border-left: 3px solid var(--border-hover); padding: 1rem 1.5rem; background: rgba(255,255,255,0.02); margin: 1rem 0; font-style: italic; border-radius: 0 8px 8px 0; }
+.security-callout strong { color: var(--primary); font-style: normal; }
+
+/* Download Button */
+.download-pdf-btn { display: block; width: 100%; text-align: center; padding: 1rem; background: #111; border: 1px solid var(--border-light); color: var(--primary); font-weight: 600; border-radius: 8px; text-decoration: underline; margin: 2.5rem 0; transition: var(--transition); }
+.download-pdf-btn:hover { background: #1a1a1a; border-color: var(--border-hover); color: var(--primary); }
+
+/* Sources */
+.faq-sources { border-top: 1px solid var(--border-light); padding-top: 1.5rem; }
+.source-disclaimer { font-size: 0.85rem; font-style: italic; margin-bottom: 1rem; }
+.faq-sources a { display: block; color: var(--text-muted); font-size: 0.85rem; text-decoration: underline; margin-bottom: 0.5rem; transition: 0.2s; }
+.faq-sources a:hover { color: var(--primary); }
+
+@media (max-width: 800px) {
+    .faq-main-box { padding: 1rem 1.5rem; }
+    .visa-grid { grid-template-columns: 1fr; }
+}
 
 /* The HR PDF Download Card */
 .employer-guide-card { display: flex; align-items: center; gap: 1.2rem; background: var(--bg-card); border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 12px; transition: var(--transition); }

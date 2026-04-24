@@ -55,25 +55,38 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Certifications", status_earned: "Earned", status_progress: "In Progress", btn_verify: "Verify", btn_view_cert: "Certificate",
             section_projects: "Featured Projects", proj_1_title: "Secure Azure Cloud Network", proj_1_desc: "A complex Azure implementation featuring pfSense, Suricata IPS, and Active Directory.", proj_2_title: "Network Automation", proj_2_desc: "Python scripts for automating device configuration and network discovery.", btn_details: "View Details",
             
-            // --- DETAILED FAQ (ENGLISH) ---
-            section_faq: "Frequently Asked Questions",
-            faq_subtitle: "Everything you need to know about hiring an international apprentice from Morocco.",
-            guide_title: "Employer Visa Guide",
-            guide_desc: "A quick 1-page HR cheat sheet.",
-            
-            faq_1_q: "How complicated is the visa process for you as an employer?", 
-            faq_1_a: "It is much simpler than most think. Using the <strong>Fast-Track Procedure for Skilled Workers (§ 81a AufenthG)</strong>, you can initiate the process at your local Foreigners' Authority (Ausländerbehörde). I only need the signed training contract and the 'Declaration regarding a contract of employment' (Erklärung zum Beschäftigungsverhältnis). I handle the embassy appointment and paperwork entirely on my own.",
-            
-            faq_2_q: "Who handles your relocation and accommodation?", 
+            // FAQ SECTION
+            faq_section_title: "FREQUENTLY ASKED QUESTIONS",
+            faq_1_q: "You live outside the EU. How complicated is the hiring process from Morocco to Germany?",
+            faq_1_intro_title: "A manageable process for employers",
+            faq_1_intro: "I am familiar with this procedure and will take over the applicant side entirely as soon as the employer documents are ready. For companies, this mainly means: choosing the regular or fast-track route and submitting the required documents cleanly once.",
+            faq_1_opt1_title: "Option 1: Classic Route (§ 36 BeschV)",
+            faq_1_opt1_p1: "<strong>1. Your Part: Pre-approval</strong><br>You submit the 'Declaration regarding a contract of employment' and the training contract to your local Agentur für Arbeit. This step is free and takes 2-4 weeks.",
+            faq_1_opt1_p2: "<strong>2. My Part: Embassy Appointment</strong>",
+            faq_1_opt1_wait: "WAITING TIME: 2-4 MONTHS<br><span class='wait-subtext'>After your approval, I have to wait for an appointment at the German Embassy in Morocco before I can submit the application.</span>",
+            faq_1_opt2_title: "Option 2: Fast-Track Route (§ 81a AufenthG)",
+            faq_1_opt2_p1: "<strong>1. Your Part: Initiate process</strong><br>With my power of attorney, you initiate the process at your local Ausländerbehörde. They become your central contact. The fee is €411.",
+            faq_1_opt2_p2: "<strong>2. My Part: Direct Appointment</strong>",
+            faq_1_opt2_wait: "WAITING TIME: WITHIN 3 WEEKS<br><span class='wait-subtext'>I receive a guaranteed appointment to submit my application directly. The final decision usually follows within 3 more weeks.</span>",
+            faq_1_sec_title: "Your Security and My Responsibility",
+            faq_1_sec_callout: "<strong>Clear contract regulation:</strong> A standard clause can state that the training contract only becomes effective upon visa issuance. Companies can use their regular HR or legal phrasing for this.",
+            faq_1_sec_p: "As soon as the employer documents are available, I handle the further process on the applicant side: scheduling, document preparation, application submission, and answering queries.",
+            faq_1_btn: "Download Complete Guide as PDF",
+            faq_1_src_title: "Official Sources",
+            faq_1_src_disclaimer: "Status of this information: April 2026. Fees and processing times should additionally be confirmed via the official sources below.",
+            faq_2_q: "Where will you live? We do not offer accommodation. How do you organize that?",
             faq_2_a: "I take full responsibility for my relocation. I have sufficient financial reserves to cover my flights, security deposit, and first few months of rent. To ensure I am ready on day one without stress, I will initially rent a temporary apartment or WG-room before arriving in Germany.",
+            faq_3_q: "You previously studied Biology, but are IT-oriented. How does that fit together?",
+            faq_3_a: "My university studies in Biology sharpened my analytical thinking, methodology, and ability to handle complex systems. However, my true passion has always been network infrastructure. Switching to my current IT degree and building enterprise-grade home labs (Azure, pfSense) was the best decision to purposefully pursue my career as a System Administrator.",
+            faq_4_q: "Why Germany?",
+            faq_4_a: "Germany's dual vocational training system is globally recognized for blending theory with hands-on practice. My goal is to become an elite System Integration Specialist, and learning within a high-standard German IT environment is the best path to achieve that.",
+            faq_5_q: "How good are your German and English skills?",
+            faq_5_a: "I hold a solid, certified B1 level in German and am actively taking intensive courses to reach B2 before the apprenticeship begins. Additionally, I speak English at an advanced C1 level, which is extremely valuable for reading technical IT documentation, Cisco manuals, and troubleshooting.",
+
+            section_contact: "Let's Connect", contact_desc: "I am currently looking for internship and apprenticeship opportunities.", btn_send: "Send Message",
             
-            faq_3_q: "Is your German sufficient for the vocational school (Berufsschule)?", 
-            faq_3_a: "Yes. I hold an official <strong>B1 German certificate</strong> and am intensively studying to reach B2 before the apprenticeship begins. Furthermore, since the IT industry relies heavily on English (which I speak fluently at a C1 level), I have no issues reading technical documentation, configuring systems, or communicating technical concepts.",
-            
-            faq_4_q: "Why should we hire you instead of a local applicant?", 
-            faq_4_a: "Because I do not start from zero. Unlike a typical high school graduate, I already possess practical IT experience from internships, hold a <strong>Cisco CCNA training background</strong>, and independently build enterprise-grade network architectures (Azure, pfSense, Active Directory) in my home lab. I am highly motivated to bring real value to your infrastructure team immediately.",
-            
-            section_contact: "Let's Connect", contact_desc: "I am currently looking for internship and apprenticeship opportunities.", btn_send: "Send Message"
+            // PROJECT PAGE
+            proj_badge: "Enterprise Cloud Architecture", proj_title: "Secure Azure Cloud Infrastructure", proj_subtitle: "A comprehensive, zero-trust cloud network deployment on Microsoft Azure featuring strict Hub-and-Spoke segmentation, IDS/IPS threat detection, and centralized SIEM monitoring.", proj_repo: "View Repository", proj_role_label: "Role", proj_role_val: "Network Architect", proj_env_label: "Environment", proj_env_val: "Microsoft Azure IaaS", proj_sec_label: "Security Model", proj_sec_val: "Zero-Trust / Hub-and-Spoke", proj_s1_title: "Strict Traffic Control & UDRs", proj_s1_p1: "To completely eliminate the vulnerabilities of a flat network, the architecture is strictly segmented into dedicated subnets: AD/DNS, Web, Client, VoIP, and Management.", proj_s1_p2: "Using Azure User Defined Routes (UDRs), all outbound and inter-subnet traffic is forcefully funneled through the central pfSense Network Virtual Appliance (NVA). No internal machine can bypass the firewall.", proj_s2_title: "Central Security Gateway", proj_s2_p1: "The pfSense Firewall acts as the absolute core of the security perimeter.", proj_s2_p2: "It handles highly granular LAN/WAN filtering, Network Address Translation (NAT) for outbound traffic, and provisions a secure OpenVPN tunnel for remote administration. This ensures root access is never exposed to the public internet.", proj_s3_title: "Identity & Reverse Proxy", proj_s3_p1: "A Windows Server instance runs Active Directory (AD DS) to centralize IAM and handle local DNS resolution across the entire virtual network.", proj_s3_p2: "For externally facing services, internal Nginx web servers are securely published using HAProxy. This handles SSL-offloading at the edge and obfuscates internal IP structures from end-users.", proj_s4_title: "Full SOC Observability & IDS/IPS", proj_s4_p1: "A modern network is blind without monitoring. To defend the perimeter dynamically, Suricata (IDS/IPS) analyzes network flows to detect and block malicious signatures, actively mitigating simulated Nmap port scans.", proj_s4_p2: "Total visibility is maintained using Zabbix for real-time hardware monitoring, while Wazuh (SIEM/HIDS) aggregates system logs into a comprehensive Security Operations Center.", proj_tech_stack: "Technology Stack"
         },
         de: {
             nav_home: "Startseite", nav_edu: "Bildung", nav_exp: "Erfahrung", nav_competence: "Kompetenzen", nav_certs: "Zertifikate", nav_projects: "Projekte", nav_contact: "Kontakt", nav_faq: "FAQ",
@@ -86,25 +99,38 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Zertifizierungen", status_earned: "Erhalten", status_progress: "In Bearbeitung", btn_verify: "Verifizieren", btn_view_cert: "Zertifikat",
             section_projects: "Ausgewählte Projekte", proj_1_title: "Sicheres Azure Cloud Netzwerk", proj_1_desc: "Eine komplexe Azure-Implementierung mit pfSense, Suricata IPS und Active Directory.", proj_2_title: "Netzwerkautomatisierung", proj_2_desc: "Python-Skripte zur Automatisierung der Gerätekonfiguration.", btn_details: "Details",
             
-            // --- DETAILED FAQ (GERMAN) ---
-            section_faq: "Häufig Gestellte Fragen",
-            faq_subtitle: "Alles, was Sie über die Einstellung eines internationalen Auszubildenden aus Marokko wissen müssen.",
-            guide_title: "Visum-Leitfaden (Arbeitgeber)",
-            guide_desc: "Ein kompaktes 1-Seiten PDF für Ihre HR.",
+            // FAQ SECTION
+            faq_section_title: "HÄUFIG GESTELLTE FRAGEN",
+            faq_1_q: "Sie leben nicht in der EU. Wie kompliziert ist der Einstellungsprozess von Marokko bis Deutschland?",
+            faq_1_intro_title: "Ein ueberschaubarer Arbeitgeberprozess",
+            faq_1_intro: "Ich kenne dieses Verfahren bereits und uebernehme die Antragsteller-Seite selbst, sobald die Arbeitgeberunterlagen bereit sind. Fuer Unternehmen bedeutet das vor allem: den regulaeren oder den beschleunigten Weg waehlen und die benoetigten Dokumente einmal sauber einreichen.",
+            faq_1_opt1_title: "Option 1: Klassischer Weg (§ 36 BeschV)",
+            faq_1_opt1_p1: "<strong>1. Ihr Part: Vorabzustimmung</strong><br>Sie reichen das Formular „Erklärung zum Beschäftigungsverhältnis“ und den Ausbildungsvertrag bei Ihrer lokalen Agentur für Arbeit ein. Dieser Schritt ist kostenfrei und dauert 2-4 Wochen.",
+            faq_1_opt1_p2: "<strong>2. Mein Part: Termin bei der Botschaft</strong>",
+            faq_1_opt1_wait: "WARTEZEIT: 2-4 MONATE<br><span class='wait-subtext'>Nach Ihrer Zustimmung muss ich auf einen Termin von der Deutschen Botschaft in Marokko warten, bevor ich den Antrag stellen kann.</span>",
+            faq_1_opt2_title: "Option 2: Beschleunigter Weg (§ 81a AufenthG)",
+            faq_1_opt2_p1: "<strong>1. Ihr Part: Verfahren anstoßen</strong><br>Mit meiner Vollmacht leiten Sie das Verfahren bei Ihrer lokalen Ausländerbehörde ein. Die Behörde wird Ihr zentraler Ansprechpartner. Die Gebühr beträgt 411€.",
+            faq_1_opt2_p2: "<strong>2. Mein Part: Direkter Termin</strong>",
+            faq_1_opt2_wait: "WARTEZEIT: INNERHALB VON 3 WOCHEN<br><span class='wait-subtext'>Ich erhalte einen garantierten Termin, um meinen Antrag direkt einzureichen. Die finale Entscheidung erfolgt meist innerhalb von 3 weiteren Wochen.</span>",
+            faq_1_sec_title: "Ihre Sicherheit und Meine Verantwortung",
+            faq_1_sec_callout: "<strong>Klare Vertragsregelung:</strong> Eine uebliche Klausel kann festhalten, dass der Ausbildungsvertrag mit Visumerteilung wirksam wird. Unternehmen koennen dafuer ihre regulaere HR- oder Rechtsformulierung verwenden.",
+            faq_1_sec_p: "Sobald die Arbeitgeberunterlagen vorliegen, uebernehme ich den weiteren Ablauf auf Antragstellerseite: Terminorganisation, Dokumentenaufbereitung, Antragstellung und Rueckfragen.",
+            faq_1_btn: "Vollständigen Leitfaden als PDF herunterladen",
+            faq_1_src_title: "Offizielle Quellen",
+            faq_1_src_disclaimer: "Stand dieser Angaben auf der Website: April 2026. Gebühren und Bearbeitungszeiten sollten zusätzlich über die offiziellen Quellen unten bestätigt werden.",
+            faq_2_q: "Wo werden Sie wohnen? Wir bieten keine Unterkunft an. Wie organisieren Sie das?",
+            faq_2_a: "Ich kümmere mich komplett eigenständig um meine Unterkunft. Ich habe ausreichend finanzielle Rücklagen gebildet, um die Kaution, die ersten Mieten und meine Flugkosten selbst zu tragen. Um am ersten Arbeitstag stressfrei vor Ort zu sein, werde ich für die Anfangszeit eine temporäre Unterkunft (z.B. WG oder möbliertes Apartment) anmieten.",
+            faq_3_q: "Sie haben zuvor Biologie studiert, sind aber IT-orientiert. Wie passt das zusammen?",
+            faq_3_a: "Das Biologiestudium hat mein analytisches Denken, meine strukturierte Arbeitsweise und mein Verständnis für komplexe Systeme geschärft. Meine wahre Leidenschaft war jedoch schon immer die IT-Infrastruktur. Der Wechsel in meine aktuelle IT-Ausbildung und der Aufbau meiner Azure/pfSense-Labs war die beste Entscheidung, um meine Karriere als Systemadministrator zielstrebig zu verfolgen.",
+            faq_4_q: "Warum Deutschland?",
+            faq_4_a: "Das duale Ausbildungssystem in Deutschland ist weltweit für die Kombination aus Theorie und Praxis anerkannt. Mein Ziel ist es, ein hervorragender Fachinformatiker für Systemintegration zu werden. Die Ausbildung in einem deutschen IT-Unternehmen bietet dafür die perfekten Rahmenbedingungen.",
+            faq_5_q: "Wie gut sind Ihre Deutsch- und Englischkenntnisse?",
+            faq_5_a: "Ich verfüge über ein solides, zertifiziertes B1-Niveau in Deutsch und lerne bereits intensiv für B2, um bis zum Ausbildungsbeginn eine reibungslose Kommunikation im Betrieb sicherzustellen. Zudem spreche ich Englisch auf C1-Niveau, was mir beim Lesen von technischen Dokumentationen, Cisco-Handbüchern und bei der Fehlerbehebung extrem hilft.",
+
+            section_contact: "Lassen Sie uns verbinden", contact_desc: "Ich suche derzeit nach Praktikums- und Ausbildungsplätzen.", btn_send: "Nachricht Senden",
             
-            faq_1_q: "Wie kompliziert ist der Visumprozess für Sie als Arbeitgeber?", 
-            faq_1_a: "Einfacher als oft gedacht. Über das <strong>beschleunigte Fachkräfteverfahren (§ 81a AufenthG)</strong> können Sie den Prozess bei Ihrer Ausländerbehörde anstoßen. Ich benötige von Ihnen lediglich den unterschriebenen Ausbildungsvertrag und die 'Erklärung zum Beschäftigungsverhältnis'. Den eigentlichen Visumantrag und den Botschaftstermin übernehme ich komplett selbstständig.",
-            
-            faq_2_q: "Wer kümmert sich um Ihren Umzug und die Wohnungssuche?", 
-            faq_2_a: "Das übernehme ich zu 100 % selbst. Ich habe ausreichend Ersparnisse, um Flüge, Kaution und die ersten Mieten zu finanzieren. Um am ersten Arbeitstag stressfrei und pünktlich vor Ort zu sein, werde ich für die Anfangszeit eine temporäre Unterkunft (z.B. WG oder möbliertes Apartment) anmieten. Für Sie entsteht hier kein Aufwand.",
-            
-            faq_3_q: "Reicht Ihr Deutsch für den Arbeits- und Berufsschulalltag?", 
-            faq_3_a: "Ja. Ich verfüge über ein <strong>zertifiziertes B1-Niveau</strong> und lerne bereits intensiv für B2, um bis zum Start fließend kommunizieren zu können. Da die IT-Infrastruktur ohnehin stark englisch geprägt ist (und ich Englisch auf <strong>C1-Niveau</strong> spreche), fällt es mir leicht, technische Dokumentationen zu lesen und Systeme zu administrieren.",
-            
-            faq_4_q: "Warum sollten wir Sie anstelle eines lokalen Bewerbers einstellen?", 
-            faq_4_a: "Weil ich nicht bei Null anfange. Im Gegensatz zu einem regulären Schulabgänger bringe ich bereits praktische IT-Erfahrung aus Praktika mit, besitze fundiertes Wissen aus dem <strong>Cisco CCNA Training</strong> und baue in meiner Freizeit komplexe Enterprise-Netzwerke (Azure, pfSense, Active Directory) in meinem Home Lab. Ich bin hochmotiviert, vom ersten Tag an einen echten Mehrwert für Ihr Infrastruktur-Team zu leisten.",
-            
-            section_contact: "Lassen Sie uns verbinden", contact_desc: "Ich suche derzeit nach Praktikums- und Ausbildungsplätzen.", btn_send: "Nachricht Senden"
+            // PROJECT PAGE
+            proj_badge: "Enterprise Cloud Architektur", proj_title: "Sichere Azure Cloud Infrastruktur", proj_subtitle: "Eine umfassende Zero-Trust-Cloud-Netzwerkbereitstellung auf Microsoft Azure mit strenger Hub-and-Spoke-Segmentierung, IDS/IPS-Bedrohungserkennung und zentralisierter SIEM-Überwachung.", proj_repo: "Repository Ansehen", proj_role_label: "Rolle", proj_role_val: "Netzwerkarchitekt", proj_env_label: "Umgebung", proj_env_val: "Microsoft Azure IaaS", proj_sec_label: "Sicherheitsmodell", proj_sec_val: "Zero-Trust / Hub-and-Spoke", proj_s1_title: "Strenge Verkehrskontrolle & UDRs", proj_s1_p1: "Um die Schwachstellen eines flachen Netzwerks vollständig zu beseitigen, ist die Architektur strikt in dedizierte Subnetze unterteilt: AD/DNS, Web, Client, VoIP und Management.", proj_s1_p2: "Mithilfe von Azure User Defined Routes (UDRs) wird der gesamte ausgehende und Inter-Subnetz-Verkehr zwingend durch die zentrale pfSense-Firewall geleitet. Keine interne Maschine kann die Firewall umgehen.", proj_s2_title: "Zentrales Sicherheits-Gateway", proj_s2_p1: "Die pfSense-Firewall fungiert als absoluter Kern des Sicherheitsperimeters.", proj_s2_p2: "Sie übernimmt hochgranulare LAN/WAN-Filterung, Network Address Translation (NAT) für ausgehenden Datenverkehr und stellt einen sicheren OpenVPN-Tunnel für die Fernadministration bereit. Dies stellt sicher, dass der Root-Zugriff niemals dem öffentlichen Internet ausgesetzt ist.", proj_s3_title: "Identität & Reverse Proxy", proj_s3_p1: "Eine Windows Server-Instanz führt Active Directory (AD DS) aus, um das IAM zu zentralisieren und die lokale DNS-Auflösung im gesamten virtuellen Netzwerk abzuwickeln.", proj_s3_p2: "Für nach außen gerichtete Dienste werden interne Nginx-Webserver sicher über HAProxy veröffentlicht. Dies übernimmt das SSL-Offloading am Edge und verbirgt interne IP-Strukturen vor Endbenutzern.", proj_s4_title: "Vollständige SOC-Überwachung & IDS/IPS", proj_s4_p1: "Ein modernes Netzwerk ist ohne Überwachung blind. Um den Perimeter dynamisch zu verteidigen, analysiert Suricata (IDS/IPS) Netzwerkströme, um bösartige Signaturen zu erkennen und zu blockieren.", proj_s4_p2: "Die vollständige Transparenz wird durch Zabbix für die Echtzeit-Hardwareüberwachung aufrechterhalten, während Wazuh (SIEM/HIDS) Systemprotokolle in einem umfassenden Security Operations Center aggregiert.", proj_tech_stack: "Technologie-Stack"
         },
         fr: {
             nav_home: "Accueil", nav_edu: "Éducation", nav_exp: "Expérience", nav_competence: "Compétences", nav_certs: "Certs", nav_projects: "Projets", nav_contact: "Contact", nav_faq: "FAQ",
@@ -117,25 +143,38 @@ document.addEventListener("DOMContentLoaded", function () {
             section_certs: "Certifications", status_earned: "Obtenu", status_progress: "En Cours", btn_verify: "Vérifier", btn_view_cert: "Certificat",
             section_projects: "Projets Phares", proj_1_title: "Réseau Cloud Azure Sécurisé", proj_1_desc: "Une implémentation Azure complexe avec pfSense, Suricata IPS et Active Directory.", proj_2_title: "Automatisation Réseau", proj_2_desc: "Scripts Python pour automatiser la configuration des appareils.", btn_details: "Voir Détails",
             
-            // --- DETAILED FAQ (FRENCH) ---
-            section_faq: "Foire Aux Questions",
-            faq_subtitle: "Tout ce que vous devez savoir sur le recrutement d'un apprenti international.",
-            guide_title: "Guide Visa Employeur",
-            guide_desc: "Document résumé (1 page) pour les RH.",
-            
-            faq_1_q: "Le processus de visa est-il compliqué pour l'employeur ?", 
-            faq_1_a: "Le processus est très encadré. Grâce à la <strong>procédure accélérée (§ 81a AufenthG)</strong>, vous pouvez initier la démarche auprès du bureau des étrangers local. Je n'ai besoin que de votre part du contrat d'apprentissage signé et du formulaire de déclaration d'emploi. Je gère ma demande de visa de manière totalement autonome.",
-            
-            faq_2_q: "Qui s'occupe de votre logement et relocalisation ?", 
-            faq_2_a: "Je prends entièrement en charge ma relocalisation. J'ai des réserves financières suffisantes pour le vol, la caution et les premiers loyers. Je louerai initialement un logement temporaire pour être prêt et sans stress dès mon premier jour de travail.",
-            
-            faq_3_q: "Votre allemand est-il suffisant pour l'école professionnelle ?", 
-            faq_3_a: "Oui. J'ai un <strong>niveau B1 certifié</strong> et je prépare activement le niveau B2 pour assurer une communication fluide. De plus, le domaine informatique reposant beaucoup sur l'anglais (que je parle couramment au <strong>niveau C1</strong>), je n'ai aucune difficulté à lire la documentation technique.",
-            
-            faq_4_q: "Pourquoi vous embaucher plutôt qu'un candidat local ?", 
-            faq_4_a: "Parce que je ne pars pas de zéro. Je possède déjà une expérience pratique via des stages en informatique, j'ai suivi la <strong>formation Cisco CCNA</strong>, et je construis de manière autonome des infrastructures réseau (Azure, pfSense, AD) dans mon laboratoire personnel. Je suis très motivé à apporter une réelle valeur ajoutée à votre équipe dès le premier jour.",
+            // FAQ SECTION
+            faq_section_title: "FOIRE AUX QUESTIONS",
+            faq_1_q: "Vous résidez hors de l'UE. Le processus de recrutement depuis le Maroc est-il compliqué ?",
+            faq_1_intro_title: "Un processus gérable pour les employeurs",
+            faq_1_intro: "Je connais bien cette procédure et je prends entièrement en charge la partie demandeur dès que les documents de l'employeur sont prêts. Pour les entreprises, cela signifie principalement : choisir la voie normale ou accélérée et soumettre les documents requis.",
+            faq_1_opt1_title: "Option 1 : Voie Classique (§ 36 BeschV)",
+            faq_1_opt1_p1: "<strong>1. Votre Partie : Approbation préalable</strong><br>Vous soumettez la déclaration d'emploi et le contrat d'apprentissage à votre Agentur für Arbeit locale. Cette étape est gratuite et prend 2 à 4 semaines.",
+            faq_1_opt1_p2: "<strong>2. Ma Partie : Rendez-vous à l'ambassade</strong>",
+            faq_1_opt1_wait: "TEMPS D'ATTENTE : 2-4 MOIS<br><span class='wait-subtext'>Après votre approbation, je dois attendre un rendez-vous à l'ambassade d'Allemagne au Maroc avant de pouvoir soumettre ma demande.</span>",
+            faq_1_opt2_title: "Option 2 : Voie Accélérée (§ 81a AufenthG)",
+            faq_1_opt2_p1: "<strong>1. Votre Partie : Initier le processus</strong><br>Avec ma procuration, vous initiez le processus auprès de votre Ausländerbehörde locale. Les frais sont de 411 €.",
+            faq_1_opt2_p2: "<strong>2. Ma Partie : Rendez-vous direct</strong>",
+            faq_1_opt2_wait: "TEMPS D'ATTENTE : MOINS DE 3 SEMAINES<br><span class='wait-subtext'>Je reçois un rendez-vous garanti pour soumettre directement ma demande. La décision finale suit généralement dans les 3 semaines.</span>",
+            faq_1_sec_title: "Votre sécurité et ma responsabilité",
+            faq_1_sec_callout: "<strong>Réglementation claire du contrat :</strong> Une clause standard peut stipuler que le contrat de formation ne prend effet qu'à la délivrance du visa.",
+            faq_1_sec_p: "Dès que les documents de l'employeur sont disponibles, je m'occupe de la suite : prise de rendez-vous, préparation des documents, et soumission de la demande.",
+            faq_1_btn: "Télécharger le Guide Complet (PDF)",
+            faq_1_src_title: "Sources Officielles",
+            faq_1_src_disclaimer: "État de ces informations : Avril 2026. Les frais et délais de traitement doivent également être confirmés via les sources officielles ci-dessous.",
+            faq_2_q: "Où allez-vous vivre ? Nous ne proposons pas de logement. Comment organisez-vous cela ?",
+            faq_2_a: "Je prends l'entière responsabilité de mon déménagement. J'ai des réserves financières suffisantes pour le vol, la caution et les premiers loyers. Je louerai initialement un logement temporaire (ex: colocation) pour être prêt et sans stress dès mon premier jour.",
+            faq_3_q: "Vous avez étudié la biologie, mais vous êtes orienté informatique. Comment cela s'accorde-t-il ?",
+            faq_3_a: "Mes études en biologie ont aiguisé mon esprit analytique et ma compréhension des systèmes complexes. Cependant, ma véritable passion a toujours été l'infrastructure réseau. Intégrer ma formation IT actuelle et construire mes propres labs (Azure, pfSense) a été la meilleure décision pour ma carrière.",
+            faq_4_q: "Pourquoi l'Allemagne ?",
+            faq_4_a: "Le système de formation en alternance en Allemagne est mondialement reconnu. Mon objectif est de devenir un spécialiste en intégration de systèmes de haut niveau, et me former dans un environnement informatique allemand est la meilleure voie pour y parvenir.",
+            faq_5_q: "Quel est votre niveau en allemand et en anglais ?",
+            faq_5_a: "J'ai un niveau B1 certifié en allemand et je prépare activement le niveau B2 pour garantir une communication fluide. De plus, je parle couramment anglais au niveau C1, ce qui m'aide énormément à lire la documentation technique, les manuels Cisco et à résoudre les problèmes IT.",
 
-            section_contact: "Connectons-nous", contact_desc: "Je suis actuellement à la recherche d'opportunités de stage et d'apprentissage.", btn_send: "Envoyer"
+            section_contact: "Connectons-nous", contact_desc: "Je suis actuellement à la recherche d'opportunités de stage et d'apprentissage.", btn_send: "Envoyer",
+            
+            // PROJECT PAGE
+            proj_badge: "Architecture Cloud d'Entreprise", proj_title: "Infrastructure Cloud Azure Sécurisée", proj_subtitle: "Un déploiement réseau cloud complet et zéro-confiance sur Microsoft Azure avec une segmentation stricte Hub-and-Spoke, une détection des menaces IDS/IPS et une surveillance SIEM centralisée.", proj_repo: "Voir le Dépôt", proj_role_label: "Rôle", proj_role_val: "Architecte Réseau", proj_env_label: "Environnement", proj_env_val: "Microsoft Azure IaaS", proj_sec_label: "Modèle de Sécurité", proj_sec_val: "Zéro Confiance / Hub-and-Spoke", proj_s1_title: "Contrôle Strict du Trafic & UDRs", proj_s1_p1: "Pour éliminer complètement les vulnérabilités d'un réseau plat, l'architecture est strictement segmentée en sous-réseaux dédiés : AD/DNS, Web, Client, VoIP et Management.", proj_s1_p2: "Grâce aux User Defined Routes (UDR) d'Azure, tout le trafic sortant et inter-sous-réseaux est obligatoirement acheminé via le pare-feu central pfSense. Aucune machine interne ne peut contourner le pare-feu.", proj_s2_title: "Passerelle de Sécurité Centrale", proj_s2_p1: "Le pare-feu pfSense agit comme le cœur absolu du périmètre de sécurité.", proj_s2_p2: "Il gère un filtrage LAN/WAN très granulaire, la traduction d'adresses réseau (NAT) pour le trafic sortant et fournit un tunnel OpenVPN sécurisé pour l'administration à distance.", proj_s3_title: "Identité & Proxy Inverse", proj_s3_p1: "Une instance Windows Server exécute Active Directory (AD DS) pour centraliser l'IAM et gérer la résolution DNS locale sur l'ensemble du réseau virtuel.", proj_s3_p2: "Pour les services exposés à l'extérieur, les serveurs web Nginx internes sont publiés en toute sécurité via HAProxy. Cela gère le déchargement SSL à la périphérie et masque les structures IP internes.", proj_s4_title: "Observabilité Complète du SOC & IDS/IPS", proj_s4_p1: "Un réseau moderne est aveugle sans surveillance. Pour défendre dynamiquement le périmètre, Suricata (IDS/IPS) analyse les flux réseau pour détecter et bloquer les signatures malveillantes.", proj_s4_p2: "La visibilité totale est maintenue grâce à Zabbix pour la surveillance matérielle en temps réel, tandis que Wazuh (SIEM/HIDS) agrège les journaux système dans un centre des opérations de sécurité complet.", proj_tech_stack: "Stack Technologique"
         }
     };
     
@@ -162,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if(btn.getAttribute('onclick').includes(`'${lang}'`)) btn.classList.add('active');
         });
 
-        // IMPORTANT FIX: Using innerHTML so <strong> and <br> tags in FAQ render correctly!
+        // Use innerHTML to render HTML tags in FAQ answers
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if(translations[lang][key]) el.innerHTML = translations[lang][key];
@@ -206,19 +245,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // --- 6. FAQ ACCORDION LOGIC ---
+    // --- 6. FAQ ACCORDION LOGIC (+ and x icons) ---
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
             
-            // Close all items
-            faqItems.forEach(faq => faq.classList.remove('active'));
+            // Close all items and reset icons to plus
+            faqItems.forEach(faq => {
+                faq.classList.remove('active');
+                const icon = faq.querySelector('.faq-question i');
+                if (icon) icon.className = 'bx bx-plus';
+            });
             
-            // Open clicked item if it wasn't already open
+            // Open clicked item and change icon to x
             if (!isActive) {
                 item.classList.add('active');
+                const icon = item.querySelector('.faq-question i');
+                if (icon) icon.className = 'bx bx-x';
             }
         });
     });
