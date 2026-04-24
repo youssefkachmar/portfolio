@@ -182,16 +182,43 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .github-btn { font-size: 1.5rem; color: var(--text-muted); }
 .github-btn:hover { color: var(--primary); }
 
-/* FAQ SECTION */
-.faq-container { display: flex; flex-direction: column; gap: 1rem; }
-.faq-item { background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-light); overflow: hidden; transition: var(--transition); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; background: transparent; border: none; color: var(--primary); font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; cursor: pointer; text-align: left; transition: var(--transition); }
+/* --- ELITE FAQ SECTION --- */
+#faq { padding-top: 8rem; padding-bottom: 8rem; border-top: 1px solid var(--border-light); }
+.faq-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: start; }
+
+.faq-left h2 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px; text-align: left; }
+.faq-subtitle { font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 3rem; }
+
+/* The HR PDF Download Card */
+.employer-guide-card { display: flex; align-items: center; gap: 1.2rem; background: var(--bg-card); border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 12px; transition: var(--transition); }
+.employer-guide-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+.guide-icon { width: 50px; height: 50px; background: rgba(255,255,255,0.05); color: #ff5f56; font-size: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+.guide-text h4 { font-size: 1.1rem; margin-bottom: 0.2rem; color: var(--primary); }
+.guide-text p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+.guide-download-btn { margin-left: auto; background: var(--primary); color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: var(--transition); }
+.guide-download-btn:hover { transform: scale(1.1); }
+
+/* Minimalist Accordion List */
+.faq-right { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border-light); padding: 1.5rem 0; overflow: hidden; }
+.faq-item:first-child { border-top: 1px solid var(--border-light); }
+
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; background: transparent; border: none; color: var(--primary); font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; cursor: pointer; text-align: left; transition: var(--transition); padding: 0; letter-spacing: -0.5px; }
 .faq-question:hover { color: var(--text-muted); }
-.faq-question i { font-size: 1.5rem; color: var(--text-muted); transition: transform 0.3s ease; }
-.faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; padding: 0 2rem; }
-.faq-answer-inner { overflow: hidden; color: var(--text-muted); line-height: 1.6; }
-.faq-item.active .faq-answer { grid-template-rows: 1fr; padding-bottom: 1.5rem; }
-.faq-item.active .faq-question i { transform: rotate(180deg); color: var(--primary); }
+.faq-question i { font-size: 1.8rem; color: var(--text-muted); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.faq-answer-inner { overflow: hidden; color: var(--text-muted); line-height: 1.7; font-size: 1.05rem; }
+.faq-answer-inner strong { color: var(--primary); font-weight: 600; }
+
+.faq-item.active .faq-answer { grid-template-rows: 1fr; }
+.faq-item.active .faq-answer-inner { padding-top: 1.5rem; padding-bottom: 0.5rem; }
+.faq-item.active .faq-question i { transform: rotate(45deg); color: var(--primary); }
+
+@media (max-width: 950px) {
+    .faq-layout { grid-template-columns: 1fr; gap: 4rem; }
+    .faq-left h2 { font-size: 3rem; }
+}
 
 /* CONTACT */
 .contact-card { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding: 4rem; align-items: center; }
