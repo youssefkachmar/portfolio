@@ -42,16 +42,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const translations = {
         en: {
-            nav_home: "Home", nav_edu: "Education", nav_exp: "Experience", nav_competence: "Competence", nav_certs: "Certs", nav_projects: "Projects", nav_contact: "Contact", nav_faq: "FAQ",
+            nav_home: "Home", nav_edu: "Education", nav_exp: "Experience", nav_competence: "Competences", nav_certs: "Certs", nav_projects: "Projects", nav_contact: "Contact", nav_faq: "FAQ",
             hero_badge: "Network & Systems Student", hero_title: "Future Admin.",
             hero_desc: "A 20-year-old aspiring IT Specialist for System Integration with a solid technical foundation in computer systems and advanced networking. Combining hands-on experience in virtualization and network architecture with a dedicated work ethic, I am eager to apply my skills within a professional apprenticeship in Germany.",
             nav_resume: "Resume", btn_contact: "Contact Me",
             section_edu: "Education Path", edu_ista_title: "Computer Systems & Networks", edu_ista_date: "Sept 2024 - June 2026", edu_ista_desc: "Comprehensive training in network architecture, system administration, and infrastructure management.", edu_bio_title: "Biology Studies", edu_bio_date: "Sept 2023 - July 2024", edu_bio_desc: "Developed scientific reasoning, lab safety protocols, and analytical skills.", edu_bac_title: "High School Diploma - Physics", edu_bac_date: "Jun 2023", edu_bac_company: "GS Salma Erragragui", edu_bac_desc: "Focus on Physics and Mathematics.",
             section_exp: "Professional Experience", exp_1_title: "IT Technician Intern", exp_1_company: "Societe Regionale Multiservices | Taza, Morocco", exp_1_desc: "Assisted in configuring and deploying network devices. Monitored network performance and provided baseline troubleshooting to maintain reliable IT infrastructure.", exp_2_title: "IT Support Intern", exp_2_company: "L.P.E.C. (Bureau d'Etudes Techniques) | Oujda, Morocco", exp_2_desc: "Installed, configured, and maintained office hardware and network equipment. Delivered Tier-1 technical support and effectively resolved day-to-day user issues.",
             
-            section_competence: "Competence", skill_net: "Networking", skill_sys: "SysAdmin", skill_cloud: "Cloud & Sec", 
+            section_competence: "Competences", skill_net: "Networking", skill_sys: "SysAdmin", skill_cloud: "Cloud & Sec", 
             skill_itsm: "ITSM & Workflow", skill_itsm_desc: "ITIL, Ticketing (Jira), Git, Documentation",
-            skill_lang: "Languages", lang_ar: "Arabic", level_native: "Native", lang_en: "English", level_c1: "Advanced (C1)", lang_de: "German", level_b1: "Intermediate (B1)", lang_fr: "French", level_b2: "Intermediate (B2)",
+            skill_lang: "Languages", lang_ar: "Arabic", level_native: "Native", lang_en: "English", level_c1: "Advanced (C1)", lang_de: "German", level_de: "B1 (Currently studying B2, exam soon)", lang_fr: "French", level_fr: "Intermediate (B2)",
             
             section_certs: "Certifications", status_earned: "Earned", status_progress: "In Progress", btn_verify: "Verify", btn_view_cert: "Certificate",
             section_projects: "Featured Projects", proj_1_title: "Secure Azure Cloud Network", proj_1_desc: "A complex Azure implementation featuring pfSense, Suricata IPS, and Active Directory.", proj_2_title: "Network Automation", proj_2_desc: "Python scripts for automating device configuration and network discovery.", btn_details: "View Details",
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             faq_4_q: "Why Germany?",
             faq_4_a: "Germany's dual vocational training system is globally recognized for blending theory with hands-on practice. My goal is to become an elite System Integration Specialist, and learning within a high-standard German IT environment is the best path to achieve that.",
             faq_5_q: "How good are your German and English skills?",
-            faq_5_a: "I hold a solid, certified B1 level in German and am actively taking intensive courses to reach B2 before the apprenticeship begins. Additionally, I speak English at an advanced C1 level, which is extremely valuable for reading technical IT documentation, Cisco manuals, and troubleshooting.",
+            faq_5_a: "I hold a certified B1 level in German, am currently studying at the B2 level, and am planning on taking the B2 exam very soon to ensure smooth, professional communication. Additionally, I speak English at an advanced C1 level, which is extremely valuable for reading technical IT documentation, Cisco manuals, and troubleshooting.",
 
             section_contact: "Let's Connect", contact_desc: "I am currently looking for internship and apprenticeship opportunities.", btn_send: "Send Message",
             footer_legal: "Legal Notice", footer_privacy: "Privacy Policy",
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             section_competence: "Kompetenzen", skill_net: "Netzwerke", skill_sys: "SysAdmin", skill_cloud: "Cloud & Sicherheit", 
             skill_itsm: "ITSM & Workflow", skill_itsm_desc: "ITIL, Ticketing (Jira), Git, Dokumentation",
-            skill_lang: "Sprachen", lang_ar: "Arabisch", level_native: "Muttersprache", lang_en: "Englisch", level_c1: "Fortgeschritten (C1)", lang_de: "Deutsch", level_b1: "Mittelstufe (B1)", lang_fr: "Französisch", level_b2: "Mittelstufe (B2)",
+            skill_lang: "Sprachen", lang_ar: "Arabisch", level_native: "Muttersprache", lang_en: "Englisch", level_c1: "Fortgeschritten (C1)", lang_de: "Deutsch", level_de: "B1 (In B2-Vorbereitung, Prüfung bald)", lang_fr: "Französisch", level_fr: "Obere Mittelstufe (B2)",
             
             section_certs: "Zertifizierungen", status_earned: "Erhalten", status_progress: "In Bearbeitung", btn_verify: "Verifizieren", btn_view_cert: "Zertifikat",
             section_projects: "Ausgewählte Projekte", proj_1_title: "Sicheres Azure Cloud Netzwerk", proj_1_desc: "Eine komplexe Azure-Implementierung mit pfSense, Suricata IPS und Active Directory.", proj_2_title: "Netzwerkautomatisierung", proj_2_desc: "Python-Skripte zur Automatisierung der Gerätekonfiguration.", btn_details: "Details",
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
             faq_4_q: "Warum Deutschland?",
             faq_4_a: "Das duale Ausbildungssystem in Deutschland ist weltweit für die Kombination aus Theorie und Praxis anerkannt. Mein Ziel ist es, ein hervorragender Fachinformatiker für Systemintegration zu werden. Die Ausbildung in einem deutschen IT-Unternehmen bietet dafür die perfekten Rahmenbedingungen.",
             faq_5_q: "Wie gut sind Ihre Deutsch- und Englischkenntnisse?",
-            faq_5_a: "Ich verfüge über ein solides, zertifiziertes B1-Niveau in Deutsch und lerne bereits intensiv für B2, um bis zum Ausbildungsbeginn eine reibungslose Kommunikation im Betrieb sicherzustellen. Zudem spreche ich Englisch auf C1-Niveau, was mir beim Lesen von technischen Dokumentationen, Cisco-Handbüchern und bei der Fehlerbehebung extrem hilft.",
+            faq_5_a: "Ich besitze ein zertifiziertes B1-Zertifikat in Deutsch, lerne derzeit bereits auf B2-Niveau und plane, die B2-Prüfung sehr bald abzulegen, um eine reibungslose und professionelle Kommunikation im Betrieb zu gewährleisten. Zudem spreche ich Englisch auf C1-Niveau, was mir beim Lesen von technischen Dokumentationen, Cisco-Handbüchern und bei der Fehlerbehebung extrem hilft.",
 
             section_contact: "Lassen Sie uns verbinden", contact_desc: "Ich suche derzeit nach Praktikums- und Ausbildungsplätzen.", btn_send: "Nachricht Senden",
             footer_legal: "Impressum", footer_privacy: "Datenschutz",
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             section_competence: "Compétences", skill_net: "Réseaux", skill_sys: "Admin Sys", skill_cloud: "Cloud & Sécu", 
             skill_itsm: "ITSM & Méthodologie", skill_itsm_desc: "ITIL, Ticketing (Jira), Git, Documentation",
-            skill_lang: "Langues", lang_ar: "Arabe", level_native: "Langue Maternelle", lang_en: "Anglais", level_c1: "Avancé (C1)", lang_de: "Allemand", level_b1: "Intermédiaire (B1)", lang_fr: "Français", level_b2: "Intermédiaire (B2)",
+            skill_lang: "Langues", lang_ar: "Arabe", level_native: "Langue Maternelle", lang_en: "Anglais", level_c1: "Avancé (C1)", lang_de: "Allemand", level_de: "B1 (En préparation du B2, examen très bientôt)", lang_fr: "Français", level_fr: "Intermédiaire Supérieur (B2)",
             
             section_certs: "Certifications", status_earned: "Obtenu", status_progress: "En Cours", btn_verify: "Vérifier", btn_view_cert: "Certificat",
             section_projects: "Projets Phares", proj_1_title: "Réseau Cloud Azure Sécurisé", proj_1_desc: "Une implémentation Azure complexe avec pfSense, Suricata IPS et Active Directory.", proj_2_title: "Automatisation Réseau", proj_2_desc: "Scripts Python pour automatiser la configuration des appareils.", btn_details: "Voir Détails",
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
             faq_4_q: "Pourquoi l'Allemagne ?",
             faq_4_a: "Le système de formation en alternance en Allemagne est mondialement reconnu. Mon objectif est de devenir un spécialiste en intégration de systèmes de haut niveau, et me former dans un environnement informatique allemand est la meilleure voie pour y parvenir.",
             faq_5_q: "Quel est votre niveau en allemand et en anglais ?",
-            faq_5_a: "J'ai un niveau B1 certifié en allemand et je prépare activement le niveau B2 pour garantir une communication fluide. De plus, je parle couramment anglais au niveau C1, ce qui m'aide énormément à lire la documentation technique, les manuels Cisco et à résoudre les problèmes IT.",
+            faq_5_a: "Je dispose d'un niveau B1 certifié en allemand, j'étudie actuellement au niveau B2 et je prévois de passer l'examen B2 très bientôt afin de garantir une communication fluide et professionnelle dans l'entreprise. De plus, je parle couramment anglais au niveau C1, ce qui m'aide énormément à lire la documentation technique, les manuels Cisco et à résoudre les problèmes IT.",
 
             section_contact: "Connectons-nous", contact_desc: "Je suis actuellement à la recherche d'opportunités de stage et d'apprentissage.", btn_send: "Envoyer",
             footer_legal: "Mentions Légales", footer_privacy: "Confidentialité",
