@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Secure Azure Infrastructure | Youssef Kachmar</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="project-page-body">
+
+<nav class="main-nav" style="background: rgba(0,0,0,0.8); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="nav-content">
+        <a href="index.html" class="logo">YOUSSEF<span class="dot">.</span></a>
+        <div class="nav-links" style="position: static; transform: none;">
+            <a href="index.html" class="back-link"><i class='bx bx-left-arrow-alt'></i> Back to Portfolio</a>
+        </div>
+        
+        <div class="nav-controls">
+            <div class="lang-dropdown" id="lang-dropdown">
+                <button class="dropdown-trigger">
+                    <i class='bx bx-globe'></i> <span id="current-lang">EN</span> <i class='bx bx-chevron-down'></i>
+                </button>
+                <div class="dropdown-menu">
+                    <button onclick="setLanguage('en')">English</button>
+                    <button onclick="setLanguage('fr')">Français</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="case-study-main">
+    <section class="project-hero">
+        <div class="hero-content">
+            <span class="hero-badge" data-aos="fade-up" data-i18n="proj_badge"></span>
+            <h1 class="project-title" data-aos="fade-up" data-aos-delay="100" data-i18n="proj_title"></h1>
+            <p class="project-subtitle" data-aos="fade-up" data-aos-delay="200" data-i18n="proj_subtitle"></p>
+            
+            <div class="project-links" data-aos="fade-up" data-aos-delay="300" style="gap: 1rem;">
+                <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="primary-btn">
+                    <i class='bx bxl-github'></i> <span data-i18n="proj_repo"></span>
+                </a>
+                <a href="docs/report-fr.pdf" target="_blank" class="secondary-btn">
+                    <i class='bx bxs-file-pdf'></i> Rapport (FR)
+                </a>
+            </div>
+            
+            <div class="project-meta-bar" data-aos="fade-up" data-aos-delay="400">
+                <div class="meta-item"><span data-i18n="proj_role_label"></span><strong data-i18n="proj_role_val"></strong></div>
+                <div class="meta-item"><span data-i18n="proj_env_label"></span><strong data-i18n="proj_env_val"></strong></div>
+                <div class="meta-item"><span data-i18n="proj_sec_label"></span><strong data-i18n="proj_sec_val"></strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="full-width-section" data-aos="fade-up" data-aos-delay="500">
+        <div class="massive-image-container glow-blue">
+            <div class="mac-window">
+                <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">0-topology.png</span></div>
+                <img src="images/azure-project/0-topology.png" alt="Azure Network Topology">
+            </div>
+        </div>
+    </section>
+
+    <section class="editorial-container">
+        <div class="editorial-row" data-aos="fade-up">
+            <div class="editorial-text">
+                <div class="step-number">01</div>
+                <h2 data-i18n="proj_s1_title"></h2>
+                <p data-i18n="proj_s1_p1"></p>
+                <p data-i18n="proj_s1_p2"></p>
+            </div>
+            <div class="editorial-image glow-purple">
+                <div class="mac-window">
+                    <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">1-azure-udr.png</span></div>
+                    <img src="images/azure-project/1-azure-udr.png" alt="Azure UDR Routing">
+                </div>
+            </div>
+        </div>
+
+        <div class="editorial-row reverse" data-aos="fade-up">
+            <div class="editorial-text">
+                <div class="step-number">02</div>
+                <h2 data-i18n="proj_s2_title"></h2>
+                <p data-i18n="proj_s2_p1"></p>
+                <p data-i18n="proj_s2_p2"></p>
+            </div>
+            <div class="editorial-image glow-blue">
+                <div class="mac-window">
+                    <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">2-pfsense-dashboard.png</span></div>
+                    <img src="images/azure-project/2-pfsense-dashboard.png" alt="pfSense Dashboard">
+                </div>
+            </div>
+        </div>
+
+        <div class="editorial-row" data-aos="fade-up">
+            <div class="editorial-text">
+                <div class="step-number">03</div>
+                <h2 data-i18n="proj_s3_title"></h2>
+                <p data-i18n="proj_s3_p1"></p>
+                <p data-i18n="proj_s3_p2"></p>
+            </div>
+            <div class="editorial-image stacked-images">
+                <div class="mac-window glow-purple mb-4">
+                    <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">3-ad-dashboard.png</span></div>
+                    <img src="images/azure-project/3-ad-dashboard.png" alt="Active Directory">
+                </div>
+                <div class="mac-window glow-blue">
+                    <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">4-haproxy-stats.png</span></div>
+                    <img src="images/azure-project/4-haproxy-stats.png" alt="HAProxy Stats">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="soc-section" data-aos="fade-up">
+        <div class="soc-header">
+            <div class="step-number" style="margin: 0 auto 1rem;">04</div>
+            <h2 data-i18n="proj_s4_title"></h2>
+            <p data-i18n="proj_s4_p1"></p>
+            <p data-i18n="proj_s4_p2"></p>
+        </div>
+        
+        <div class="soc-gallery">
+            <div class="mac-window glow-red" data-aos="fade-up">
+                <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">6-suricata-alerts.png</span></div>
+                <img src="images/azure-project/6-suricata-alerts.png" alt="Suricata Alerts">
+            </div>
+            <div class="mac-window glow-blue" data-aos="fade-up" data-aos-delay="100">
+                <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">8-wazuh-dashboard.png</span></div>
+                <img src="images/azure-project/8-wazuh-dashboard.png" alt="Wazuh SIEM">
+            </div>
+            <div class="mac-window glow-purple" data-aos="fade-up" data-aos-delay="200">
+                <div class="mac-header"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div><span class="mac-title">7-zabbix-dashboard.png</span></div>
+                <img src="images/azure-project/7-zabbix-dashboard.png" alt="Zabbix Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack-container">
+        <h2 data-i18n="proj_tech_stack"></h2>
+        <div class="tech-marquee-wrapper">
+            <div class="tech-stack-track">
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pfsense/pfsense-original.svg" alt="pfSense"><span>pfSense</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows Server"><span>Windows Server</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx"><span>Nginx</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/wazuh.svg" alt="Wazuh"><span>Wazuh</span></div>
+                <div class="tech-item"><img src="https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/zabbix.svg" alt="Zabbix"><span>Zabbix</span></div>
+
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pfsense/pfsense-original.svg" alt="pfSense"><span>pfSense</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows Server"><span>Windows Server</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx"><span>Nginx</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/wazuh.svg" alt="Wazuh"><span>Wazuh</span></div>
+                <div class="tech-item"><img src="https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/zabbix.svg" alt="Zabbix"><span>Zabbix</span></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="main-footer">
+    <p>© 2026 Youssef Kachmar.</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</body>
+</html>

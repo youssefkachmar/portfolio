@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <!-- SEO & META TAGS -->
+    <title>Youssef Kachmar | Network Admin</title>
+    <meta name="description" content="Portfolio of Youssef Kachmar, an aspiring IT Specialist for System Integration. Discover my projects in Azure, Networking, Security, and SysAdmin.">
+    <meta name="keywords" content="Youssef Kachmar, Systemintegration, Network Admin, Fachinformatiker, Azure, pfSense, CCNA, IT Portfolio, Ausbildung Deutschland">
+    <meta name="author" content="Youssef Kachmar">
+    
+    <!-- OPEN GRAPH / SOCIAL SHARING -->
+    <meta property="og:title" content="Youssef Kachmar | Network Admin">
+    <meta property="og:description" content="Portfolio of Youssef Kachmar, aspiring IT Specialist for System Integration in Germany.">
+    <meta property="og:image" content="images/video-poster.jpg">
+    <meta property="og:url" content="https://youssefkachmar.github.io/portfolio">
+    <meta property="og:type" content="website">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="boot-screen">
+    <div class="boot-text" id="boot-text"></div>
+</div>
+
+<nav class="main-nav">
+    <div class="nav-content">
+        <a href="#hero" class="logo">YOUSSEF<span class="dot">.</span></a>
+        
+        <div class="nav-links">
+            <a href="#hero" data-i18n="nav_home">Home</a>
+            <a href="#education" data-i18n="nav_edu">Education</a>
+            <a href="#experience" data-i18n="nav_exp">Experience</a>
+            <a href="#projects" data-i18n="nav_projects">Projects</a>
+            <a href="#skills" data-i18n="nav_competence">Competences</a>
+        </div>
+        
+        <div class="nav-controls">
+            <div class="lang-dropdown" id="lang-dropdown">
+                <button class="dropdown-trigger">
+                    <i class='bx bx-globe'></i> <span id="current-lang">EN</span> <i class='bx bx-chevron-down'></i>
+                </button>
+                <div class="dropdown-menu">
+                    <button onclick="setLanguage('en')">English</button>
+                    <button onclick="setLanguage('fr')">Français</button>
+                </div>
+            </div>
+        </div>
+        
+        <button aria-label="Open menu" class="mobile-menu-icon">
+            <i class='bx bx-menu'></i>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav-overlay" id="mobile-nav">
+    <div class="mobile-header">
+        <span class="menu-title">MENU</span>
+        <button class="close-mobile-nav">
+            <i class='bx bx-x'></i>
+        </button>
+    </div>
+    <div class="mobile-nav-content">
+        <a href="#hero" class="mobile-link"><span data-i18n="nav_home">Home</span></a>
+        <a href="#education" class="mobile-link"><span data-i18n="nav_edu">Education</span></a>
+        <a href="#experience" class="mobile-link"><span data-i18n="nav_exp">Experience</span></a>
+        <a href="#projects" class="mobile-link"><span data-i18n="nav_projects">Projects</span></a>
+        <a href="#skills" class="mobile-link"><span data-i18n="nav_competence">Competences</span></a>
+        <a href="#certifications" class="mobile-link"><span data-i18n="nav_certs">Certs</span></a>
+    </div>
+    <div class="mobile-footer">
+        <div class="mobile-controls">
+            <button onclick="setLanguage('en')" id="mob-en">EN</button>
+            <button onclick="setLanguage('fr')" id="mob-fr">FR</button>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section class="hero" id="hero">
+        <div class="hero-text" data-aos="fade-right" data-aos-delay="1500">
+            <span class="hero-badge" data-i18n="hero_badge">Network & Systems Student</span>
+            <h1>Youssef Kachmar <br><span class="gradient-text" data-i18n="hero_subtitle">Future Admin.</span></h1>
+            <p class="hero-description" data-i18n="hero_desc"></p>
+            
+            <div class="hero-btns">
+                <a href="resume/cv-fr.pdf" target="_blank" class="primary-btn">
+                    <span data-i18n="nav_resume">Resume</span>
+                    <i class='bx bx-link-external'></i>
+                </a>
+                <a href="#contact" class="secondary-btn" data-i18n="btn_contact">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="1700">
+            <div class="image-container">
+                <img src="images/profile.png" alt="Youssef Kachmar">
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="education">
+        <h2 data-aos="fade-up" data-i18n="section_edu">Education Path</h2>
+        <div class="content-card spotlight-card unified-card" data-aos="fade-up">
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="edu_ista_title">Specialized Technician Diploma - Computer Systems & Networks</h3>
+                    <span class="date-badge" data-i18n="edu_ista_date">Sept 2024 - June 2026</span>
+                </div>
+                <p class="company">ISTA Taza</p>
+                <p class="desc" data-i18n="edu_ista_desc"></p>
+                <ul data-i18n="edu_ista_list" class="styled-list"></ul>
+            </div>
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="edu_bio_title">Biology Studies</h3>
+                    <span class="date-badge" data-i18n="edu_bio_date">Sept 2023 - July 2024</span>
+                </div>
+                <p class="company">Faculté Polydisciplinaire de Taza</p>
+                <p class="desc" data-i18n="edu_bio_desc"></p>
+            </div>
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="edu_bac_title">High School Diploma - Physics</h3>
+                    <span class="date-badge" data-i18n="edu_bac_date">Jun 2023</span>
+                </div>
+                <p class="company" data-i18n="edu_bac_company">GS Salma Erragragui</p>
+                <p class="desc" data-i18n="edu_bac_desc"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="experience">
+        <h2 data-aos="fade-up" data-i18n="section_exp">Professional Experience</h2>
+        <div class="content-card spotlight-card unified-card" data-aos="fade-up">
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="exp_1_title">IT Technician Intern</h3>
+                    <span class="date-badge">04/2026 - 05/2026</span>
+                </div>
+                <p class="company" data-i18n="exp_1_company"></p>
+                <p class="desc" data-i18n="exp_1_desc"></p>
+            </div>
+            <div class="unified-item">
+                <div class="card-header-row">
+                    <h3 data-i18n="exp_2_title">IT Support Intern</h3>
+                    <span class="date-badge">06/2025 - 09/2025</span>
+                </div>
+                <p class="company" data-i18n="exp_2_company"></p>
+                <p class="desc" data-i18n="exp_2_desc"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="projects">
+        <h2 data-aos="fade-up" data-i18n="section_projects">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card spotlight-card" data-aos="fade-up">
+                <div class="project-cover">
+                    <img src="images/azure-project/0-topology.png" alt="Azure Topology">
+                </div>
+                <div class="project-content">
+                    <h3 data-i18n="proj_1_title">Secure Azure Cloud Network</h3>
+                    <p data-i18n="proj_1_desc"></p>
+                    <div class="project-actions">
+                        <a href="project-azure.html" class="link-text">
+                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                        <a href="https://github.com/youssefkachmar/azure-secure-infrastructure" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card spotlight-card" data-aos="fade-up" data-aos-delay="100" data-modal-id="project-modal-2">
+                <div class="project-content" style="padding-top: 2rem;">
+                    <div class="project-icon"><i class='bx bxl-python'></i></div>
+                    <h3 data-i18n="proj_2_title">Network Automation</h3>
+                    <p data-i18n="proj_2_desc"></p>
+                    <div class="project-actions">
+                        <button class="link-text open-project-modal-btn">
+                            <span data-i18n="btn_details">View Details</span> <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                        <a href="#" target="_blank" class="github-btn" aria-label="View on GitHub"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <section class="container" id="skills">
+        <h2 data-aos="fade-up" data-i18n="section_competence">Competences</h2>
+        <div class="skills-grid">
+            <div class="skill-card spotlight-card" data-aos="fade-up">
+                <i class='bx bx-network-chart skill-icon'></i>
+                <h3 data-i18n="skill_net">Networking</h3>
+                <p>Cisco, OSPF, BGP, STP, VoIP, WLAN</p>
+            </div>
+            <div class="skill-card spotlight-card" data-aos="fade-up" data-aos-delay="100">
+                <i class='bx bxl-windows skill-icon'></i>
+                <h3 data-i18n="skill_sys">SysAdmin</h3>
+                <p>Windows Server, Linux, AD DS, DNS</p>
+            </div>
+            <div class="skill-card spotlight-card" data-aos="fade-up" data-aos-delay="200">
+                <i class='bx bxs-cloud skill-icon'></i>
+                <h3 data-i18n="skill_cloud">Cloud & Sec</h3>
+                <p>Azure, pfSense, Suricata, Python</p>
+            </div>
+
+            <div class="skill-card spotlight-card" data-aos="fade-up" data-aos-delay="300">
+                <i class='bx bx-globe skill-icon'></i>
+                <h3 data-i18n="skill_lang">Languages</h3>
+                <div class="lang-list">
+                    <div class="lang-row">
+                        <span data-i18n="lang_ar">Arabic</span><span class="lang-dot"></span><span class="text-muted" data-i18n="level_native">Native</span>
+                    </div>
+                    <div class="lang-row">
+                        <span data-i18n="lang_en">English</span><span class="lang-dot"></span><span class="text-muted" data-i18n="level_c1">Advanced (C1)</span>
+                    </div>
+                    <div class="lang-row">
+                        <span data-i18n="lang_de">German</span><span class="lang-dot"></span><span class="text-muted" data-i18n="level_de">B1 (Currently studying B2, exam soon)</span>
+                    </div>
+                    <div class="lang-row">
+                        <span data-i18n="lang_fr">French</span><span class="lang-dot"></span><span class="text-muted" data-i18n="level_fr">Intermediate (B2)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="certifications">
+        <h2 data-aos="fade-up" data-i18n="section_certs">Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card spotlight-card" data-aos="fade-up">
+                <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
+                <div class="cert-details">
+                    <h3>Introduction to Networks</h3>
+                    <p class="issuer">Cisco (CCNA)</p>
+                    <div class="cert-footer">
+                        <span class="status-earned" data-i18n="status_earned">Earned</span>
+                        <div class="cert-actions">
+                            <a href="https://www.credly.com/badges/98b8142d-b62c-4193-9437-b59b36b7c24e/public_url" target="_blank" class="btn-verify">
+                                <i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span>
+                            </a>
+                            <a href="certifications/CCNA Introduction to Networks Certificate.pdf" target="_blank" class="btn-view-cert">
+                                <i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-card spotlight-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
+                <div class="cert-details">
+                    <h3>Switching, Routing & Wireless</h3>
+                    <p class="issuer">Cisco (CCNA)</p>
+                    <div class="cert-footer">
+                        <span class="status-earned" data-i18n="status_earned">Earned</span>
+                        <div class="cert-actions">
+                            <a href="https://www.credly.com/badges/c46107af-00c9-42b9-b66d-6a2ce5f493bf/public_url" target="_blank" class="btn-verify">
+                                <i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span>
+                            </a>
+                            <a href="certifications/CCNA Switching, Routing and Wireless Essentials Certificate.pdf" target="_blank" class="btn-view-cert">
+                                <i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-card spotlight-card cert-centered" data-aos="fade-up" data-aos-delay="200">
+                <div class="cert-icon-box"><i class='bx bx-check-shield'></i></div>
+                <div class="cert-details">
+                    <h3>Enterprise Networking, Security, and Automation</h3>
+                    <p class="issuer">Cisco (CCNA)</p>
+                    <div class="cert-footer">
+                        <span class="status-earned" data-i18n="status_earned">Earned</span>
+                        <div class="cert-actions">
+                            <a href="https://www.credly.com/badges/da7e7add-771e-4103-8f4c-cfc5d1cfc6e0/public_url" target="_blank" class="btn-verify">
+                                <i class='bx bx-check-shield'></i> <span data-i18n="btn_verify">Verify</span>
+                            </a>
+                            <a href="certifications/CCNA Enterprise Networking Security and Automation Certificate.pdf" target="_blank" class="btn-view-cert">
+                                <i class='bx bx-link-external'></i> <span data-i18n="btn_view_cert">Certificate</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container" id="contact">
+        <div class="contact-card spotlight-card" data-aos="fade-up">
+            <div class="contact-info">
+                <h2 data-i18n="section_contact">Let's Connect</h2>
+                <p data-i18n="contact_desc"></p>
+                <div class="contact-links">
+                    <a href="mailto:youssefkachmar46@gmail.com" class="contact-pill">
+                        <div class="icon-box"><i class='bx bx-envelope'></i></div>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/youssef-kachmar-82600a296" class="contact-pill" target="_blank">
+                        <div class="icon-box"><i class='bx bxl-linkedin'></i></div>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/youssefkachmar" class="contact-pill" target="_blank">
+                        <div class="icon-box"><i class='bx bxl-github'></i></div>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+            <form action="https://formspree.io/f/xeeqawbq" method="POST" class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" required placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" data-i18n="btn_send">Send Message <i class='bx bx-send'></i></button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="main-footer">
+    <p>© 2026 Youssef Kachmar. <br class="mobile-break">
+    <a href="impressum.html" data-i18n="footer_legal" class="footer-link">Legal Notice</a> | 
+    <a href="datenschutz.html" data-i18n="footer_privacy" class="footer-link">Privacy Policy</a></p>
+</footer>
+
+<a href="#hero" class="back-to-top" aria-label="Back to Top"><i class='bx bx-up-arrow-alt'></i></a>
+
+<div class="modal project-modal" id="project-modal-2">
+    <div class="modal-content">
+        <button class="close-button"><i class='bx bx-x'></i></button>
+        <div class="project-modal-body">
+            <div class="project-modal-image-wrapper"></div>
+            <div class="modal-tech-ticker"><div class="ticker-track" id="ticker-track-2"></div></div>
+            <div class="project-modal-description"></div>
+            <div class="project-modal-controls">
+                <button class="control-btn prev"><i class='bx bx-chevron-left'></i></button>
+                <div class="project-modal-counter"></div>
+                <button class="control-btn next"><i class='bx bx-chevron-right'></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="image-modal">
+    <div class="modal-content image-zoom-content">
+        <button class="close-button"><i class='bx bx-x'></i></button>
+        <img src="" alt="Enlarged">
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
